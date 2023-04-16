@@ -5,11 +5,16 @@ import "./Navbar.css";
 const Navbar = () => {
   return (
     <div>
-      <section className="">
+      {/* <a href="https://ibb.co/7pjP0Rm"><img src="https://i.ibb.co/5jGmJnH/seo-search-symbol.png" alt="seo-search-symbol" border="0"></a> */}
+      <section className="navbar-container">
         <nav class="navbar navbar-expand-lg bg-body-tertiary">
           <div class="container">
             <Link class="navbar-brand" href="#">
-              Navbar
+              <img
+                src="https://i.ibb.co/5jGmJnH/seo-search-symbol.png"
+                style={{ width: "52px", height: "52px" }}
+                alt=""
+              />
             </Link>
             <button
               class="navbar-toggler"
@@ -23,7 +28,7 @@ const Navbar = () => {
               <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <ul class="navbar-nav m-auto mb-2 mb-lg-0">
                 <li class="nav-item">
                   <Link class="nav-link active" aria-current="page" href="#">
                     Home
