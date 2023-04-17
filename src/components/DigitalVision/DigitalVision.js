@@ -8,11 +8,6 @@ const DigitalVision = () => {
       <h1 className='text-4xl font-sans font-semibold section_title'>Why DigitalVision?</h1>
       <p className='text-center text-xl font-sans font-medium'>We make sure each penny you spend at DigitaVision worth it.</p>
 
-      
-  
-
-     
-	
 		<div className="mt-10 grid grid-cols-1 gap-x-4 gap-y-8 md:grid-cols-2 lg:grid-cols-3">
 			<article className="flex flex-col bg-white">
       <img src="https://digitavision.com/wp-content/uploads/2021/10/member-management.png" alt="" className="w-16 h-16 mx-auto rounded-full mt-4" />
