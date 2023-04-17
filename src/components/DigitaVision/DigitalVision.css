@@ -1,0 +1,8 @@
+.section_title{
+    padding: 10px 30px;
+    border-bottom: 3px solid #dc160c;
+    width: fit-content;
+    margin-bottom: 10px !important;
+    text-align: center !important;
+    margin: 0 auto;
+}
