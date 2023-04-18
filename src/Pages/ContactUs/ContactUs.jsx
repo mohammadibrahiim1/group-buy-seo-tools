@@ -95,99 +95,115 @@ const ContactUs = () => {
         </div>
       </section>
       {/* Faq section */}
-      <section className="bg-gray-100 text-gray-800">
+      <section className="bg-[#292929] text-[#F5F5F5]">
         <div className="container flex flex-col justify-center px-4 py-8 mx-auto md:p-8">
-          <h2 className="text-2xl font-semibold sm:text-4xl">
+          <h2 className="text-2xl font-semibold sm:text-4xl text-center">
             Frequently Asked Questions
           </h2>
-          <p className="mt-4 mb-8 text-gray-600">
+          <p className="mt-4 mb-8 text-gray-600 text-center">
             Sagittis tempor donec id vestibulum viverra. Neque condimentum
             primis orci at lacus amet bibendum.
           </p>
-          <div className=" flex ">
-            <div className="">
+          <div className=" flex justify-evenly align-center ">
+            <div className="faq-container ">
               <details className="w-full border rounded-lg">
                 <summary className="px-4 py-6 focus:outline-none focus-visible:ring-violet-600">
-                  Ex orci laoreet egestas sapien magna egestas scelerisque?
+                  What does Group Buy mean?
                 </summary>
-                <p className="px-4 py-6 pt-0 ml-4 -mt-4 text-gray-600">
-                  Lectus iaculis orci metus vitae ligula dictum per. Nisl per
-                  nullam taciti at adipiscing est.{" "}
+                <p className="px-4 py-6 pt-0 ml-4 -mt-4 text-gray-600 ">
+                  Group Buy Means you get a Seo tools access on an <br />{" "}
+                  affordable price as compared to original price. These accounts{" "}
+                  <br /> are for the medium users of SEO Tools. If you are heavy
+                  usage <br /> people, please don’t purchase.
                 </p>
               </details>
               <details className="w-full border rounded-lg">
                 <summary className="px-4 py-6 focus:outline-none focus-visible:ring-violet-600">
-                  Lorem at arcu rutrum viverra metus sapien venenatis lobortis
-                  odio?
+                  Do you provide login details to the seo tools? How do I get
+                  access to the accounts?
                 </summary>
                 <p className="px-4 py-6 pt-0 ml-4 -mt-4 text-gray-600">
-                  Tincidunt ut hac condimentum rhoncus phasellus nostra. Magna
-                  porttitor egestas tincidunt neque vehicula potenti.{" "}
+                  No, you will need to install our Chrome extension and then you
+                  can use the tools through it. You will receive video tutorial.
                 </p>
               </details>
               <details className="w-full border rounded-lg">
                 <summary className="px-4 py-6 focus:outline-none focus-visible:ring-violet-600">
-                  Eleifend feugiat sollicitudin laoreet adipiscing bibendum
-                  suscipit erat?
+                  Are there any limitations in the accounts?
                 </summary>
                 <p className="px-4 py-6 pt-0 ml-4 -mt-4 text-gray-600">
-                  Justo libero tellus integer tincidunt justo semper consequat
-                  venenatis aliquet imperdiet. Ultricies urna proin fusce nulla
-                  pretium sodales vel magna et massa euismod vulputate sed.{" "}
+                  Yes there are daily limits of few tools. Check here
                 </p>
               </details>
               <details className="w-full border rounded-lg">
                 <summary className="px-4 py-6 focus:outline-none focus-visible:ring-violet-600">
-                  Eleifend feugiat sollicitudin laoreet adipiscing bibendum
-                  suscipit erat?
+                  Do you Guaranty All tools work All the time?
                 </summary>
                 <p className="px-4 py-6 pt-0 ml-4 -mt-4 text-gray-600">
-                  Justo libero tellus integer tincidunt justo semper consequat
-                  venenatis aliquet imperdiet. Ultricies urna proin fusce nulla
-                  pretium sodales vel magna et massa euismod vulputate sed.{" "}
+                  No we don't guaranty that all tools will work all the time
+                  fluently. Since they are shared account, if users do something
+                  wrong then the account may get banned and will take a little
+                  time to resolve. Or every tools have some limits. Which is
+                  divided among all the users. You have to use keeping it in
+                  mind.
+                </p>
+              </details>
+              <details className="w-full border rounded-lg">
+                <summary className="px-4 py-6 focus:outline-none focus-visible:ring-violet-600">
+                  Can I share your SEO Tools with Others?
+                </summary>
+                <p className="px-4 py-6 pt-0 ml-4 -mt-4 text-gray-600">
+                  No never, If you are reselling customer or you want to shared
+                  with any one, Our system catches your IP and if it is used on
+                  2nd IP then you’ll be banned immediately.
                 </p>
               </details>
             </div>
-            <div className="">
+            <div className="faq-container">
               <details className="w-full border rounded-lg">
                 <summary className="px-4 py-6 focus:outline-none focus-visible:ring-violet-600">
-                  Ex orci laoreet egestas sapien magna egestas scelerisque?
+                  Are these shared accounts or dedicated accounts?
                 </summary>
                 <p className="px-4 py-6 pt-0 ml-4 -mt-4 text-gray-600">
-                  Lectus iaculis orci metus vitae ligula dictum per. Nisl per
-                  nullam taciti at adipiscing est.{" "}
+                  Yes, Group Buy means shared. All accounts are shared with the
+                  other people or multiple user.
                 </p>
               </details>
               <details className="w-full border rounded-lg">
                 <summary className="px-4 py-6 focus:outline-none focus-visible:ring-violet-600">
-                  Lorem at arcu rutrum viverra metus sapien venenatis lobortis
-                  odio?
+                  How do I get help if I need any?What are your support details?
                 </summary>
                 <p className="px-4 py-6 pt-0 ml-4 -mt-4 text-gray-600">
-                  Tincidunt ut hac condimentum rhoncus phasellus nostra. Magna
-                  porttitor egestas tincidunt neque vehicula potenti.{" "}
+                  We provide support on Skype Support, Email Support and Website
+                  Support IF you have any query fell free to ask on our Support
+                  form.
                 </p>
               </details>
               <details className="w-full border rounded-lg">
                 <summary className="px-4 py-6 focus:outline-none focus-visible:ring-violet-600">
-                  Eleifend feugiat sollicitudin laoreet adipiscing bibendum
-                  suscipit erat?
+                  Do we support Refund?
                 </summary>
                 <p className="px-4 py-6 pt-0 ml-4 -mt-4 text-gray-600">
-                  Justo libero tellus integer tincidunt justo semper consequat
-                  venenatis aliquet imperdiet. Ultricies urna proin fusce nulla
-                  pretium sodales vel magna et massa euismod vulputate sed.{" "}
+                  Please check our detailed refund policy guide Here.
                 </p>
               </details>
               <details className="w-full border rounded-lg">
                 <summary className="px-4 py-6 focus:outline-none focus-visible:ring-violet-600">
-                  Eleifend feugiat sollicitudin laoreet adipiscing bibendum
-                  suscipit erat?
+                  Is this tools available for MAC?
                 </summary>
                 <p className="px-4 py-6 pt-0 ml-4 -mt-4 text-gray-600">
-                  Justo libero tellus integer tincidunt justo semper consequat
-                  venenatis aliquet imperdiet. Ultricies urna proin fusce nulla
-                  pretium sodales vel magna et massa euismod vulputate sed.{" "}
+                  Yes almost all tools runs on Any OS.
+                </p>
+              </details>
+              <details className="w-full border rounded-lg">
+                <summary className="px-4 py-6 focus:outline-none focus-visible:ring-violet-600">
+                  Do you have a Guide or Video on how to open the Firefox
+                  Portable?
+                </summary>
+                <p className="px-4 py-6 pt-0 ml-4 -mt-4 text-gray-600">
+                  Yes, we provide you video tutorial and complete guide and if
+                  get any error we help you using Teamviewer or Skype Screen
+                  Share.
                 </p>
               </details>
             </div>

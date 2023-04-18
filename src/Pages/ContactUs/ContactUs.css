@@ -2,3 +2,13 @@
   height: 262px;
   width: 288px;
 }
+
+.faq-container {
+  width: 540px;
+}
+.faq-container .w-full {
+  margin-bottom: 12px;
+}
+.faq-container .w-full  summary{
+  font-size: 17px;
+}
