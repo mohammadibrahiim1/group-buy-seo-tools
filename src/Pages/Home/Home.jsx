@@ -8,6 +8,7 @@ import AboutUs from "../../components/About-Us/AboutUs";
 import PrivacyPolicy from "../../components/About-Us/PrivacyPolicy";
 import RefundPolicy from "../../components/About-Us/RefundPolicy";
 import TermsPolicy from "../../components/About-Us/TermsPolicy";
+import Pricing from "../../components/Pricing/Pricing";
 
 const Home = () => {
   return (
@@ -21,6 +22,7 @@ const Home = () => {
       <PrivacyPolicy></PrivacyPolicy>
       <RefundPolicy></RefundPolicy>
       <TermsPolicy></TermsPolicy>
+      <Pricing></Pricing>
     </div>
   );
 };
