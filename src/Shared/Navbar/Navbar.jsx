@@ -6,18 +6,20 @@ import { Link } from "react-router-dom";
 const Navbar = () => {
   return (
     <div>
-
       {/* <Link  to="https://ibb.co/7pjP0Rm"><img src="https://i.ibb.co/5jGmJnH/seo-search-symbol.png" alt="seo-search-symbol" border="0"></Link > */}
       <section>
         <nav class="bg-white border-gray-200 dark:bg-gray-900">
           <div class="max-w-screen-xl  flex flex-wrap  items-center justify-between mx-auto p-4">
             <Link to="https://flowbite.com/" class="flex items-center">
-              <img
+              {/* <img
                 src="https://i.ibb.co/5jGmJnH/seo-search-symbol.png"
                 class="h-12 mr-3"
                 alt=""
-              />
-              <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white"></span>
+              /> */}
+              <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
+                {" "}
+                GBSEO.Tools
+              </span>
             </Link>
             <button
               data-collapse-toggle="navbar-default"
