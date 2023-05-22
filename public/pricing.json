@@ -1,6 +1,7 @@
 [
   {
-    "name": "Easy",
+    "id": 1,
+    "name": "Basic",
     "discretion": "All the basics for businesses that are just getting started.",
     "price": {
       "monthly": 29,
@@ -9,7 +10,8 @@
     "features": "['One project', 'Your dashboard']"
   },
   {
-    "name": "Basic",
+    "id": 2,
+    "name": "Combo",
     "discretion": "Better for growing businesses that want more customers.",
     "price": {
       "monthly": 59,
@@ -18,7 +20,8 @@
     "features": "['Two projects', 'Your dashboard', 'Components included', 'Advanced charts']"
   },
   {
-    "name": "Custom",
+    "id": 3,
+    "name": "All In One",
     "discretion": "Advanced features for pros who need more customization.",
     "price": {
       "monthly": 139,
