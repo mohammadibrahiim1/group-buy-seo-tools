@@ -23,7 +23,10 @@ const Tools = () => {
   return (
     <div>
       <section className="tools-section">
-        {/* <p>{tools.length}</p> */}
+        <div className=" text-center py-12 ">
+          <h1 className="text-5xl text-info fw-semibold">See Tool Pricing </h1>
+          <p className=" text-base-500">Always Know What You Are Pricing</p>
+        </div>
         <div className="grid grid-cols-3 gap-y-4">
           {tools.slice(0, showMore).map((tool) => (
             <Tool tool={tool} key={tool.id}></Tool>
@@ -34,7 +37,7 @@ const Tools = () => {
           <button className="btn btn-success" onClick={showMoreTools}>
             show more
           </button>{" "}
-          <Link to="/" className="btn btn-success">
+          <Link to="/allTools" className="btn btn-success">
             See all tools
           </Link>{" "}
         </div>

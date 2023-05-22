@@ -3,6 +3,7 @@ import Layout from "../Layout/Root";
 import Home from "../Pages/Home/Home";
 import ContactUs from "../Pages/ContactUs/ContactUs";
 import Pricing from "../Components/Pricing/Pricing";
+import AllTools from "../Pages/AllTools/AllTools";
 
 export const router = createBrowserRouter([
   {
@@ -18,8 +19,8 @@ export const router = createBrowserRouter([
         element: <ContactUs />,
       },
       {
-        path: "/pricing",
-        element: <Pricing/>,
+        path: "/allTools",
+        element: <AllTools/>,
       },
     ],
   },
