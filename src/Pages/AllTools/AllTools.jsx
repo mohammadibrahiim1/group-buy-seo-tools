@@ -15,9 +15,9 @@ const AllTools = () => {
     <div>
       <div>
         <div className="overflow-x-auto w-full mx-auto">
-          <table className="table w-full">
+          <table className="table w-full text-center">
             {/* head */}
-            <thead>
+            <thead >
               <tr>
                 <th>
                   {/* <label>
@@ -36,9 +36,9 @@ const AllTools = () => {
               <>
                 <tbody>
                   <tr>
-                    <th>{i+1}</th>
+                    <th className="text-center">{i+1}</th>
                     <td>
-                      <div className="flex items-center space-x-3">
+                      <div className="flex items-center justify-center space-x-3">
                         <div className="avatar">
                           <div className="mask mask-squircle w-12 h-12">
                             <img src={allTool.profile.image} alt="" />
@@ -61,7 +61,9 @@ const AllTools = () => {
                         Desktop Support Technician
                       </span> */}
                     </td>
-                    <td>{allTool.profile.access}</td>
+                    <td>
+                        {allTool.profile.access}
+                        </td>
                     <td>
                     {allTool.profile.limit?.slice(0, 20)} ...
                       <button className="btn btn-ghost btn-xs">
