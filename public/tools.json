@@ -10,7 +10,7 @@
       "image": "https://i.ibb.co/8jxsY61/ahrefs-cloud.png",
       "limit": "Daily 15 credits Limit (All Features available of Standard plan Except adding project. You can not add your site as a project/ Can't do Site audit/tracking.) Weekly 5,000 rows export limit (1k at a time). Weekly 20 Serp Update credit. You can add 1 project . Standard/LITE planCredit: Credits means 1. When you search a Domain/keyword/content explorer/batch analysis or anything it consumes 1 credit for each query.2. On keyword explorer/site explorer , after searching a Keyword when you Visit Related terms/Matching terms or other section from left side it consumes 1 more credit. When you see serp/position of any suggested keywords it consumes 1 credit. When you apply any filter, it consumes 1 credits per each filter. When You update SERP of keywords, it consumes 1 credit.3. On site explorer after searching a site when you Visit any features from left panel (Like Organic keywords, Backlinks,Top pages, broken links,Broken contents etc) it consumes 1 credits per each feature you visit.4. Even on content explorer when you search anything , check details of any query, Apply filters ( whenever any data loads or you bring up any data) it consumes 1 credit per each action.",
       "access": "Any Os (Mac/Linux/Windows)",
-      "Status": "Active",
+      "status": "Active",
       "location": {
         "lat": 88.766256,
         "long": 109.507587
@@ -29,7 +29,7 @@
       "price": 0,
       "name": "Udemy",
       "image": "https://i.ibb.co/Wy47z9W/udemy.png",
-      "limits": "Unlimited",
+      "limit": "Unlimited",
       "access": "Any Os (Mac/Linux/Windows)",
       "status": "Active",
       "location": {
