@@ -12,7 +12,7 @@ const Home = () => {
       <AsSeenOn></AsSeenOn>
       {/* <DigitalVision></DigitalVision> */}
       <Tools></Tools>
-      <Pricing />
+      {/* <Pricing /> */}
     </div>
   );
 };
