@@ -1,4 +1,24 @@
-.allTool-section {
+.allTools-section {
   width: 64%;
   margin: 0 auto;
+}
+
+/* .drawer-button {
+  position: absolute;
+  top: 80px;
+  right: 100px;
+} */
+
+/* .drawer-side {
+  position: absolute;
+  top: 200px;
+  right: 0;
+  height: 100px;
+  border: 1px solid orangered;
+}  */
+
+.indicator {
+  position: fixed;
+  top: 50%;
+  right: 2%;
 }

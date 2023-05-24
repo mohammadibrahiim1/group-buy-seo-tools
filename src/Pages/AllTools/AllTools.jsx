@@ -3,16 +3,16 @@ import React, { useContext, useState } from "react";
 import "./AllTools.css";
 import ToolsModal from "../../Components/ToolsModal/ToolsModal";
 import { ApiContext } from "../../Context/DataContext";
+import CartDrawer from "../../Components/CartDrawer/CartDrawer";
 
 const AllTools = () => {
   const { tools } = useContext(ApiContext);
   const [toolDetails, setToolDetails] = useState();
 
-
   return (
     <div className="bg-base-100">
-      <div className="allTool-section">
-        <div className="grid grid-cols-4 gap-4 ">
+      <div className="allTools-section">
+        <div className="grid grid-cols-4 gap-4  ">
           {tools.map((tool) => (
             <>
               {/* <!-- component --> */}
@@ -65,6 +65,9 @@ const AllTools = () => {
               </div>
             </>
           ))}
+        </div>
+        <div className="cart-section">
+          <CartDrawer></CartDrawer>
         </div>
         <div>
           {toolDetails && (

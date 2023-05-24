@@ -4,12 +4,15 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import DataContext from "./Context/DataContext";
+import { ThemeProvider } from "@material-tailwind/react";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <DataContext>
-      <App />
+      <ThemeProvider>
+        <App />
+      </ThemeProvider>
     </DataContext>
   </React.StrictMode>
 );
