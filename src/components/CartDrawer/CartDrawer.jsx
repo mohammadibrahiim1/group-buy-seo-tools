@@ -1,30 +1,36 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { FaCartArrowDown } from "react-icons/fa";
 import { MdClose } from "react-icons/md";
+import { ApiContext } from "../../Context/DataContext";
+import CartTool from "../../Pages/Cart/CartTool";
 // FaCartArrowDown
 
 const CartDrawer = () => {
   const [openToggler, setOpenToggler] = useState(false);
+  const { cart } = useContext(ApiContext);
+  console.log(cart);
   return (
     <div>
       <div className="indicator" onClick={() => setOpenToggler(!openToggler)}>
-        <span className="indicator-item badge badge-secondary">99+</span>
+        <span className="indicator-item badge badge-warning">
+          {cart.length}
+        </span>
         <button className=" btn btn-sm btn-primary flex flex-column">
           <span>
             {" "}
             {openToggler ? "" : <FaCartArrowDown className=" h-5 w-5" />}
           </span>{" "}
           <br />
-          <span className=""> 100 BDT</span>
+          <span className="text-xs ms-1">see cart</span>
         </button>
       </div>
       <div
-        className={`cart-item bg-base-100 ${
+        className={`cart-item bg-base-100  ${
           openToggler ? "cart-item-open" : "cart-item-closed"
         }`}
       >
         <div
-          className="logo text-end mt-3"
+          className="logo text-end"
           onClick={() => setOpenToggler(!openToggler)}
         >
           <button className="btn btn-sm">
@@ -37,10 +43,11 @@ const CartDrawer = () => {
             all in one package($250) 50$/30days
           </p>
           <p className="text-xs text-warning">save $200+ now</p>
-          <ul>
-            <li>item-1</li>
-            <li>item-2</li>
-          </ul>
+          <div>
+            {cart.map((tool) => (
+              <CartTool tool={tool} key={tool.id}></CartTool>
+            ))}
+          </div>
         </div>
       </div>
     </div>

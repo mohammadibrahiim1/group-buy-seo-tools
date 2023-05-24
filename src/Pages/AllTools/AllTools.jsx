@@ -6,7 +6,7 @@ import { ApiContext } from "../../Context/DataContext";
 import CartDrawer from "../../Components/CartDrawer/CartDrawer";
 
 const AllTools = () => {
-  const { tools } = useContext(ApiContext);
+  const { tools, addToCart } = useContext(ApiContext);
   const [toolDetails, setToolDetails] = useState();
 
   return (
@@ -22,15 +22,7 @@ const AllTools = () => {
                   src={tool.profile.image}
                   alt="avatar"
                 />
-                {/* <div class="flex items-center px-6 py-3 bg-gray-900">
-                <svg
-                  class="h-6 w-6 text-white fill-current"
-                  viewBox="0 0 512 512"
-                >
-                  <path d="M256 48C150 48 64 136.2 64 245.1v153.3c0 36.3 28.6 65.7 64 65.7h64V288h-85.3v-42.9c0-84.7 66.8-153.3 149.3-153.3s149.3 68.5 149.3 153.3V288H320v176h64c35.4 0 64-29.3 64-65.7V245.1C448 136.2 362 48 256 48z" />
-                </svg>
-                <h1 class="mx-3 text-white font-semibold text-lg">Focusing</h1>
-              </div> */}
+
                 <div class="py-4 px-6">
                   <h1 class="text-xl font-semibold text-primary">
                     {tool.profile.name}
@@ -44,7 +36,10 @@ const AllTools = () => {
                     </p>
                   </div>
                   <div class="flex justify-between mt-4 text-gray-700">
-                    <button class="px-2 text-sm p-1 rounded-md btn-secondary">
+                    <button
+                      class="px-2 text-sm p-1 rounded-md btn-secondary"
+                      onClick={() => addToCart(tool)}
+                    >
                       add to cart
                     </button>
                     <label
@@ -67,7 +62,7 @@ const AllTools = () => {
           ))}
         </div>
         <div className="cart-section">
-          <CartDrawer></CartDrawer>
+          <CartDrawer addToCart={addToCart}></CartDrawer>
         </div>
         <div>
           {toolDetails && (

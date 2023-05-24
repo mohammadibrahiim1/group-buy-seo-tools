@@ -7,7 +7,7 @@ import { ApiContext } from "../../Context/DataContext";
 
 const Tools = () => {
   const { tools } = useContext(ApiContext);
-  console.log(tools);
+  // console.log(tools);
   const [showMore, setShowMore] = useState(6);
   const showMoreTools = () => {
     setShowMore((preValue) => preValue + 3);
