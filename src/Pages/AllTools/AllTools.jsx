@@ -1,90 +1,89 @@
-import React, { useEffect, useState } from "react";
-import DisplayTools from "../../Components/DisplayTools/DisplayTools";
+import React, { useContext, useEffect, useState } from "react";
+// import DisplayTools from "../../Components/DisplayTools/DisplayTools";
+import "./AllTools.css";
+import ToolsModal from "../../Components/ToolsModal/ToolsModal";
+import { ApiContext } from "../../Context/DataContext";
 
 const AllTools = () => {
-  const [allTools, seeAllTools] = useState([]);
-  useEffect(() => {
-    fetch("tools.json")
-      .then((res) => res.json())
-      .then((data) => {
-        console.log(data);
-        seeAllTools(data);
-      });
-  }, []);
+  const { tools } = useContext(ApiContext);
+  const [toolDetails, setToolDetails] = useState();
+  // console.log(toolDetails);
+  // useEffect(() => {
+  //   fetch("tools.json")
+  //     .then((res) => res.json())
+  //     .then((data) => {
+  //       // console.log(data);
+  //       seeAllTools(data);
+  //     });
+  // }, []);
+
   return (
-    <div>
+<div className="bg-warning">
+<div className="allTool-section">
+      <div className="grid grid-cols-4 gap-4 ">
+        {tools.map((tool) => (
+          <>
+            {/* <!-- component --> */}
+            <div class="max-w-sm bg-white shadow-lg rounded-lg overflow-hidden my-4">
+              <img
+                class="w-full h-56 p-2 rounded-md object-cover object-center"
+                src={tool.profile.image}
+                alt="avatar"
+              />
+              {/* <div class="flex items-center px-6 py-3 bg-gray-900">
+                <svg
+                  class="h-6 w-6 text-white fill-current"
+                  viewBox="0 0 512 512"
+                >
+                  <path d="M256 48C150 48 64 136.2 64 245.1v153.3c0 36.3 28.6 65.7 64 65.7h64V288h-85.3v-42.9c0-84.7 66.8-153.3 149.3-153.3s149.3 68.5 149.3 153.3V288H320v176h64c35.4 0 64-29.3 64-65.7V245.1C448 136.2 362 48 256 48z" />
+                </svg>
+                <h1 class="mx-3 text-white font-semibold text-lg">Focusing</h1>
+              </div> */}
+              <div class="py-4 px-6">
+                <h1 class="text-xl font-semibold text-accent">
+                  {tool.profile.name}
+                </h1>
+                <div className="flex justify-between">
+                  <p class="py-2 text-sm text-success font-semibold">
+                    {tool.profile.status}
+                  </p>
+                  <p class="py-2 text-sm text-success font-semibold">
+                    ${tool.profile.price}
+                  </p>
+                </div>
+                <div class="flex justify-between mt-4 text-gray-700">
+                  <button class="px-2 text-sm p-1 rounded-md btn-success">
+                    add to cart
+                  </button>
+                  <label
+                    onClick={() => setToolDetails(tool)}
+                    htmlFor="my-modal-3"
+                    className="px-2 text-sm p-1 rounded-md btn-info cursor-pointer"
+                  >
+                    details
+                  </label>
+                </div>
+
+                <div class="flex items-center mt-4 text-gray-700">
+                  <h1 class="px-2 text-sm">
+                    limits : {tool.profile.limit.slice(0, 23)}...
+                  </h1>
+                </div>
+              </div>
+            </div>
+          </>
+        ))}
+      </div>
       <div>
-        <div className="overflow-x-auto w-full mx-auto">
-          <table className="table w-full text-center">
-            {/* head */}
-            <thead >
-              <tr>
-                <th>
-                  {/* <label>
-                    <input type="checkbox" className="checkbox" />
-                  </label> */}
-                </th>
-                <th>Tools Name</th>
-                <th>Active Status</th>
-                <th>Access System</th>
-                <th>Limits</th>
-                <th>Price</th>
-                <th>Cart</th>
-              </tr>
-            </thead>
-            {allTools.map((allTool, i) => (
-              <>
-                <tbody>
-                  <tr>
-                    <th className="text-center">{i+1}</th>
-                    <td>
-                      <div className="flex items-center justify-center space-x-3">
-                        <div className="avatar">
-                          <div className="mask mask-squircle w-12 h-12">
-                            <img src={allTool.profile.image} alt="" />
-                          </div>
-                        </div>
-                        <div>
-                          <div className="font-bold">
-                            {allTool.profile.name} 
-                          </div>
-                          {/* <div className="text-sm opacity-50">
-                            United States
-                          </div> */}
-                        </div>
-                      </div>
-                    </td>
-                    <td>
-                      {allTool.profile.status}
-                      {/* <br />
-                      <span className="badge badge-ghost badge-sm">
-                        Desktop Support Technician
-                      </span> */}
-                    </td>
-                    <td>
-                        {allTool.profile.access}
-                        </td>
-                    <td>
-                    {allTool.profile.limit?.slice(0, 20)} ...
-                      <button className="btn btn-ghost btn-xs">
-                        see details
-                      </button>
-                    </td>
-                    <td>${allTool.profile.price}</td>
-                    <td>
-                      <button className="btn btn-info btn-xs">
-                        add to cart
-                      </button>
-                    </td>
-                  </tr>
-                  <hr />
-                </tbody>{" "}
-              </>
-            ))}
-          </table>
-        </div>
+        {toolDetails && (
+          <ToolsModal
+            toolDetails={toolDetails}
+            key={toolDetails.id}
+          ></ToolsModal>
+        )}
       </div>
     </div>
+</div>
   );
 };
 
