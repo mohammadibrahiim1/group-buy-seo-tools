@@ -16,11 +16,11 @@ const ToolsModal = ({ toolDetails }) => {
             ✕
           </label>
           <div className="flex justify-between pe-5">
-            <h3 className="text-lg text-accent font-bold">{name}</h3>
+            <h3 className="text-lg text-primary font-bold">{name}</h3>
             <h3 className="text-lg text-error font-bold">${price}</h3>
           </div>
           <p className="py-3 text-success">active status : {status}</p>
-          <p className="py-1 text-warning">limit : {limit}</p>
+          <p className="py-1 text-sm text-primary font-semibold">limit : {limit}</p>
         </div>
       </div>
     </div>

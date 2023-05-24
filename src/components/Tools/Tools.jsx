@@ -37,10 +37,16 @@ const Tools = () => {
         </div>
         <div className="text-center mt-5">
           {" "}
-          <button className="btn btn-success" onClick={showMoreTools}>
+          <button
+            className="btn btn-secondary  btn-sm rounded-full text-xs"
+            onClick={showMoreTools}
+          >
             show more
           </button>{" "}
-          <Link to="/allTools" className="btn btn-success">
+          <Link
+            to="/allTools"
+            className=" btn btn-secondary  btn-sm rounded-full text-xs"
+          >
             See all tools
           </Link>{" "}
         </div>

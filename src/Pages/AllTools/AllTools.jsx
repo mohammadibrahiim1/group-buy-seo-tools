@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useState } from "react";
 // import DisplayTools from "../../Components/DisplayTools/DisplayTools";
 import "./AllTools.css";
 import ToolsModal from "../../Components/ToolsModal/ToolsModal";
@@ -7,30 +7,22 @@ import { ApiContext } from "../../Context/DataContext";
 const AllTools = () => {
   const { tools } = useContext(ApiContext);
   const [toolDetails, setToolDetails] = useState();
-  // console.log(toolDetails);
-  // useEffect(() => {
-  //   fetch("tools.json")
-  //     .then((res) => res.json())
-  //     .then((data) => {
-  //       // console.log(data);
-  //       seeAllTools(data);
-  //     });
-  // }, []);
+
 
   return (
-<div className="bg-warning">
-<div className="allTool-section">
-      <div className="grid grid-cols-4 gap-4 ">
-        {tools.map((tool) => (
-          <>
-            {/* <!-- component --> */}
-            <div class="max-w-sm bg-white shadow-lg rounded-lg overflow-hidden my-4">
-              <img
-                class="w-full h-56 p-2 rounded-md object-cover object-center"
-                src={tool.profile.image}
-                alt="avatar"
-              />
-              {/* <div class="flex items-center px-6 py-3 bg-gray-900">
+    <div className="bg-base-100">
+      <div className="allTool-section">
+        <div className="grid grid-cols-4 gap-4 ">
+          {tools.map((tool) => (
+            <>
+              {/* <!-- component --> */}
+              <div class="max-w-sm bg-white shadow-lg rounded-lg overflow-hidden my-4">
+                <img
+                  class="w-full h-56 p-2 rounded-md object-cover object-center"
+                  src={tool.profile.image}
+                  alt="avatar"
+                />
+                {/* <div class="flex items-center px-6 py-3 bg-gray-900">
                 <svg
                   class="h-6 w-6 text-white fill-current"
                   viewBox="0 0 512 512"
@@ -39,51 +31,51 @@ const AllTools = () => {
                 </svg>
                 <h1 class="mx-3 text-white font-semibold text-lg">Focusing</h1>
               </div> */}
-              <div class="py-4 px-6">
-                <h1 class="text-xl font-semibold text-accent">
-                  {tool.profile.name}
-                </h1>
-                <div className="flex justify-between">
-                  <p class="py-2 text-sm text-success font-semibold">
-                    {tool.profile.status}
-                  </p>
-                  <p class="py-2 text-sm text-success font-semibold">
-                    ${tool.profile.price}
-                  </p>
-                </div>
-                <div class="flex justify-between mt-4 text-gray-700">
-                  <button class="px-2 text-sm p-1 rounded-md btn-success">
-                    add to cart
-                  </button>
-                  <label
-                    onClick={() => setToolDetails(tool)}
-                    htmlFor="my-modal-3"
-                    className="px-2 text-sm p-1 rounded-md btn-info cursor-pointer"
-                  >
-                    details
-                  </label>
-                </div>
-
-                <div class="flex items-center mt-4 text-gray-700">
-                  <h1 class="px-2 text-sm">
-                    limits : {tool.profile.limit.slice(0, 23)}...
+                <div class="py-4 px-6">
+                  <h1 class="text-xl font-semibold text-primary">
+                    {tool.profile.name}
                   </h1>
+                  <div className="flex justify-between">
+                    <p class="py-2 text-sm text-success font-semibold">
+                      {tool.profile.status}
+                    </p>
+                    <p class="py-2 text-sm text-success font-semibold">
+                      {tool.profile.price} BDT
+                    </p>
+                  </div>
+                  <div class="flex justify-between mt-4 text-gray-700">
+                    <button class="px-2 text-sm p-1 rounded-md btn-secondary">
+                      add to cart
+                    </button>
+                    <label
+                      onClick={() => setToolDetails(tool)}
+                      htmlFor="my-modal-3"
+                      className="px-2 text-sm p-1 rounded-md btn-info cursor-pointer"
+                    >
+                      details
+                    </label>
+                  </div>
+
+                  <div class="flex items-center mt-4 text-gray-700">
+                    <h1 class="px-2 text-sm text-primary font-semibold">
+                      limits : {tool.profile.limit.slice(0, 23)}...
+                    </h1>
+                  </div>
                 </div>
               </div>
-            </div>
-          </>
-        ))}
-      </div>
-      <div>
-        {toolDetails && (
-          <ToolsModal
-            toolDetails={toolDetails}
-            key={toolDetails.id}
-          ></ToolsModal>
-        )}
+            </>
+          ))}
+        </div>
+        <div>
+          {toolDetails && (
+            <ToolsModal
+              toolDetails={toolDetails}
+              key={toolDetails.id}
+            ></ToolsModal>
+          )}
+        </div>
       </div>
     </div>
-</div>
   );
 };
 
