@@ -17,8 +17,48 @@
   border: 1px solid orangered;
 }  */
 
+/* .drawer-button {
+  position: fixed;
+  top: 50%;
+  right: 1.5%;
+} */
 .indicator {
   position: fixed;
   top: 50%;
-  right: 2%;
+  right: 1.5%;
+  z-index: 1;
 }
+
+.cart-item {
+  width: 340px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  background-color: antiquewhite;
+  height: 100%;
+  overflow-y: hidden;
+  transition: 0.5s;
+  margin-top: 70px;
+}
+
+.cart-item-open {
+  right: 0;
+}
+.cart-item-closed {
+  right: -340px;
+}
+
+/* .nav-button {
+  z-index: 2;
+} */
+
+/* .indicator .btn {
+  font-size: 2.5rem;
+} */
+
+/* .cart-item {
+  display: block;
+  transition: all 0.3s linear;
+
+} */
