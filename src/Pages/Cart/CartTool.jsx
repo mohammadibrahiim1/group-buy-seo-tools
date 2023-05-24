@@ -1,9 +1,10 @@
 import React from "react";
 import "./CartTool.css";
+import { FaTrash } from "react-icons/fa";
 
-const CartTool = ({ tool }) => {
+const CartTool = ({ tool, handleRemoveProduct }) => {
   console.log(tool);
-  const { image, name, price } = tool.profile;
+  const { image, name, price, id } = tool.profile;
   return (
     <div>
       <div class="justify-between mb-4 mt-4 rounded-lg bg-white p-3  shadow-md sm:flex sm:justify-start">
@@ -14,7 +15,8 @@ const CartTool = ({ tool }) => {
             <p class="mt-1 text-xs text-error">total : {price} BDT</p>
           </div>
           <div class="mt-4 flex justify-between sm:space-y-6 sm:mt-0 sm:block sm:space-x-6">
-            <div class="flex items-center border-gray-100">
+            <div class="flex justify-between items-center   border-gray-100">
+              {/* <div className="mr-5"> */}
               <span class="cursor-pointer rounded-l bg-gray-100 py-1 px-3.5 duration-100 hover:bg-blue-500 hover:text-blue-50">
                 {" "}
                 -{" "}
@@ -25,14 +27,15 @@ const CartTool = ({ tool }) => {
                 value="1"
                 min="1"
               />
-              <span class="cursor-pointer rounded-r bg-gray-100 py-1 px-3 duration-100 hover:bg-blue-500 hover:text-blue-50">
+              <span class="cursor-pointer rounded-r bg-gray-100 py-1 px-3 mr-5 duration-100 hover:bg-blue-500 hover:text-blue-50">
                 {" "}
                 +{" "}
               </span>
+              {/* </div> */}
+              <span onClick={() => handleRemoveProduct(id)}>
+                <FaTrash className="text-error cursor-pointer" />
+              </span>
             </div>
-            {/* <div class="flex items-center space-x-4">
-              <p class="text-sm">{price} BDT</p>
-            </div> */}
           </div>
         </div>
       </div>

@@ -7,7 +7,7 @@ import CartTool from "../../Pages/Cart/CartTool";
 
 const CartDrawer = () => {
   const [openToggler, setOpenToggler] = useState(false);
-  const { cart } = useContext(ApiContext);
+  const { cart, handleRemoveProduct } = useContext(ApiContext);
   console.log(cart);
   return (
     <div>
@@ -45,7 +45,11 @@ const CartDrawer = () => {
           <p className="text-xs text-warning">save $200+ now</p>
           <div>
             {cart.map((tool) => (
-              <CartTool tool={tool} key={tool.id}></CartTool>
+              <CartTool
+                tool={tool}
+                handleRemoveProduct={handleRemoveProduct}
+                key={tool.id}
+              ></CartTool>
             ))}
           </div>
         </div>

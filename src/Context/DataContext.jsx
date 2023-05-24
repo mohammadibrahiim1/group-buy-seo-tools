@@ -21,7 +21,14 @@ const DataContext = ({ children }) => {
     }
     setCart(newCart);
     console.log(newCart);
-    localStorage.setItem("tool", JSON.stringify(newCart));
+    localStorage.setItem("newCart", JSON.stringify(newCart));
+  };
+
+  const handleRemoveProduct = (id) => {
+    const updatedItems = [...cart];
+    updatedItems.splice(id, 1);
+    localStorage.setItem("newCart", JSON.stringify(updatedItems));
+    setCart(updatedItems);
   };
 
   useEffect(() => {
@@ -43,7 +50,8 @@ const DataContext = ({ children }) => {
   const data = {
     tools,
     addToCart,
-    cart
+    cart,
+    handleRemoveProduct,
   };
   return (
     <div>
