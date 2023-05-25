@@ -1,5 +1,5 @@
 import React from "react";
-import AsSeenOn from "../../Components/As-seen-on/AsSeenOn";
+import AsSeenOn from "../../Components/As-seen-on/PopularTools";
 // import DigitalVision from "../../Components/DigitaVision/DigitalVision";
 // import Pricing from "../../Components/Pricing/Pricing";
 import Header from "../../Components/Header/Header";
