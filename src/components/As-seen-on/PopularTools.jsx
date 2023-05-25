@@ -58,7 +58,7 @@ const PopularTools = () => {
           </h1>
         </div>
 
-        <div className=" stats border shadow">
+        <div className=" stats border shadow grid grid-cols-3">
           <div className="stat">
             <div className="stat-figure text-primary">
               <img

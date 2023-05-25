@@ -1,18 +1,20 @@
 import React from "react";
-import AsSeenOn from "../../Components/As-seen-on/PopularTools";
-// import DigitalVision from "../../Components/DigitaVision/DigitalVision";
-// import Pricing from "../../Components/Pricing/Pricing";
 import Header from "../../Components/Header/Header";
 import Tools from "../../Components/Tools/Tools";
+import PopularTools from "../../Components/As-seen-on/PopularTools";
+import Payment from "../../Components/Payment/Payment";
+import Counters from "../../Components/Counters/Counters";
+import ServiceCard from "../../Components/ServiceCard/ServiceCard";
 
 const Home = () => {
   return (
     <div>
       <Header />
-      <AsSeenOn></AsSeenOn>
-      {/* <DigitalVision></DigitalVision> */}
+      <PopularTools></PopularTools>
       <Tools></Tools>
-      {/* <Pricing /> */}
+      <Counters></Counters>
+      <ServiceCard></ServiceCard>
+      <Payment></Payment>
     </div>
   );
 };

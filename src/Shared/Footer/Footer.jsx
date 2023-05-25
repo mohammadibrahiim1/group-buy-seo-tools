@@ -4,14 +4,6 @@ import { Link } from "react-router-dom";
 const Footer = () => {
   return (
     <div>
-      <div className="py-6 my-6 bg-[#F0F7F7]">
-        <img
-          className="h-60 w-1/2 mx-auto"
-          src="https://i.ibb.co/5rfXF2W/We-Accept-The-Following-Payment-Methods.jpg"
-          alt=""
-          srcset=""
-        />
-      </div>
       <footer className="px-4  text-[#000] bg-[#FFFFFF] ">
         <div className="container flex flex-col justify-between py-10 mx-auto space-y-8 lg:flex-row lg:space-y-0 max-w-screen-xl mx-auto">
           <div className="lg:w-1/3">
@@ -158,9 +150,9 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="py-6 text-sm text-center dark:text-gray-400">
+        <div className="py-6 text-sm text-center text-primary font-semibold">
           © Author{" "}
-          <Link to="/" className="hover:text-[#243c5a]">
+          <Link to="/" className="hover:text-error text-info">
             Safiul Alom
           </Link>
           . All right reserved.

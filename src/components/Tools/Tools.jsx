@@ -7,29 +7,23 @@ import { ApiContext } from "../../Context/DataContext";
 
 const Tools = () => {
   const { tools } = useContext(ApiContext);
-  // console.log(tools);
   const [showMore, setShowMore] = useState(6);
   const showMoreTools = () => {
     setShowMore((preValue) => preValue + 3);
   };
 
-  // useEffect(() => {
-  //   fetch("tools.json")
-  //     .then((res) => res.json())
-  //     .then((data) => {
-  //       // console.log(data);
-  //       setTools(data);
-  //     });
-  // }, []);
-
   return (
     <div>
-      <section className="tools-section">
-        <div className=" text-center py-12 ">
-          <h1 className="text-5xl text-info fw-semibold">See Tool Pricing </h1>
-          <p className=" text-base-500">Always Know What You Are Pricing</p>
+      <section className="tools-section pt-52">
+        <div className=" text-center  ">
+          <h1 className="text-primary text-center text-5xl uppercase font-semibold">
+            See Tool Pricing{" "}
+          </h1>
+          <p className="text-error text-sm font-bond">
+            Always Know What You Are Pricing
+          </p>
         </div>
-        <div className="grid grid-cols-3 gap-y-4">
+        <div className="grid grid-cols-3 gap-y-4 pt-12 ">
           {tools &&
             tools
               ?.slice(0, showMore)
