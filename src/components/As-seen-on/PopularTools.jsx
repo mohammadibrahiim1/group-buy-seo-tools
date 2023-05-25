@@ -51,144 +51,93 @@ import React from "react";
 const PopularTools = () => {
   return (
     <div>
-      {/* <section className="p-6 bg-gray-100 text-gray-800">
-        <div className="container p-4 mx-auto text-center">
-          <h2 className="text-4xl font-bold">
-            Our Popular Seo Tools for Group Buy
-          </h2>
-        </div>
-        <div className="container flex  justify-center mx-auto text-gray-600">
-          <div className="flex justify-center w-1/2 p-6 align-middle md:w-1/3 xl:w-1/4">
-            <img
-              src="https://i.ibb.co/8jxsY61/ahrefs-cloud.png"
-              alt=""
-              srcset=""
-              className=" rounded w-28 h-28"
-            />
-          </div>
-          <div className="flex justify-center w-1/2 p-6 align-middle md:w-1/3 xl:w-1/4">
-            <img
-              src="https://i.ibb.co/mG3f6cK/SEMrush.png"
-              alt=""
-              srcset=""
-              className="rounded-pill w-14 h-14"
-            />
-          </div>
-          <div className="flex justify-center w-1/2 p-6 align-middle md:w-1/3 xl:w-1/4">
-            <img
-              src="https://i.ibb.co/2cPqCGh/copyscape.png"
-              alt=""
-              srcset=""
-              className=" w-14 h-14"
-            />
-          </div>
-          <div className="flex justify-center w-1/2 p-6 align-middle md:w-1/3 xl:w-1/4">
-            <img
-              src="https://i.ibb.co/cvMymGp/grammarly-logo.png"
-              alt=""
-              srcset=""
-              className=" w-14 h-14"
-            />
-          </div>
-          <div className="flex justify-center w-1/2 p-6 align-middle md:w-1/3 xl:w-1/4">
-            <img
-              src="https://i.ibb.co/G7RzKg1/jasper.png"
-              alt=""
-              srcset=""
-              className=" w-14 h-14"
-            />
-          </div>
-          <div className="flex justify-center w-1/2 p-6 align-middle md:w-1/3 xl:w-1/4">
-            <img
-              src="https://i.ibb.co/nbgHWb9/Story-Blocks.png"
-              alt=""
-              srcset=""
-              className=" w-14 h-14"
-            />
-          </div>
-
-       
-        </div>
-      </section> */}
-
-      <div className="stats shadow">
-        <div className="stat">
-          <div className="stat-figure text-primary">
-            <img
-              src="https://i.ibb.co/8jxsY61/ahrefs-cloud.png"
-              alt=""
-              srcset=""
-              className=" rounded w-28 h-28"
-            />
-          </div>
-          <div className="stat-title">Total Likes</div>
-          <div className="stat-value text-primary">25.6K</div>
-          <div className="stat-desc">21% more than last month</div>
+      <section className="w-11/12 mx-auto ">
+        <div>
+          <h1 className="text-primary text-center text-5xl py-16 uppercase font-semibold">
+            Our Most popular Group buy tools
+          </h1>
         </div>
 
-        <div className="stat">
-          <div className="stat-figure text-secondary">
-            <img
-              src="https://i.ibb.co/mG3f6cK/SEMrush.png"
-              alt=""
-              srcset=""
-              className=" rounded w-28 h-28"
-            />
+        <div className=" stats border shadow">
+          <div className="stat">
+            <div className="stat-figure text-primary">
+              <img
+                src="https://i.ibb.co/8jxsY61/ahrefs-cloud.png"
+                alt=""
+                srcset=""
+                className=" rounded w-28 h-28"
+              />
+            </div>
+            <div className="stat-title">Total Likes</div>
+            <div className="stat-value text-primary">25.6K</div>
+            <div className="stat-desc">21% more than last month</div>
           </div>
-          <div className="stat-title">Page Views</div>
-          <div className="stat-value text-secondary">2.6M</div>
-          <div className="stat-desc">21% more than last month</div>
-        </div>
-
-        <div className="stat">
-          <div className="stat-figure text-secondary">
-            <div className="avatar online">
-              <div className="w-28 h-28 ">
-                <img src="https://i.ibb.co/2cPqCGh/copyscape.png" alt="" />
+          <div className="stat">
+            <div className="stat-figure text-secondary">
+              <img
+                src="https://i.ibb.co/mG3f6cK/SEMrush.png"
+                alt=""
+                srcset=""
+                className=" rounded w-28 h-28"
+              />
+            </div>
+            <div className="stat-title">Page Views</div>
+            <div className="stat-value text-secondary">2.6M</div>
+            <div className="stat-desc">21% more than last month</div>
+          </div>
+          <div className="stat">
+            <div className="stat-figure text-secondary">
+              <div className="avatar online">
+                <div className="w-28 h-28 rounded ">
+                  <img src="https://i.ibb.co/2cPqCGh/copyscape.png" alt="" />
+                </div>
               </div>
             </div>
+            <div className="stat-value">86%</div>
+            <div className="stat-title">Tasks done</div>
+            <div className="stat-desc text-secondary">31 tasks remaining</div>
           </div>
-          <div className="stat-value">86%</div>
-          <div className="stat-title">Tasks done</div>
-          <div className="stat-desc text-secondary">31 tasks remaining</div>
-        </div>
-        <div className="stat">
-          <div className="stat-figure text-secondary">
-            <div className="avatar online">
-              <div className="w-28 h-28 ">
-                <img src="https://i.ibb.co/G7RzKg1/jasper.png" alt="" />
+          <div className="stat">
+            <div className="stat-figure text-secondary">
+              <div className="avatar online">
+                <div className="w-28 h-28 rounded">
+                  <img src="https://i.ibb.co/G7RzKg1/jasper.png" alt="" />
+                </div>
               </div>
             </div>
+            <div className="stat-value">86%</div>
+            <div className="stat-title">Tasks done</div>
+            <div className="stat-desc text-secondary">31 tasks remaining</div>
           </div>
-          <div className="stat-value">86%</div>
-          <div className="stat-title">Tasks done</div>
-          <div className="stat-desc text-secondary">31 tasks remaining</div>
-        </div>
-        <div className="stat">
-          <div className="stat-figure text-secondary">
-            <div className="avatar online">
-              <div className="w-28 h-28 ">
-                <img src="https://i.ibb.co/nbgHWb9/Story-Blocks.png" alt="" />
+          <div className="stat">
+            <div className="stat-figure text-secondary">
+              <div className="avatar online">
+                <div className="w-28 h-28 rounded ">
+                  <img src="https://i.ibb.co/nbgHWb9/Story-Blocks.png" alt="" />
+                </div>
               </div>
             </div>
+            <div className="stat-value">86%</div>
+            <div className="stat-title">Tasks done</div>
+            <div className="stat-desc text-secondary">31 tasks remaining</div>
           </div>
-          <div className="stat-value">86%</div>
-          <div className="stat-title">Tasks done</div>
-          <div className="stat-desc text-secondary">31 tasks remaining</div>
-        </div>
-        <div className="stat">
-          <div className="stat-figure text-secondary">
-            <div className="avatar online">
-              <div className="w-28 h-28 ">
-                <img src="https://i.ibb.co/cvMymGp/grammarly-logo.png" alt="" />
+          <div className="stat">
+            <div className="stat-figure text-secondary">
+              <div className="avatar online">
+                <div className="w-28 h-28 rounded">
+                  <img
+                    src="https://i.ibb.co/cvMymGp/grammarly-logo.png"
+                    alt=""
+                  />
+                </div>
               </div>
             </div>
+            <div className="stat-value">86%</div>
+            <div className="stat-title">Tasks done</div>
+            <div className="stat-desc text-secondary">31 tasks remaining</div>
           </div>
-          <div className="stat-value">86%</div>
-          <div className="stat-title">Tasks done</div>
-          <div className="stat-desc text-secondary">31 tasks remaining</div>
         </div>
-      </div>
+      </section>
     </div>
   );
 };
