@@ -11,8 +11,8 @@ const Home = () => {
     <div>
       <Header />
       <PopularTools></PopularTools>
-      <Tools></Tools>
       <Counters></Counters>
+      <Tools></Tools>
       <ServiceCard></ServiceCard>
       <Payment></Payment>
     </div>
