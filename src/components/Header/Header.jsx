@@ -2,7 +2,7 @@ import React from "react";
 import "./Header.css";
 // import ResponsiveEmbed from "react-bootstrap/lib/ResponsiveEmbed";
 // import PageHeader from "react-bootstrap/lib/Pageheader";
-import { Ratio } from "react-bootstrap";
+// import { Ratio } from "react-bootstrap";
 
 const Header = () => {
   return (
