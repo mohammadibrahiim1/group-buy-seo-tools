@@ -16,8 +16,8 @@ const Tools = () => {
     <div>
       <section className="tools-section pt-52">
         <div className=" text-center  ">
-          <h1 className="text-primary text-center text-5xl uppercase font-semibold">
-            See Tool Pricing{" "}
+          <h1 className="text-primary text-center text-5xl capitalize font-semibold">
+           Our seo Tools 
           </h1>
           <p className="text-error text-sm font-bond">
             Always Know What You Are Pricing

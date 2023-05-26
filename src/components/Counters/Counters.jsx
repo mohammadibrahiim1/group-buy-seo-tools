@@ -4,7 +4,7 @@ import "./Counter.css";
 const Counters = () => {
   return (
     <div>
-      <div className="">
+      <div className=" w-1/2 mx-auto">
         <div className="stats shadow me-4">
           <div className="stat">
             <div className="stat-title">Total Page Views</div>
