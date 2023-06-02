@@ -3,6 +3,7 @@ import "./SignUP.css";
 // import { Link } from "react-router-dom";
 import { FcGoogle } from "react-icons/fc";
 import { FaFacebook } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const SignUP = () => {
   return (
@@ -10,20 +11,22 @@ const SignUP = () => {
       <section>
         <div className="signUp-page">
           <div className="flex justify-evenly align-center mt-10 mb-10 w-10/12 mx-auto ">
-            <div className=" text-5xl text-white bg-info w-full ">
-              <h1>You order and we deliver</h1>
+            <div className=" bg-info w-full ">
+              <h1 className="text-5xl text-white w-96 pt-8 pb-6 mx-auto">
+                You order and we deliver
+              </h1>
 
               <img
                 src="https://i.ibb.co/qMDcmvY/signup.png"
                 alt=""
-                className="w-4/5 h-4/5 mt-5 mb-5"
+                className="w-96 mx-auto  mt-5 mb-5"
               />
             </div>
 
-            <div className="input-form w-full bg-success ">
-              <form action="" className="sign-up-form w-8/12 mx-auto">
+            <div className="input-form w-full bg-white  ">
+              <form action="" className="sign-up-form w-8/12 mx-auto pt-20">
                 <div>
-                  <h1 className="text-4xl text-white font-semibold mb-5">
+                  <h1 className="text-4xl text-neutral font-semibold mb-5">
                     Create Account
                   </h1>
                   <div>
@@ -65,6 +68,14 @@ const SignUP = () => {
 
                 <div>
                   <button class="btn btn-wide ">Create Account</button>
+                </div>
+                <div className="flex justify-between align-center w-96 mt-10 mb-10 ">
+                  <p className="text-success font-semibold">
+                    Already Have An Account?{" "}
+                  </p>
+                  <Link to="/" className="text-error">
+                    Login{" "}
+                  </Link>
                 </div>
               </form>
             </div>
