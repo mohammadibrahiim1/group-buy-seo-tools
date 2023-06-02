@@ -29,10 +29,7 @@ const CartDrawer = () => {
           openToggler ? "cart-item-open" : "cart-item-closed"
         }`}
       >
-        <div
-          className="logo text-end"
-          onClick={() => setOpenToggler(!openToggler)}
-        >
+        <div className="text-end" onClick={() => setOpenToggler(!openToggler)}>
           <button className="btn btn-sm">
             {" "}
             {openToggler ? <MdClose className="h-5 w-5 " /> : ""}
