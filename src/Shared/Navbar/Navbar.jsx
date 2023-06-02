@@ -1,115 +1,168 @@
 import React from "react";
-
 import "./Navbar.css";
 import { Link } from "react-router-dom";
+import {
+  Button,
+  IconButton,
+  Menu,
+  MenuHandler,
+  MenuItem,
+  MenuList,
+  MobileNav,
+  Typography,
+} from "@material-tailwind/react";
 
 const Navbar = () => {
+  const [openNav, setOpenNav] = React.useState(false);
+
+  React.useEffect(() => {
+    window.addEventListener(
+      "resize",
+      () => window.innerWidth >= 960 && setOpenNav(false)
+    );
+  }, []);
+
+  const navList = (
+    <ul className="mb-4 mt-2 flex flex-col gap-2 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-6">
+      <Typography
+        as="li"
+        variant="small"
+        color="blue-gray"
+        className="p-1 font-normal"
+      >
+        <Link
+          to="/"
+          className="flex items-center text-primary text-lg hover:text-accent font-semibold"
+        >
+          Home
+        </Link>
+      </Typography>
+      <Typography
+        as="li"
+        variant="small"
+        color="blue-gray"
+        className="p-1 font-normal"
+      >
+        <Link
+          to="/allTools"
+          className="flex items-center text-lg text-primary hover:text-accent font-semibold"
+        >
+          All Tools
+        </Link>
+      </Typography>
+      <Typography
+        as="li"
+        variant="small"
+        color="blue-gray"
+        className="p-1 font-normal"
+      >
+        <Link
+          href="#"
+          className="flex items-center text-lg text-primary hover:text-accent font-semibold"
+        >
+          Blog
+        </Link>
+      </Typography>
+      <Typography
+        as="li"
+        variant="small"
+        color="blue-gray"
+        className="p-1 font-normal"
+      >
+        <Menu placement="bottom-start">
+          <MenuHandler>
+            <div className="cursor-pointer font-semibold text-lg text-primary hover:text-accent">
+              Client Area
+            </div>
+          </MenuHandler>
+          <MenuList>
+            <MenuItem className="mb-3 font-semibold text-base text-primary hover:text-accent">
+              <Link to="/signUp">Sign Up</Link>
+            </MenuItem>
+            <MenuItem className="mb-3 font-semibold text-base text-primary hover:text-accent">
+              <Link to="/logIn">Login</Link>
+            </MenuItem>
+          </MenuList>
+        </Menu>
+        {/* <Link href="#" className="flex items-center">
+          Client Area
+        </Link> */}
+      </Typography>
+    </ul>
+  );
   return (
     <div>
       {/* <Link  to="https://ibb.co/7pjP0Rm"><img src="https://i.ibb.co/5jGmJnH/seo-search-symbol.png" alt="seo-search-symbol" border="0"></Link > */}
       <section>
-        <nav class="bg-white border-gray-200 dark:bg-gray-900">
-          <div class="max-w-screen-xl  flex flex-wrap  items-center justify-between mx-auto p-4">
-            <Link to="/" class="flex items-center">
-              {/* <img
-                src="https://i.ibb.co/5jGmJnH/seo-search-symbol.png"
-                class="h-12 mr-3"
-                alt=""
-              /> */}
-              <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
-                {" "}
-                GBSEO.Tools
-              </span>
-            </Link>
-            <button
-              data-collapse-toggle="navbar-default"
-              type="button"
-              class="inline-flex items-center p-2 ml-3 text-sm text-gray-500 rounded-lg lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
-              aria-controls="navbar-default"
-              aria-expanded="false"
+        <div className=" container sticky inset-0 z-10 h-max max-w-full rounded-none py-2 px-4 lg:px-8 lg:py-4">
+          <div className="flex items-center justify-between text-blue-gray-900">
+            <Typography
+              as="a"
+              href="#"
+              className="mr-4 cursor-pointer py-1.5 font-medium"
             >
-              <span class="sr-only">Open main menu</span>
-              <svg
-                class="w-6 h-6"
-                aria-hidden="true"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-                xmlns="http://www.w3.org/2000/svg"
+              GBSEO Tools
+            </Typography>
+            <div className="flex items-center gap-4">
+              <div className="mr-4 hidden lg:block">{navList}</div>
+              <Button
+                variant="gradient"
+                size="sm"
+                className="hidden lg:inline-block btn-sm btn-error"
               >
-                <path
-                  fill-rule="evenodd"
-                  d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
-                  clip-rule="evenodd"
-                ></path>
-              </svg>
-            </button>
-            <div
-              class="hidden w-full md:hidden lg:block md:w-auto"
-              id="navbar-default"
-            >
-              <ul class="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
-                <li>
-                  <Link
-                    to="/"
-                    class="block py-2 pl-3 pr-4 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white md:dark:text-blue-500"
-                    aria-current="page"
+                <Link to="/allTools">Shop Now</Link>
+              </Button>
+              <IconButton
+                variant="text"
+                className="ml-auto h-6 w-6 text-inherit hover:bg-transparent focus:bg-transparent active:bg-transparent lg:hidden"
+                ripple={false}
+                onClick={() => setOpenNav(!openNav)}
+              >
+                {openNav ? (
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    className="h-6 w-6"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    strokeWidth={2}
                   >
-                    Home
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to="/about"
-                    class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M6 18L18 6M6 6l12 12"
+                    />
+                  </svg>
+                ) : (
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-6 w-6"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth={2}
                   >
-                    About
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to="/services"
-                    class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
-                  >
-                    Services
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to="/cart"
-                    class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
-                  >
-                    Cart
-                  </Link>
-                </li>
-                <li>
-                  <div className="dropdown dropdown-bottom">
-                    <label
-                      tabIndex={0}
-                      className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent cursor-pointer"
-                    >
-                      Client Area
-                    </label>
-                    <ul
-                      tabIndex={0}
-                      className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52"
-                    >
-                      <li>
-                        <Link to="/logIn" className="">
-                          Log In
-                        </Link>
-                      </li>
-                      <li>
-                        <Link to="/signUp" className="">
-                          Sign Up
-                        </Link>
-                      </li>
-                    </ul>
-                  </div>
-                </li>
-              </ul>
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M4 6h16M4 12h16M4 18h16"
+                    />
+                  </svg>
+                )}
+              </IconButton>
             </div>
           </div>
-        </nav>
+          <MobileNav open={openNav}>
+            {navList}
+            <Button
+              variant="gradient"
+              size="sm"
+              fullWidth
+              className="mb-2 btn btn-error"
+            >
+              <Link to="/allTools">Shop Now</Link>
+            </Button>
+          </MobileNav>
+        </div>
       </section>
     </div>
   );

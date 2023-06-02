@@ -4,6 +4,16 @@ import Tool from "../Tool/Tool";
 import "./Tools.css";
 import { Link } from "react-router-dom";
 import { ApiContext } from "../../Context/DataContext";
+import {
+  Button,
+  // IconButton,
+  // Menu,
+  // MenuHandler,
+  // MenuItem,
+  // MenuList,
+  // MobileNav,
+  // Typography,
+} from "@material-tailwind/react";
 
 const Tools = () => {
   const { tools } = useContext(ApiContext);
@@ -31,18 +41,29 @@ const Tools = () => {
         </div>
         <div className="text-center mt-5">
           {" "}
-          <button
+          {/* <button
             className="btn btn-secondary  btn-sm rounded-full text-xs"
-            onClick={showMoreTools}
+           
           >
             show more
-          </button>{" "}
-          <Link
+          </button>{" "} */}
+          <Button
+            variant="gradient"
+            size="sm"
+            className=" btn-sm btn-primary me-3"
+            onClick={showMoreTools}
+          >
+            <div>Show More</div>
+          </Button>
+          <Button variant="gradient" size="sm" className=" btn-sm btn-primary">
+            <Link to="/allTools">Shop Now</Link>
+          </Button>
+          {/* <Link
             to="/allTools"
             className=" btn btn-secondary  btn-sm rounded-full text-xs"
           >
-            See all tools
-          </Link>{" "}
+            Shop Now
+          </Link>{" "} */}
         </div>
       </section>
     </div>
