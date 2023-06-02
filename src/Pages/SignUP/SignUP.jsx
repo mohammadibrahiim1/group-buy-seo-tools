@@ -1,6 +1,5 @@
 import React from "react";
 import "./SignUP.css";
-// import { Link } from "react-router-dom";
 import { FcGoogle } from "react-icons/fc";
 import { FaFacebook } from "react-icons/fa";
 import { Link } from "react-router-dom";
@@ -47,21 +46,21 @@ const SignUP = () => {
                     <input
                       type="text"
                       placeholder="Full Name"
-                      className="input input-bordered input-md w-full max-w-xs"
+                      className="input input-bordered input-md w-full max-w-xs focus:outline-0"
                     />
                   </div>
                   <div className="mt-10 mb-10">
                     <input
-                      type="text"
-                      placeholder="Full Name"
-                      className="input input-bordered input-md w-full max-w-xs"
+                      type="email"
+                      placeholder="Email"
+                      className="input input-bordered input-md w-full max-w-xs focus:outline-0"
                     />
                   </div>
                   <div className="mt-10 mb-10">
                     <input
-                      type="text"
-                      placeholder="Full Name"
-                      className="input input-bordered input-md w-full max-w-xs"
+                      type="password"
+                      placeholder="Password"
+                      className="input input-bordered input-md w-full max-w-xs focus:outline-0"
                     />
                   </div>
                 </div>
@@ -73,7 +72,7 @@ const SignUP = () => {
                   <p className="text-success font-semibold">
                     Already Have An Account?{" "}
                   </p>
-                  <Link to="/" className="text-error">
+                  <Link to="/logIn" className="text-error text-semibold btn-sm">
                     Login{" "}
                   </Link>
                 </div>
