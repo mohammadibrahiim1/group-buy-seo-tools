@@ -24,45 +24,46 @@ const Navbar = () => {
 
   const navList = (
     <ul className="mb-4 mt-2 flex flex-col gap-2 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-6">
-      <Typography
-        as="li"
-        variant="small"
-        color="blue-gray"
-        className="p-1 font-normal"
-      >
-        <Link
-          to="/"
-          className="flex items-center text-primary text-lg hover:text-accent font-semibold"
+      <Link to="/">
+        <Typography
+          as="li"
+          variant="small"
+          color="blue-gray"
+          className="p-1 font-normal"
         >
-          Home
-        </Link>
-      </Typography>
-      <Typography
-        as="li"
-        variant="small"
-        color="blue-gray"
-        className="p-1 font-normal"
-      >
-        <Link
-          to="/allTools"
-          className="flex items-center text-lg text-primary hover:text-accent font-semibold"
+          <div className="flex items-center text-primary text-lg hover:text-accent font-semibold">
+            Home
+          </div>
+        </Typography>
+      </Link>
+
+      <Link to="/allTools">
+        {" "}
+        <Typography
+          as="li"
+          variant="small"
+          color="blue-gray"
+          className="p-1 font-normal"
         >
-          All Tools
-        </Link>
-      </Typography>
-      <Typography
-        as="li"
-        variant="small"
-        color="blue-gray"
-        className="p-1 font-normal"
-      >
-        <Link
-          href="#"
-          className="flex items-center text-lg text-primary hover:text-accent font-semibold"
+          <div className="flex items-center text-lg text-primary hover:text-accent font-semibold">
+            All Tools
+          </div>
+        </Typography>
+      </Link>
+      <Link to="/blog">
+        {" "}
+        <Typography
+          as="li"
+          variant="small"
+          color="blue-gray"
+          className="p-1 font-normal"
         >
-          Blog
-        </Link>
-      </Typography>
+          <div className="flex items-center text-lg text-primary hover:text-accent font-semibold">
+            Blog
+          </div>
+        </Typography>
+      </Link>
+      {/* <Link>    */}
       <Typography
         as="li"
         variant="small"
@@ -76,18 +77,25 @@ const Navbar = () => {
             </div>
           </MenuHandler>
           <MenuList>
-            <MenuItem className="mb-3 font-semibold text-base text-primary hover:text-accent">
-              <Link to="/signUp">Sign Up</Link>
-            </MenuItem>
-            <MenuItem className="mb-3 font-semibold text-base text-primary hover:text-accent">
-              <Link to="/logIn">Login</Link>
-            </MenuItem>
+            <Link to="/signUp">
+              {" "}
+              <MenuItem className="mb-3 font-semibold text-base text-primary hover:text-accent">
+                <div>Sign Up</div>
+              </MenuItem>
+            </Link>
+            <Link to="/logIn">
+              {" "}
+              <MenuItem className="mb-3 font-semibold text-base text-primary hover:text-accent">
+                <div>Login</div>
+              </MenuItem>
+            </Link>
           </MenuList>
         </Menu>
         {/* <Link href="#" className="flex items-center">
           Client Area
         </Link> */}
       </Typography>
+      {/* </Link> */}
     </ul>
   );
   return (
@@ -153,14 +161,17 @@ const Navbar = () => {
           </div>
           <MobileNav open={openNav}>
             {navList}
-            <Button
-              variant="gradient"
-              size="sm"
-              fullWidth
-              className="mb-2 btn btn-error"
-            >
-              <Link to="/allTools">Shop Now</Link>
-            </Button>
+            <Link to="/allTools">
+              {" "}
+              <Button
+                variant="gradient"
+                size="sm"
+                fullWidth
+                className="mb-2 btn btn-error sticky"
+              >
+                <p>Shop Now</p>
+              </Button>
+            </Link>
           </MobileNav>
         </div>
       </section>
