@@ -23,7 +23,7 @@ const SignUP = () => {
               />
             </div>
 
-            <div className="input-form w-full bg-white  ">
+            <div className="input-form w-full bg-white ">
               <form action="" className="sign-up-form w-8/12 mx-auto pt-20">
                 <div>
                   <h1 className="text-4xl text-neutral font-semibold mb-5">
