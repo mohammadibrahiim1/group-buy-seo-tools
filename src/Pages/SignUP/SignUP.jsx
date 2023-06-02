@@ -9,9 +9,9 @@ const SignUP = () => {
     <div>
       <section>
         <div className="signUp-page">
-          <div className="flex justify-evenly align-center mt-10 mb-10 w-10/12 mx-auto ">
+          <div className="flex justify-evenly align-center mt-10 mb-10 w-10/12 mx-auto">
             <div className=" bg-info w-full ">
-              <h1 className="text-5xl text-white w-96 pt-8 pb-6 mx-auto">
+              <h1 className="text-4xl text-primary font-semibold w-96 pt-20 pb-6 mx-auto">
                 You order and we deliver
               </h1>
 
@@ -25,18 +25,18 @@ const SignUP = () => {
             <div className="input-form w-full bg-white ">
               <form action="" className="sign-up-form w-8/12 mx-auto pt-20">
                 <div>
-                  <h1 className="text-4xl text-neutral font-semibold mb-5">
+                  <h1 className="text-4xl text-primary font-semibold mb-5">
                     Create Account
                   </h1>
                   <div>
-                    <button className="btn capitalize w-60 h-12 mr-5 ">
+                    <button className="btn capitalize w-60 h-12 mr-5 text-primary font-semibold ">
                       {" "}
                       <FcGoogle className="w-5 h-5 me-2" /> Sign up with Google
                     </button>
-                    <button className="btn capitalize w-60 h-12 ">
+                    <button className="btn capitalize w-60 h-12 text-primary font-semibold ">
                       {" "}
-                      <FaFacebook className="w-5 h-5 me-2 text-info" /> Sign up
-                      with Facebook
+                      <FaFacebook className="w-5 h-5 me-2 text-primary" /> Sign
+                      up with Facebook
                     </button>
                   </div>
                 </div>
@@ -69,10 +69,13 @@ const SignUP = () => {
                   <button class="btn btn-wide ">Create Account</button>
                 </div>
                 <div className="flex justify-between align-center w-96 mt-10 mb-10 ">
-                  <p className="text-success font-semibold">
+                  <p className="text-primary font-semibold">
                     Already Have An Account?{" "}
                   </p>
-                  <Link to="/logIn" className="text-error text-semibold btn-sm">
+                  <Link
+                    to="/logIn"
+                    className="text-error text-semibold border pe-4 ps-4 border-error rounded "
+                  >
                     Login{" "}
                   </Link>
                 </div>

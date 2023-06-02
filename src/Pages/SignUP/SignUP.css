@@ -16,9 +16,18 @@
   border-right: 0px;
   border-radius: 0px;
   background-color: #ffffff;
-  
 }
 
 .input-form .btn-wide {
   border-radius: 7px;
+}
+
+.input-form {
+  border-top-right-radius: 12px;
+  border-bottom-right-radius: 12px;
+}
+
+.signUp-page .bg-info {
+  border-top-left-radius: 12px;
+  border-bottom-left-radius: 12px;
 }
