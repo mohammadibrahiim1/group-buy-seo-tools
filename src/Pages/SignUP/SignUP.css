@@ -1,0 +1,23 @@
+.input-form .btn {
+  background: #ffffff;
+  border: 2px solid #f2f2f2;
+  box-shadow: -5px 5px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 7px;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 29px;
+  color: #000000;
+}
+
+.sign-up-form .input-bordered {
+  border-bottom: 1px solid black;
+  border-top: 0px;
+  border-left: 0px;
+  border-right: 0px;
+  border-radius: 0px;
+  background-color: #ffffff;
+}
+
+.input-form .btn-wide {
+  border-radius: 7px;
+}
