@@ -63,7 +63,7 @@ const Navbar = () => {
           </div>
         </Typography>
       </Link>
-      {/* <Link>    */}
+
       <Typography
         as="li"
         variant="small"
@@ -91,26 +91,24 @@ const Navbar = () => {
             </Link>
           </MenuList>
         </Menu>
-        {/* <Link href="#" className="flex items-center">
-          Client Area
-        </Link> */}
       </Typography>
-      {/* </Link> */}
     </ul>
   );
   return (
     <div>
       {/* <Link  to="https://ibb.co/7pjP0Rm"><img src="https://i.ibb.co/5jGmJnH/seo-search-symbol.png" alt="seo-search-symbol" border="0"></Link > */}
       <section>
-        <div className=" container sticky inset-0 z-10 h-max max-w-full rounded-none py-2 px-4 lg:px-8 lg:py-4">
-          <div className="flex items-center justify-between text-blue-gray-900">
-            <Typography
-              as="a"
-              href="#"
-              className="mr-4 cursor-pointer py-1.5 font-medium"
-            >
-              GBSEO Tools
-            </Typography>
+        <div className="  fixed inset-0 z-10 h-max max-w-full rounded-none py-2 px-4 lg:px-8 lg:py-4">
+          <div className=" navbar mx-auto flex items-center justify-between text-blue-gray-900">
+            <Link to="/">
+              {" "}
+              <Typography
+                as="a"
+                className="mr-4 cursor-pointer py-1.5 font-medium"
+              >
+                GBSEO Tools
+              </Typography>
+            </Link>
             <div className="flex items-center gap-4">
               <div className="mr-4 hidden lg:block">{navList}</div>
               <Button

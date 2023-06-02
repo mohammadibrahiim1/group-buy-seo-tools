@@ -11,7 +11,10 @@ const AllTools = () => {
 
   return (
     <div className="bg-base-100">
-      <div className="allTools-section">
+      <div className="pt-28 pb-12 text-center">
+        <h1 className="text-5xl text-primary font-semibold  underline">See All Tools</h1>
+      </div>
+      <div className="allTools-section ">
         <div className="grid grid-cols-4 gap-4  ">
           {tools.map((tool) => (
             <>

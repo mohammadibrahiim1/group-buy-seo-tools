@@ -38,9 +38,15 @@ const Tools = () => {
           >
             <div>Show More</div>
           </Button>
-          <Button variant="gradient" size="sm" className=" btn-sm btn-primary">
-            <Link to="/allTools">Shop Now</Link>
-          </Button>
+          <Link to="/allTools">
+            <Button
+              variant="gradient"
+              size="sm"
+              className=" btn-sm btn-primary"
+            >
+              <div>Shop Now</div>
+            </Button>
+          </Link>
         </div>
       </section>
     </div>
