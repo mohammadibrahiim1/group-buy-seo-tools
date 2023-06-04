@@ -15,7 +15,7 @@ const Counters = () => {
         </div> */}
         <div className="grid grid-cols-4 w-3/4 mx-auto gap-5">
           <div>
-            <div class="  h-56 rounded-xl border border-gray-100 p-4 shadow-xl sm:p-6 lg:p-8">
+            <div class=" h-56 rounded-xl border border-gray-100 p-4 shadow-xl sm:p-6 lg:p-8">
               <div class="pt-4 text-gray-500">
                 <FaUserAlt class="h-8 w-8 sm:h-10 sm:w-10 text-warning text-center mx-auto" />
 

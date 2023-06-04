@@ -7,9 +7,9 @@ import { Button } from "@material-tailwind/react";
 
 const Tools = () => {
   const { tools } = useContext(ApiContext);
-  const [showMore, setShowMore] = useState(6);
+  const [showMore, setShowMore] = useState(8);
   const showMoreTools = () => {
-    setShowMore((preValue) => preValue + 3);
+    setShowMore((preValue) => preValue + 4);
   };
 
   return (
@@ -23,7 +23,7 @@ const Tools = () => {
             Always Know What You Are Pricing
           </p>
         </div>
-        <div className="grid grid-cols-3 gap-y-4 pt-12 ">
+        <div className="w-3/4 mx-auto grid grid-cols-4 gap-4 pt-12 ">
           {tools &&
             tools
               ?.slice(0, showMore)

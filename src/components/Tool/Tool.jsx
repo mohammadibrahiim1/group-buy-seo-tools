@@ -6,7 +6,7 @@ const Tool = ({ tool }) => {
   //   console.log(tool);
   return (
     <div className="tool-info">
-      <div className="card w-96 h-56  bg-base-100 shadow-xl image-full">
+      <div className="card w-full h-56  bg-base-100 shadow-xl image-full">
         <figure>
           <img src={image} alt="Shoes" className="" />
         </figure>
