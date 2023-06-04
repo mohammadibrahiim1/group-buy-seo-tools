@@ -9,9 +9,11 @@ const Header = () => {
     <div>
       <section>
         <div className="header-section">
-          <div className="text-center p-40">
+          <div className="text-center p-60">
             <div>
-              <h1 className="text-5xl ">Valuable Group Buy SEO Tools Service at Affordable Price</h1>
+              <h1 className="text-5xl ">
+                Valuable Group Buy SEO Tools Service at Affordable Price
+              </h1>
               <p>
                 As a SEO / Digital Marketer / Website owner, you know how
                 important the SEO is. As a result, you're looking for ways to
