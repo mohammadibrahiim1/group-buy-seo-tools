@@ -11,10 +11,10 @@ const Header = () => {
         <div className="header-section">
           <div className="text-center p-60">
             <div>
-              <h1 className="text-5xl ">
+              <h1 className="text-5xl font-semibold w-3/4 mx-auto ">
                 Valuable Group Buy SEO Tools Service at Affordable Price
               </h1>
-              <p>
+              <p className="font-semibold text-sm pt-6 lh-1  text-neutral  ">
                 As a SEO / Digital Marketer / Website owner, you know how
                 important the SEO is. As a result, you're looking for ways to
                 improve your ranking on search engines so more users can find
