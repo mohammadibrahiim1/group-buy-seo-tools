@@ -4,6 +4,7 @@ import "./AllTools.css";
 import ToolsModal from "../../Components/ToolsModal/ToolsModal";
 import { ApiContext } from "../../Context/DataContext";
 import CartDrawer from "../../Components/CartDrawer/CartDrawer";
+import Marquee from "react-fast-marquee";
 
 const AllTools = () => {
   const { tools, addToCart } = useContext(ApiContext);
@@ -14,7 +15,7 @@ const AllTools = () => {
       {/* <div className="pt-28 pb-12 text-center">
         <h1 className="text-5xl text-primary font-semibold  underline">See All Tools</h1>
       </div> */}
-      <div className="header-section">
+      <div className="all-tools-header-section">
         <div className="text-center p-60">
           <div>
             <h1 className="text-5xl font-semibold w-3/4 mx-auto leading-tight ">
@@ -24,7 +25,7 @@ const AllTools = () => {
               you'll get all your available tools in this packages
             </p>
 
-            <p className="font-semibold text-sm pt-6 lh-1  text-neutral  ">
+            {/* <p className="font-semibold text-sm pt-6 lh-1  text-neutral  ">
               As a SEO / Digital Marketer / Website owner, you know how
               important the SEO is. As a result, you're looking for ways to
               improve your ranking on search engines so more users can find you
@@ -35,7 +36,23 @@ const AllTools = () => {
               Arabia, Malaysia, and many more countries peoples also can
               purchase our service. Our maximum tools have simple access system
               (One click to access system) - hope you'll like this system!
-            </p>
+            </p> */}
+            <div className="">
+              <div className=" font-semibold leading-tight pt-4">
+                <Marquee>
+                  {" "}
+                  Best Price * Don't Miss Out * Risk Free Refund Policy
+                </Marquee>
+              </div>
+              <div className="font-semibold leading-tight text-secondary pt-2">
+                <Marquee>
+                  {" "}
+                  Choose / Add to cart multiple tools, then our system will show
+                  you package price. Package price start from 10$ to 39$
+                  maximum.
+                </Marquee>
+              </div>
+            </div>
           </div>
           {/* <div>
               <div style={{ width: 660, height: "auto" }}>
@@ -56,11 +73,11 @@ const AllTools = () => {
       </div>
 
       <div>
-        <p className="text-4xl text-primary font-semibold text-center ">
+        <p className="text-4xl text-primary font-semibold text-center underline ">
           See All Tools
         </p>
       </div>
-      <div className="allTools-section ">
+      <div className="allTools-section pt-12 ">
         <div className="grid grid-cols-4 gap-4  ">
           {tools.map((tool) => (
             <>

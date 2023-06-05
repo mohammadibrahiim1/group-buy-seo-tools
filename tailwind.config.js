@@ -1,7 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 // const withMT = require("@material-tailwind/react/utils/withMT");
 
-module.exports =  {
+module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
     extend: {},
@@ -27,6 +27,8 @@ module.exports =  {
           warning: "#FBBD23",
 
           error: "#F87272",
+
+          sub: "#a3e635",
         },
       },
     ],

@@ -1,3 +1,13 @@
+.all-tools-header-section {
+  background-color: #f0f7f7;
+  background-image: linear-gradient(to bottom, rgba(71, 71, 71, 0.52), #f0f7f7),
+    url(https://i.ibb.co/f2mfBv0/gbtoolsheaderbanner.webp);
+  /* <a href="https://ibb.co/drnF1gK"><img src="https://i.ibb.co/f2mfBv0/gbtoolsheaderbanner.webp" alt="gbtoolsheaderbanner" border="0"></a> */
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 600px;
+}
+
 .allTools-section {
   width: 64%;
   margin: 0 auto;
