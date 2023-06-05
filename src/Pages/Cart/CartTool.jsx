@@ -14,6 +14,7 @@ const CartTool = ({ tool, handleRemoveProduct }) => {
 
   const { image, name, price, id } = tool.profile;
   const newPrice = price * productQuantity;
+  localStorage.setItem("Price", newPrice);
 
   // const getTotalPrice = (items) => {
   //   const total = items
