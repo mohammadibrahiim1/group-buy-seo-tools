@@ -8,6 +8,7 @@ const DataContext = ({ children }) => {
   const [tools, setTools] = useState([]);
   const [cart, setCart] = useState(cartFromLocalStorage);
 
+
   const addToCart = (tool) => {
     let newCart = [];
     const exists = cart.find((item) => item.id === tool.id);

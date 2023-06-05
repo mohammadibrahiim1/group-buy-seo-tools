@@ -5,6 +5,7 @@ import ToolsModal from "../../Components/ToolsModal/ToolsModal";
 import { ApiContext } from "../../Context/DataContext";
 import CartDrawer from "../../Components/CartDrawer/CartDrawer";
 import Marquee from "react-fast-marquee";
+import Payment from "../../Components/Payment/Payment";
 
 const AllTools = () => {
   const { tools, addToCart } = useContext(ApiContext);
@@ -138,6 +139,10 @@ const AllTools = () => {
             ></ToolsModal>
           )}
         </div>
+      </div>
+
+      <div>
+        <Payment></Payment>
       </div>
     </div>
   );

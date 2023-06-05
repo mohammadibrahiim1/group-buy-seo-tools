@@ -3,12 +3,14 @@ import { FaCartArrowDown } from "react-icons/fa";
 import { MdClose } from "react-icons/md";
 import { ApiContext } from "../../Context/DataContext";
 import CartTool from "../../Pages/Cart/CartTool";
+// import AllTools from "../../Pages/AllTools/AllTools";
 // FaCartArrowDown
 
 const CartDrawer = () => {
   const [openToggler, setOpenToggler] = useState(false);
   const { cart, handleRemoveProduct } = useContext(ApiContext);
   console.log(cart);
+
   return (
     <div>
       <div className="indicator" onClick={() => setOpenToggler(!openToggler)}>
@@ -49,6 +51,7 @@ const CartDrawer = () => {
               ></CartTool>
             ))}
           </div>
+          
         </div>
       </div>
     </div>

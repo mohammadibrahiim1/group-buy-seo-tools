@@ -12,7 +12,7 @@ const Payment = () => {
             See Our Payment Methods
           </h1>
         </div>
-        <div className="grid grid-cols-4 w-3/4 mx-auto gap-5">
+        <div className="grid grid-cols-4 w-3/4 mx-auto gap-5"> 
           <div>
             <div class="relative flex items-center justify-evenly h-56 rounded-xl border border-gray-100 p-4 shadow-xl sm:p-6 lg:p-8">
               <div class="text-gray-500">
