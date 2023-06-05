@@ -54,6 +54,12 @@ const AllTools = () => {
             </div> */}
         </div>
       </div>
+
+      <div>
+        <p className="text-4xl text-primary font-semibold text-center ">
+          See All Tools
+        </p>
+      </div>
       <div className="allTools-section ">
         <div className="grid grid-cols-4 gap-4  ">
           {tools.map((tool) => (
