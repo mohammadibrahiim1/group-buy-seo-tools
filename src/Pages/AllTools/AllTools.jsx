@@ -11,8 +11,48 @@ const AllTools = () => {
 
   return (
     <div className="bg-base-100">
-      <div className="pt-28 pb-12 text-center">
+      {/* <div className="pt-28 pb-12 text-center">
         <h1 className="text-5xl text-primary font-semibold  underline">See All Tools</h1>
+      </div> */}
+      <div className="header-section">
+        <div className="text-center p-60">
+          <div>
+            <h1 className="text-5xl font-semibold w-3/4 mx-auto leading-tight ">
+              All in One Package $50/30days.Save $200+ now!
+            </h1>
+            <p className=" w-3/4 mx-auto leading-tight text-white">
+              you'll get all your available tools in this packages
+            </p>
+
+            <p className="font-semibold text-sm pt-6 lh-1  text-neutral  ">
+              As a SEO / Digital Marketer / Website owner, you know how
+              important the SEO is. As a result, you're looking for ways to
+              improve your ranking on search engines so more users can find you
+              on the World Wide Web. If you're looking for affordable SEO tools,
+              look no further than Group Buy SEO Tools XYZ. This company offers
+              SEO tools for all sizes of businesses, at prices everyone can
+              afford. India, Bangladesh, Pakistan, Nepal, United States, Saudi
+              Arabia, Malaysia, and many more countries peoples also can
+              purchase our service. Our maximum tools have simple access system
+              (One click to access system) - hope you'll like this system!
+            </p>
+          </div>
+          {/* <div>
+              <div style={{ width: 660, height: "auto" }}>
+                <Ratio aspectRatio="16x9">
+                  <iframe
+                    width="560"
+                    height="315"
+                    src="https://www.youtube.com/embed/TOfeDuAYUUI"
+                    title="YouTube video player"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen
+                  ></iframe>
+                </Ratio>
+              </div>
+            </div> */}
+        </div>
       </div>
       <div className="allTools-section ">
         <div className="grid grid-cols-4 gap-4  ">

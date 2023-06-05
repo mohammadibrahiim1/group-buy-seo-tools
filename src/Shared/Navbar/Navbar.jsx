@@ -79,7 +79,7 @@ const Navbar = () => {
           <MenuList>
             <Link to="/signUp">
               {" "}
-              <MenuItem className="mb-3 font-semibold text-base text-primary hover:text-accent">
+              <MenuItem className="mb-3 font-semibold text-base text-primary hover:text-accent ">
                 <div>Sign Up</div>
               </MenuItem>
             </Link>

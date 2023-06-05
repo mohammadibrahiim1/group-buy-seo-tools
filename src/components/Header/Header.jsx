@@ -11,7 +11,7 @@ const Header = () => {
         <div className="header-section">
           <div className="text-center p-60">
             <div>
-              <h1 className="text-5xl font-semibold w-3/4 mx-auto ">
+              <h1 className="text-5xl font-semibold w-3/4 mx-auto leading-tight ">
                 Valuable Group Buy SEO Tools Service at Affordable Price
               </h1>
               <p className="font-semibold text-sm pt-6 lh-1  text-neutral  ">
