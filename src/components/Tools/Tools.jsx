@@ -3,9 +3,80 @@ import Tool from "../Tool/Tool";
 import "./Tools.css";
 // import { Link } from "react-router-dom";
 import { ApiContext } from "../../Context/DataContext";
-import { Button } from "@mantine/core";
+import { Button, Text, Title, createStyles, rem } from "@mantine/core";
+const useStyles = createStyles((theme) => ({
+  root: {
+    padding: `calc(${theme.spacing.xl} * 1.5)`,
+    width: "70%",
+    margin: "auto",
+  },
+
+  value: {
+    fontSize: rem(24),
+    fontWeight: 700,
+    lineHeight: 1,
+  },
+
+  diff: {
+    lineHeight: 1,
+    display: "flex",
+    alignItems: "center",
+  },
+
+  icon: {
+    color:
+      theme.colorScheme === "dark"
+        ? theme.colors.dark[3]
+        : theme.colors.gray[4],
+  },
+
+  // title: {
+  //   fontWeight: 700,
+  //   textTransform: "uppercase",
+  // },
+
+  container: {
+    display: "flex",
+    // justifyContent: "space-evenly",
+    alignItems: "center",
+    gap: "11px",
+  },
+  title: {
+    color: theme.dark,
+    fontFamily: `Greycliff CF, ${theme.fontFamily}`,
+    fontWeight: 500,
+    lineHeight: 1.05,
+    // maxWidth: rem(500),
+    fontSize: rem(12),
+    textAlign: "center",
+    // marginTop: "25px",
+
+    [theme.fn.smallerThan("md")]: {
+      maxWidth: "100%",
+      fontSize: rem(34),
+      lineHeight: 1.15,
+    },
+  },
+  heading: {
+    color: theme.dark,
+    fontFamily: `Greycliff CF, ${theme.fontFamily}`,
+    fontWeight: 900,
+    lineHeight: 1.05,
+    // maxWidth: rem(500),
+    fontSize: rem(42),
+    textAlign: "center",
+    marginTop: "25px",
+
+    [theme.fn.smallerThan("md")]: {
+      maxWidth: "100%",
+      fontSize: rem(34),
+      lineHeight: 1.15,
+    },
+  },
+}));
 
 const Tools = () => {
+  const { classes } = useStyles();
   const { tools } = useContext(ApiContext);
   const [showMore, setShowMore] = useState(8);
   const showMoreTools = () => {
@@ -16,12 +87,19 @@ const Tools = () => {
     <div>
       <section className="tools-section pt-52">
         <div className=" text-center">
-          <h1 className="text-primary text-center text-5xl capitalize font-semibold">
-            Our seo Tools
-          </h1>
-          <p className="text-error text-sm font-bond">
-            Always Know What You Are Pricing
-          </p>
+          <Title className={classes.heading}>
+            Our{" "}
+            <Text
+              component="span"
+              inherit
+              variant="gradient"
+              gradient={{ from: "pink", to: "yellow" }}
+            >
+              seo
+            </Text>{" "}
+            Tools
+          </Title>
+          <p className={classes.title}>Always Know What You Are Pricing</p>
         </div>
         <div className="w-3/4 mx-auto grid grid-cols-4 gap-4 pt-12 ">
           {tools &&

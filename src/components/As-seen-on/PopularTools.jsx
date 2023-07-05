@@ -56,7 +56,23 @@ const useStyles = createStyles((theme) => ({
     gap: "11px",
   },
   title: {
-    color: theme.white,
+    color: theme.dark,
+    fontFamily: `Greycliff CF, ${theme.fontFamily}`,
+    fontWeight: 900,
+    lineHeight: 1.05,
+    // maxWidth: rem(500),
+    fontSize: rem(18),
+    textAlign: "center",
+    // marginTop: "25px",
+
+    [theme.fn.smallerThan("md")]: {
+      maxWidth: "100%",
+      fontSize: rem(34),
+      lineHeight: 1.15,
+    },
+  },
+  heading: {
+    color: theme.dark,
     fontFamily: `Greycliff CF, ${theme.fontFamily}`,
     fontWeight: 900,
     lineHeight: 1.05,
@@ -138,7 +154,7 @@ const PopularTools = () => {
   });
   return (
     <>
-      <Title className={classes.title}>
+      <Title className={classes.heading}>
         Our{" "}
         <Text
           component="span"
