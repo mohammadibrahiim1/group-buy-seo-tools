@@ -11,6 +11,7 @@ const Home = () => {
     <div>
       <Header />
       <PopularTools></PopularTools>
+      {/* <PopularTools></PopularTools> */}
       <Counters></Counters>
       <Tools></Tools>
       <ServiceCard></ServiceCard>

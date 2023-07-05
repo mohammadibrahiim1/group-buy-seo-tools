@@ -1,51 +1,126 @@
-import React from "react";
-import "./Header.css";
-// import ResponsiveEmbed from "react-bootstrap/lib/ResponsiveEmbed";
-// import PageHeader from "react-bootstrap/lib/Pageheader";
-// import { Ratio } from "react-bootstrap";
+
+
+import {
+  createStyles,
+  Container,
+  Title,
+  Text,
+  // Button,
+  rem,
+} from "@mantine/core";
+
+const useStyles = createStyles((theme) => ({
+  root: {
+    backgroundColor: "#11284b",
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+    height: "500px",
+    // backgroundImage:
+    //   "linear-gradient(250deg, rgba(130, 201, 30, 0) 0%, #062343 70%), url(https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1080&q=80)",
+    paddingTop: `calc(${theme.spacing.xl} * 3)`,
+    paddingBottom: `calc(${theme.spacing.xl} * 3)`,
+  },
+
+  inner: {
+    display: "flex",
+    justifyContent: "space-between",
+
+    [theme.fn.smallerThan("md")]: {
+      flexDirection: "column",
+    },
+  },
+
+  image: {
+    [theme.fn.smallerThan("md")]: {
+      display: "none",
+    },
+  },
+
+  content: {
+    paddingTop: `calc(${theme.spacing.xl} * 2)`,
+    paddingBottom: `calc(${theme.spacing.xl} * 2)`,
+    // marginRight: `calc(${theme.spacing.xl} * 3)`,
+
+    [theme.fn.smallerThan("md")]: {
+      marginRight: 0,
+    },
+  },
+
+  title: {
+    color: theme.white,
+    fontFamily: `Greycliff CF, ${theme.fontFamily}`,
+    fontWeight: 900,
+    lineHeight: 1.05,
+    // maxWidth: rem(500),
+    fontSize: rem(48),
+    textAlign: "center",
+
+    [theme.fn.smallerThan("md")]: {
+      maxWidth: "100%",
+      fontSize: rem(34),
+      lineHeight: 1.15,
+    },
+  },
+
+  description: {
+    color: theme.white,
+    opacity: 0.75,
+    maxWidth: rem(700),
+    margin: "auto",
+    textAlign: "center",
+
+    [theme.fn.smallerThan("md")]: {
+      maxWidth: "100%",
+    },
+  },
+
+  control: {
+    paddingLeft: rem(50),
+    paddingRight: rem(50),
+    fontFamily: `Greycliff CF, ${theme.fontFamily}`,
+    fontSize: rem(19),
+    width: "50%",
+    margin: "auto",
+
+    backgroundColor: "red",
+    [theme.fn.smallerThan("md")]: {
+      width: "100%",
+    },
+  },
+}));
 
 const Header = () => {
+  const { classes } = useStyles();
   return (
-    <div>
-      <section>
-        <div className="header-section">
-          <div className="text-center p-60">
-            <div>
-              <h1 className="text-5xl font-semibold w-3/4 mx-auto leading-tight ">
-                Valuable Group Buy SEO Tools Service at Affordable Price
-              </h1>
-              <p className="font-semibold text-sm pt-6 lh-1  text-neutral  ">
-                As a SEO / Digital Marketer / Website owner, you know how
-                important the SEO is. As a result, you're looking for ways to
-                improve your ranking on search engines so more users can find
-                you on the World Wide Web. If you're looking for affordable SEO
-                tools, look no further than Group Buy SEO Tools XYZ. This
-                company offers SEO tools for all sizes of businesses, at prices
-                everyone can afford. India, Bangladesh, Pakistan, Nepal, United
-                States, Saudi Arabia, Malaysia, and many more countries peoples
-                also can purchase our service. Our maximum tools have simple
-                access system (One click to access system) - hope you'll like
-                this system!
-              </p>
-            </div>
-            {/* <div>
-              <div style={{ width: 660, height: "auto" }}>
-                <Ratio aspectRatio="16x9">
-                  <iframe
-                    width="560"
-                    height="315"
-                    src="https://www.youtube.com/embed/TOfeDuAYUUI"
-                    title="YouTube video player"
-                    frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowfullscreen
-                  ></iframe>
-                </Ratio>
-              </div>
-            </div> */}
+    <div className={classes.root}>
+      <Container size="lg">
+        <div className={classes.inner}>
+          <div className={classes.content}>
+            <Title className={classes.title}>
+              Valuable{" "}
+              <Text
+                component="span"
+                inherit
+                variant="gradient"
+                gradient={{ from: "pink", to: "yellow" }}
+              >
+                Group Buy SEO Tools
+              </Text>{" "}
+              Service at Affordable Price
+            </Title>
+
+            <Text className={classes.description} mt={30}>
+              Build fully functional accessible web applications with ease –
+              Mantine includes more than 100 customizable components and hooks
+              to cover you in any situation
+            </Text>
+
+            {/* <Button className={classes.control} variant="filled" mt={25}>
+              Get Started
+            </Button> */}
           </div>
         </div>
-      </section>
+      </Container>
     </div>
   );
 };
