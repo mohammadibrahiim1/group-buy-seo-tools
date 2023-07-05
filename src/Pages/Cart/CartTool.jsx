@@ -12,7 +12,7 @@ const CartTool = ({ tool, handleRemoveProduct }) => {
     setProductQuantity(productQuantity - 1);
   };
 
-  const { image, name, price, id } = tool.profile;
+  const { image, name, price, id } = tool;
   const newPrice = price * productQuantity;
   localStorage.setItem("Price", newPrice);
 

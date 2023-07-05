@@ -82,24 +82,25 @@ const AllTools = () => {
         <div className="grid grid-cols-4 gap-4  ">
           {tools.map((tool) => (
             <>
+              {/* <p>new tools</p> */}
               {/* <!-- component --> */}
               <div class="max-w-sm bg-white shadow-lg rounded-lg overflow-hidden my-4">
                 <img
                   class="w-full h-56 p-2 rounded-md object-cover object-center"
-                  src={tool.profile.image}
+                  src={tool.image}
                   alt="avatar"
                 />
 
                 <div class="py-4 px-6">
                   <h1 class="text-xl font-semibold text-primary">
-                    {tool.profile.name}
+                    {tool.name}
                   </h1>
                   <div className="flex justify-between">
                     <p class="py-2 text-sm text-success font-semibold">
-                      {tool.profile.status}
+                      {tool.status}
                     </p>
                     <p class="py-2 text-sm text-success font-semibold">
-                      {tool.profile.price} BDT
+                      {tool.price} BDT
                     </p>
                   </div>
                   <div class="flex justify-between mt-4 text-gray-700">
@@ -120,7 +121,7 @@ const AllTools = () => {
 
                   <div class="flex items-center mt-4 text-gray-700">
                     <h1 class="px-2 text-sm text-primary font-semibold">
-                      limits : {tool.profile.limit.slice(0, 23)}...
+                      limits : {tool?.limit?.slice(0, 23)}...
                     </h1>
                   </div>
                 </div>
