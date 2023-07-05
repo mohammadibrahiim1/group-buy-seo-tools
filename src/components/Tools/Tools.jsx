@@ -1,9 +1,9 @@
 import React, { useContext, useState } from "react";
 import Tool from "../Tool/Tool";
 import "./Tools.css";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import { ApiContext } from "../../Context/DataContext";
-import { Button } from "@material-tailwind/react";
+import { Button } from "@mantine/core";
 
 const Tools = () => {
   const { tools } = useContext(ApiContext);
@@ -15,7 +15,7 @@ const Tools = () => {
   return (
     <div>
       <section className="tools-section pt-52">
-        <div className=" text-center  ">
+        <div className=" text-center">
           <h1 className="text-primary text-center text-5xl capitalize font-semibold">
             Our seo Tools
           </h1>
@@ -29,24 +29,28 @@ const Tools = () => {
               ?.slice(0, showMore)
               .map((tool) => <Tool tool={tool} key={tool.id}></Tool>)}
         </div>
-        <div className="text-center mt-5">
+        <div className="flex justify-between items-center mt-10 w-3/4 mx-auto">
           <Button
-            variant="gradient"
-            size="sm"
-            className=" btn-sm btn-primary me-3"
+            variant="light"
+            color="red"
+            fullWidth
+            mt="md"
+            radius="md"
             onClick={showMoreTools}
           >
-            <div>Show More</div>
+            Show more
           </Button>
-          <Link to="/allTools">
-            <Button
-              variant="gradient"
-              size="sm"
-              className=" btn-sm btn-primary"
-            >
-              <div>Shop Now</div>
-            </Button>
-          </Link>
+          <Button
+            component="a"
+            href="/allTools"
+            variant="light"
+            color="red"
+            fullWidth
+            mt="md"
+            radius="md"
+          >
+            See all tools
+          </Button>
         </div>
       </section>
     </div>

@@ -1,28 +1,42 @@
 import React from "react";
 import "./Tool.css";
+import { Badge, Button, Card, Group, Image, Text } from "@mantine/core";
 
 const Tool = ({ tool }) => {
-  const { image, name, price, status } = tool.profile;
+  const { image, name, price, status, limit } = tool;
   //   console.log(tool);
   return (
-    <div className="tool-info">
-      <div className="card w-full h-56  bg-base-100 shadow-xl image-full">
-        <figure>
-          <img src={image} alt="Shoes" className="" />
-        </figure>
-        <div className="card-body">
-          <h2 className="card-title text-base-100">{name}</h2>
+    <div>
+      <Card shadow="sm" padding="lg" radius="md" withBorder h={350}>
+        <Card.Section component="a" href="https://mantine.dev/">
+          <Image src={image} height={160} alt="Norway" />
+        </Card.Section>
 
-          <p className="text-accent">{price} BDT</p>
-
-          <div className="card-actions justify-end mt-5">
-            <p className="text-accent">{status}</p>
-            <button className="btn btn-secondary  btn-sm rounded-full text-xs">
-              Add to Cart
-            </button>
+        <Group position="apart" mt="md" mb="xs">
+          <Text weight={500}>{name}</Text>
+          <div>
+            <Badge color="pink" variant="light" mr={4}>
+              ${price}
+            </Badge>
+            <Badge color="pink" variant="light">
+              {status}
+            </Badge>
           </div>
+        </Group>
+
+        <Text size="sm" color="dimmed">
+          {limit.slice(0, 18)}...
+        </Text>
+
+        <div className="flex justify-between items-center mt-10">
+          <Button variant="light" color="red" fullWidth mt="md" radius="md">
+            Add to cart
+          </Button>
+          <Button variant="light" color="red" fullWidth mt="md" radius="md">
+            Read more
+          </Button>
         </div>
-      </div>
+      </Card>
     </div>
   );
 };
