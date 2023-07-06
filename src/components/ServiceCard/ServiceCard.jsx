@@ -2,7 +2,7 @@ import React from "react";
 import { GiNetworkBars } from "react-icons/gi";
 import { MdOutlineSupport } from "react-icons/md";
 import { FaCheck, FaDollarSign } from "react-icons/fa";
-import { Text, ThemeIcon, Title, createStyles, rem } from "@mantine/core";
+import { Text, Title, createStyles, rem } from "@mantine/core";
 const useStyles = createStyles((theme) => ({
   root: {
     // padding: `calc(${theme.spacing.xl} * 1.5)`,
@@ -133,14 +133,14 @@ const ServiceCard = () => {
             component="span"
             inherit
             variant="gradient"
-            gradient={{ from: "pink", to: "yellow" }}
+            gradient={{ from: "teal", to: "lime" }}
           >
             Seo Tools Services
           </Text>{" "}
           Benefits
         </Title>
       </div>
-      <div className={classes.root}>
+      <div className={classes.tool_container}>
         {data?.map((item) => (
           <>
             <div>
@@ -160,74 +160,6 @@ const ServiceCard = () => {
             </div>{" "}
           </>
         ))}
-
-        {/* <div>
-          <div
-            to="/"
-            class="relative flex items-start justify-between h-56 rounded-xl border border-gray-100 p-4 shadow-xl sm:p-6 lg:p-8"
-          >
-            <div class="pt-4 text-gray-500">
-              <FaCheck class="h-8 w-8 sm:h-10 sm:w-10 text-warning " />
-
-              <h3 class="mt-4 text-lg font-semibold text-primary sm:text-xl">
-                Instant Access
-              </h3>
-
-              <p class="mt-2 hidden text-sm sm:block">
-                Instant Access after Purchase. One click to Access System
-              </p>
-            </div>
-
-            <span class="rounded-full bg-green-100 px-3 py-1.5 text-xs font-medium text-green-600">
-              4.3
-            </span>
-          </div>
-        </div>
-        <div>
-          <div
-            to="/"
-            class="relative flex items-start justify-between h-56 rounded-xl border border-gray-100 p-4 shadow-xl sm:p-6 lg:p-8"
-          >
-            <div class="pt-4 text-gray-500">
-              <FaDollarSign class="h-8 w-8 sm:h-10 sm:w-10 text-warning" />
-
-              <h3 class="mt-4 text-lg font-bold text-primary sm:text-xl">
-                Easy Payment Gateway
-              </h3>
-
-              <p class="mt-2 hidden text-sm sm:block">
-                We accept PayPal internationally and locally bKash, Rocket and
-                Nagad.
-              </p>
-            </div>
-
-            <span class="rounded-full bg-green-100 px-3 py-1.5 text-xs font-medium text-green-600">
-              4.3
-            </span>
-          </div>
-        </div>
-        <div>
-          <div
-            to="/"
-            class="relative flex items-start justify-between h-56 rounded-xl border border-gray-100 p-4 shadow-xl sm:p-6 lg:p-8"
-          >
-            <div class="pt-4 text-gray-500">
-              <MdOutlineSupport class="h-8 w-8 sm:h-10 sm:w-10 text-warning" />
-
-              <h3 class="mt-4 text-lg font-bold text-primary sm:text-xl">
-                Quality Support
-              </h3>
-
-              <p class="mt-2 hidden text-sm sm:block">
-                You can contact us directly via chat or facebook.
-              </p>
-            </div>
-
-            <span class="rounded-full bg-green-100 px-3 py-1.5 text-xs font-medium text-green-600">
-              4.3
-            </span>
-          </div>
-        </div> */}
       </div>
     </div>
   );

@@ -16,6 +16,7 @@ const Home = () => {
       <Tools></Tools>
       <ServiceCard></ServiceCard>
       <Payment></Payment>
+      
     </div>
   );
 };

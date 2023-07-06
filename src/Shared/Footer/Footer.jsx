@@ -1,10 +1,21 @@
+import { createStyles } from "@mantine/core";
 import React from "react";
 import { Link } from "react-router-dom";
 
+const useStyles = createStyles((theme) => ({
+  footer: {
+    backgroundColor:
+      theme.colorScheme === "dark"
+        ? theme.colors.dark[6]
+        : theme.colors.gray[0],
+  },
+}));
+
 const Footer = () => {
+  const { classes } = useStyles();
   return (
     <div>
-      <footer className="px-4  text-[#000] bg-[#FFFFFF] ">
+      <footer className={classes.footer}>
         <div className="container flex flex-col justify-between py-10 mx-auto space-y-8 lg:flex-row lg:space-y-0 max-w-screen-xl mx-auto">
           <div className="lg:w-1/3">
             <Link
