@@ -160,7 +160,7 @@ const PopularTools = () => {
           component="span"
           inherit
           variant="gradient"
-          gradient={{ from: "pink", to: "yellow" }}
+          gradient={{ from: "teal", to: "lime" }}
         >
           Most Popular
         </Text>{" "}

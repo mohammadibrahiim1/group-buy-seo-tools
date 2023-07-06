@@ -104,7 +104,7 @@ const Tools = () => {
               component="span"
               inherit
               variant="gradient"
-              gradient={{ from: "pink", to: "yellow" }}
+              gradient={{ from: "teal", to: "lime" }}
             >
               seo
             </Text>{" "}
