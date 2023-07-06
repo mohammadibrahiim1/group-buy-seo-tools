@@ -1,4 +1,4 @@
-import { Image, Text, Title, createStyles, rem } from "@mantine/core";
+import { Image, Text, Title, createStyles, em, rem } from "@mantine/core";
 import React from "react";
 // import { FaCheck, FaDollarSign } from "react-icons/fa";
 // import { GiNetworkBars } from "react-icons/gi";
@@ -23,12 +23,12 @@ const useStyles = createStyles((theme) => ({
 
   title: {
     fontFamily: `Greycliff CF, ${theme.fontFamily}`,
-    fontWeight: 500,
+    fontWeight: 700,
     lineHeight: 1.05,
     fontSize: rem(16),
     textAlign: "start",
     marginTop: "22px",
-    color: "#FF922B",
+    color: "#1CBA7E",
 
     [theme.fn.smallerThan("md")]: {
       maxWidth: "100%",
@@ -37,9 +37,9 @@ const useStyles = createStyles((theme) => ({
     },
   },
   sub_title: {
-    color: theme.dark,
+    color: "#000000",
     fontFamily: `Greycliff CF, ${theme.fontFamily}`,
-    fontWeight: 400,
+    fontWeight: 500,
     lineHeight: 1.5,
     fontSize: rem(12.5),
     textAlign: "justify",
@@ -77,6 +77,38 @@ const useStyles = createStyles((theme) => ({
     width: "70%",
     margin: "auto",
     marginTop: "29px",
+
+    // Static media query
+    [`@media (max-width: ${em(576)})`]: {
+      display: "grid",
+      gridTemplateColumns: "repeat(1,1fr)",
+      justifyContent: "space-evenly",
+      alignItems: "center",
+      gap: "12px",
+      // width: "70%",
+      // margin: "auto",
+      marginTop: "29px",
+    },
+    [`@media (max-width: ${em(991)}) and (min-width : ${em(577)}) `]: {
+      display: "grid",
+      gridTemplateColumns: "repeat(2,1fr)",
+      justifyContent: "space-evenly",
+      alignItems: "center",
+      gap: "12px",
+      // width: "70%",
+      // margin: "auto",
+      marginTop: "29px",
+    },
+  },
+
+  card: {
+    position: "relative",
+    display: "flex",
+    justifyContent: "space-between",
+    alignItems: "start",
+    border: "1px solid gray",
+    borderRadius: "11px",
+    padding: "15px",
   },
 }));
 
@@ -131,7 +163,7 @@ const Payment = () => {
           {data?.map((payment) => (
             <>
               <div>
-                <div class="relative flex items-start justify-between h-38 rounded-xl border border-gray-100 p-4 shadow-xl sm:p-6 lg:p-5">
+                <div class={classes.card}>
                   <div class=" flex  gap-5 justify-between items-center  pt-4 text-gray-500">
                     <img
                       src={payment.image}

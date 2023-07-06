@@ -3,7 +3,7 @@ import Tool from "../Tool/Tool";
 import "./Tools.css";
 // import { Link } from "react-router-dom";
 import { ApiContext } from "../../Context/DataContext";
-import { Button, Text, Title, createStyles, rem } from "@mantine/core";
+import { Button, Text, Title, createStyles, em, rem } from "@mantine/core";
 const useStyles = createStyles((theme) => ({
   root: {
     padding: `calc(${theme.spacing.xl} * 1.5)`,
@@ -45,7 +45,12 @@ const useStyles = createStyles((theme) => ({
     marginTop: "5px",
     [theme.fn.smallerThan("md")]: {
       maxWidth: "100%",
-      fontSize: rem(34),
+      fontSize: rem(12),
+      lineHeight: 1.15,
+    },
+    [theme.fn.smallerThan("lg")]: {
+      maxWidth: "100%",
+      fontSize: rem(14),
       lineHeight: 1.15,
     },
   },
@@ -60,7 +65,12 @@ const useStyles = createStyles((theme) => ({
 
     [theme.fn.smallerThan("md")]: {
       maxWidth: "100%",
-      fontSize: rem(34),
+      fontSize: rem(24),
+      lineHeight: 1.15,
+    },
+    [theme.fn.smallerThan("md")]: {
+      maxWidth: "100%",
+      fontSize: rem(36),
       lineHeight: 1.15,
     },
   },
@@ -74,6 +84,27 @@ const useStyles = createStyles((theme) => ({
     width: "70%",
     margin: "auto",
     marginTop: "29px",
+
+    [`@media (max-width: ${em(576)})`]: {
+      display: "grid",
+      gridTemplateColumns: "repeat(1,1fr)",
+      justifyContent: "space-evenly",
+      alignItems: "center",
+      gap: "12px",
+      // width: "70%",
+      // margin: "auto",
+      marginTop: "29px",
+    },
+    [`@media (max-width: ${em(991)}) and (min-width: ${em(577)})  `]: {
+      display: "grid",
+      gridTemplateColumns: "repeat(2,1fr)",
+      justifyContent: "space-evenly",
+      alignItems: "center",
+      gap: "12px",
+      width: "70%",
+      margin: "auto",
+      marginTop: "29px",
+    },
   },
 }));
 
