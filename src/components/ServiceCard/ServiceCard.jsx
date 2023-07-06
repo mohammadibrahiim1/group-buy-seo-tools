@@ -43,7 +43,7 @@ const useStyles = createStyles((theme) => ({
     fontSize: rem(16),
     textAlign: "start",
     marginTop: "22px",
-    color: "#FF922B",
+    color: "#1CBA7E",
 
     [theme.fn.smallerThan("md")]: {
       maxWidth: "100%",
@@ -52,9 +52,9 @@ const useStyles = createStyles((theme) => ({
     },
   },
   sub_title: {
-    color: theme.dark,
+    color: "#000000",
     fontFamily: `Greycliff CF, ${theme.fontFamily}`,
-    fontWeight: 400,
+    fontWeight: 500,
     lineHeight: 1.5,
     fontSize: rem(12.5),
     textAlign: "justify",

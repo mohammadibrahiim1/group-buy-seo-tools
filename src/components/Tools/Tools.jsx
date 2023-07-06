@@ -30,14 +30,8 @@ const useStyles = createStyles((theme) => ({
         : theme.colors.gray[4],
   },
 
-  // title: {
-  //   fontWeight: 700,
-  //   textTransform: "uppercase",
-  // },
-
   container: {
     display: "flex",
-    // justifyContent: "space-evenly",
     alignItems: "center",
     gap: "11px",
   },
@@ -46,11 +40,9 @@ const useStyles = createStyles((theme) => ({
     fontFamily: `Greycliff CF, ${theme.fontFamily}`,
     fontWeight: 500,
     lineHeight: 1.05,
-    // maxWidth: rem(500),
     fontSize: rem(12),
     textAlign: "center",
     marginTop: "5px",
-
     [theme.fn.smallerThan("md")]: {
       maxWidth: "100%",
       fontSize: rem(34),
@@ -62,7 +54,6 @@ const useStyles = createStyles((theme) => ({
     fontFamily: `Greycliff CF, ${theme.fontFamily}`,
     fontWeight: 900,
     lineHeight: 1.05,
-    // maxWidth: rem(500),
     fontSize: rem(42),
     textAlign: "center",
     marginTop: "25px",
