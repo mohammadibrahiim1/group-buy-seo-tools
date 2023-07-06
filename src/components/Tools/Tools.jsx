@@ -96,7 +96,7 @@ const Tools = () => {
 
   return (
     <div>
-      <section className="tools-section pt-52">
+      <section className={classes.root}>
         <div className=" text-center">
           <Title className={classes.heading}>
             Our{" "}

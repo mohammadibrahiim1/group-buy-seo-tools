@@ -7,7 +7,7 @@ const Tool = ({ tool }) => {
   //   console.log(tool);
   return (
     <div>
-      <Card shadow="sm" padding="lg" radius="md" withBorder h={350}>
+      <Card shadow="sm" padding="lg" radius="md" withBorder h={350} w={310}>
         <Card.Section component="a" href="https://mantine.dev/">
           <Image src={image} height={160} alt="Norway" />
         </Card.Section>
