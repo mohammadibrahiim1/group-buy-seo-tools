@@ -9,11 +9,14 @@ import {
   em,
   rem,
 } from "@mantine/core";
+import { Icon24Hours } from "@tabler/icons-react";
+import { IconAntennaBars5, IconCheck, IconCoin } from "@tabler/icons-react";
 import React from "react";
 const useStyles = createStyles((theme) => ({
   card: {
     backgroundColor:
       theme.colorScheme === "dark" ? theme.colors.dark[7] : theme.white,
+    height: "170px",
   },
 
   title: {
@@ -67,20 +70,25 @@ const useStyles = createStyles((theme) => ({
 
     [theme.fn.smallerThan("md")]: {
       maxWidth: "100%",
-      fontSize: rem(24),
+      fontSize: rem(34),
       lineHeight: 1.15,
     },
   },
+
+  //   icon: {
+  //     padding: "5px",
+  //   },
 }));
 
 const data = [
   {
     // title: "one",
-    title: "ahrefs",
-    description: "our most popular tool",
+    title: "Tools Uptime",
+    description:
+      "We take care about tools uptime. We always try our best to keep our tools active maximum time.",
     image: "https://i.ibb.co/8jxsY61/ahrefs-cloud.png",
     category: "string",
-    date: "string",
+    icon: IconAntennaBars5,
     author: {
       name: "string",
       avatar: "string",
@@ -88,11 +96,11 @@ const data = [
   },
   {
     //  title: "one",
-    title: "udemy",
-    description: "our most popular tool",
+    title: "Instant Access",
+    description: "Instant Access after Purchase. One click to Access System",
     image: "https://i.ibb.co/Wy47z9W/udemy.png",
     category: "string",
-    date: "string",
+    icon: IconCheck,
     author: {
       name: "string",
       avatar: "string",
@@ -100,11 +108,12 @@ const data = [
   },
   {
     // title: "one",
-    title: "canva",
-    description: "our most popular tool",
+    title: "Easy Payment Gateway",
+    description:
+      "We accept PayPal internationally and locally bKash, Rocket and Nagad.",
     image: "https://i.ibb.co/1TW87K0/canva.png",
     category: "string",
-    date: "string",
+    icon: IconCoin,
     author: {
       name: "string",
       avatar: "string",
@@ -112,11 +121,11 @@ const data = [
   },
   {
     // title: "one",
-    title: "canva",
-    description: "our most popular tool",
+    title: "Quality Support",
+    description: "You can contact us directly via chat or facebook.",
     image: "https://i.ibb.co/1TW87K0/canva.png",
     category: "string",
-    date: "string",
+    icon: Icon24Hours,
     author: {
       name: "string",
       avatar: "string",
@@ -146,21 +155,27 @@ const ServiceCard = () => {
         {data.map((item) => (
           <>
             <Card withBorder radius="md" p={0} className={classes.card}>
-              <Group noWrap spacing={0}>
-                <Image src={item.image} height={140} width={140} />
+              <Group spacing={0}>
                 <div className={classes.body}>
+                  {
+                    <item.icon
+                      height={40}
+                      width={40}
+                      className={classes.icon}
+                    />
+                  }
                   <Text
                     transform="uppercase"
                     color="dimmed"
                     weight={700}
                     size="xs"
                   >
-                    {item.category}
-                  </Text>
-                  <Text className={classes.title} mt="xs" mb="md">
                     {item.title}
                   </Text>
-                  <Group noWrap spacing="xs">
+                  <Text className={classes.title} mt="xs" mb="md">
+                    {item.description}
+                  </Text>
+                  {/* <Group noWrap spacing="xs">
                     <Group spacing="xs" noWrap>
                       <Avatar size={20} src={item.author.avatar} />
                       <Text size="xs">{item.author.name}</Text>
@@ -171,7 +186,7 @@ const ServiceCard = () => {
                     <Text size="xs" color="dimmed">
                       {item.date}
                     </Text>
-                  </Group>
+                  </Group> */}
                 </div>
               </Group>
             </Card>
