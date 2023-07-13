@@ -8,7 +8,7 @@ const SignUP = () => {
   return (
     <div>
       <section>
-        <div className="signUp-page pt-28 pb-12 ">
+        <div className=" pt-28 pb-12 ">
           <div className="flex justify-evenly align-center mt-10 mb-10 w-10/12 mx-auto">
             <div className=" bg-info w-full ">
               <h1 className="text-4xl text-primary font-semibold w-96 pt-20 pb-6 mx-auto">

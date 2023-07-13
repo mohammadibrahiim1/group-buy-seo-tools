@@ -10,6 +10,7 @@ import {
   rem,
 } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
+import { Link } from "react-router-dom";
 // import { MantineLogo } from "@mantine/ds";
 
 const HEADER_HEIGHT = rem(60);
@@ -98,11 +99,11 @@ const useStyles = createStyles((theme) => ({
 }));
 
 const links = [
-  { link: "string", label: "string" },
-  { link: "string", label: "string" },
-  { link: "string", label: "string" },
-  { link: "string", label: "string" },
-  { link: "string", label: "string" },
+  { link: "/", label: "Home" },
+  { link: "/allTools", label: "Shop" },
+  { link: "/contactUs", label: "Contact" },
+  { link: "/logIn", label: "Login" },
+  { link: "/signUp", label: "SignUp" },
 ];
 
 const Navbar = () => {
@@ -111,26 +112,26 @@ const Navbar = () => {
   const { classes, cx } = useStyles();
 
   const items = links.map((link) => (
-    <a
+    <Link
       key={link.label}
-      href={link.link}
+      to={link.link}
       className={cx(classes.link, {
         [classes.linkActive]: active === link.link,
       })}
       onClick={(event) => {
-        event.preventDefault();
+        // event.preventDefault();
         setActive(link.link);
         close();
       }}
     >
       {link.label}
-    </a>
+    </Link>
   ));
 
   return (
     <Header height={HEADER_HEIGHT} className={classes.root}>
       <section className={classes.header}>
-        {/* <MantineLogo size={28} /> */} GBTools
+        <Link to="/">GBSTools</Link>
         <Group spacing={5} className={classes.links}>
           {items}
         </Group>

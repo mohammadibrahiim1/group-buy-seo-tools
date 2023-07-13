@@ -14,7 +14,7 @@ const useStyles = createStyles((theme) => ({
 const Footer = () => {
   const { classes } = useStyles();
   return (
-    <div>
+    <div className="py-32" >
       <footer className={classes.footer}>
         <div className="container flex flex-col justify-between py-10 mx-auto space-y-8 lg:flex-row lg:space-y-0 max-w-screen-xl mx-auto">
           <div className="lg:w-1/3">
