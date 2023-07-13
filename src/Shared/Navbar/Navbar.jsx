@@ -17,7 +17,7 @@ const HEADER_HEIGHT = rem(60);
 
 const useStyles = createStyles((theme) => ({
   root: {
-    position: "fixed",
+    // position: "fixed",
     zIndex: 1,
     // width: "70%",
     // margin: "auto",

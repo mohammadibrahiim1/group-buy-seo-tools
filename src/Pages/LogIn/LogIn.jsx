@@ -1,17 +1,19 @@
 import React from "react";
 import "./LogIn.css";
 import { Link } from "react-router-dom";
-import { FcGoogle } from "react-icons/fc";
-import { FaFacebook } from "react-icons/fa";
-import { Autocomplete, Input, createStyles } from "@mantine/core";
+
+import { Button, Group, Input, createStyles, rem } from "@mantine/core";
+import {
+  IconBrandFacebook,
+  IconBrandGoogle,
+  IconPassword,
+} from "@tabler/icons-react";
 import { IconAt } from "@tabler/icons-react";
 
 const useStyles = createStyles(() => ({
   container: {
-    display: "flex",
-    // justifyContent: "space-between",
-    alignItems: "center",
-    width: "842px",
+    paddingTop: "50px",
+    width: "442px",
     height: "583px",
     margin: "auto",
   },
@@ -19,9 +21,7 @@ const useStyles = createStyles(() => ({
     width: "329px",
   },
   form: {
-    padding: "30px",
-    width: "393px",
-    height: "405px",
+    padding: "50px",
     border: "1px solid gray",
     borderRadius: "7px",
   },
@@ -33,7 +33,6 @@ const useStyles = createStyles(() => ({
     fontWeight: "500",
     lineHeight: "normal",
     textAlign: "center",
-    // textDecoration: "underline",
   },
   sub_title: {
     color: "#474749",
@@ -45,6 +44,11 @@ const useStyles = createStyles(() => ({
     lineHeight: "normal",
     marginTop: "11px",
   },
+  submit_button: {
+    backgroundColor: "#00A551 !important",
+    color: "#FFFFFF",
+    marginTop: "19px",
+  },
 }));
 
 const LogIn = () => {
@@ -54,7 +58,7 @@ const LogIn = () => {
       <section>
         <div className="">
           <div className={classes.container}>
-            <div className="">
+            {/* <div className="">
               <h1 className="">You order and we deliver</h1>
 
               <img
@@ -62,7 +66,7 @@ const LogIn = () => {
                 alt=""
                 className={classes.img}
               />
-            </div>
+            </div> */}
 
             <div className={classes.form}>
               <form action="" className="">
@@ -75,8 +79,9 @@ const LogIn = () => {
                   </h1>
                 </div>
 
-                <Input.Wrapper label="Email" className="">
+                <Input.Wrapper mt={15} label="Email" className="">
                   <Input
+                    type="email"
                     icon={<IconAt />}
                     variant="filled"
                     placeholder="Your email"
@@ -84,24 +89,83 @@ const LogIn = () => {
                   />
                 </Input.Wrapper>
 
-                <Input.Wrapper label="Password" className="">
+                <Input.Wrapper mt={15} label="Password" className="">
                   <Input
-                    icon={<IconAt />}
+                    type="password"
+                    icon={<IconPassword />}
                     variant="filled"
-                    placeholder="Your email"
+                    placeholder="Your password"
                     radius="md"
                   />
                 </Input.Wrapper>
 
-                <div>
-                  <button class="">Submit</button>
-                </div>
-                <div className="">
-                  <p className="">Don't Have An Account? </p>
-                  <Link to="/signUp" className="">
-                    Sign Up{" "}
+                <Group position="center">
+                  <Button className={classes.submit_button}>Submit</Button>
+                </Group>
+                <Group
+                  position="center"
+                  className="flex items-center gap-2 mt-5"
+                >
+                  <p className={classes.sub_title}>Don't Have An Account? </p>
+                  <Link color="red" to="/signUp" className={classes.sub_title}>
+                    Sign Up
                   </Link>
-                </div>
+                </Group>
+
+                <p className={classes.sub_title}>--or--</p>
+
+                <Group position="center" className="mt-10">
+                  <Button
+                    // component="a"
+                    // target="_blank"
+                    // rel="noopener noreferrer"
+                    // href="https://twitter.com/mantinedev"
+                    leftIcon={<IconBrandGoogle size={rem(18)} />}
+                    styles={(theme) => ({
+                      root: {
+                        backgroundColor: "#00acee !important",
+                        border: 0,
+                        height: rem(42),
+                        paddingLeft: rem(20),
+                        paddingRight: rem(20),
+                        "&:not([data-disabled])": theme.fn.hover({
+                          backgroundColor: theme.fn.darken("#00acee", 0.05),
+                        }),
+                      },
+
+                      leftIcon: {
+                        marginRight: theme.spacing.md,
+                      },
+                    })}
+                  >
+                    Log in with Google
+                  </Button>
+                  <Button
+                    // component="a"
+                    // target="_blank"
+                    // rel="noopener noreferrer"
+                    // href="https://twitter.com/mantinedev"
+                    leftIcon={<IconBrandFacebook size={rem(18)} />}
+                    styles={(theme) => ({
+                      root: {
+                        backgroundColor: "#00acee !important",
+                        border: 0,
+                        height: rem(42),
+                        paddingLeft: rem(20),
+                        paddingRight: rem(20),
+                        "&:not([data-disabled])": theme.fn.hover({
+                          backgroundColor: theme.fn.darken("#00acee", 0.05),
+                        }),
+                      },
+
+                      leftIcon: {
+                        marginRight: theme.spacing.md,
+                      },
+                    })}
+                  >
+                    Log in With Facebook
+                  </Button>
+                </Group>
               </form>
             </div>
           </div>
