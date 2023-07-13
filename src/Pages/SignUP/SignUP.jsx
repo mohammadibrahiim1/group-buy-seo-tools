@@ -1,84 +1,171 @@
 import React from "react";
-import "./SignUP.css";
-import { FcGoogle } from "react-icons/fc";
-import { FaFacebook } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
+import { Button, Group, Input, createStyles, rem } from "@mantine/core";
+import {
+  IconBrandFacebook,
+  IconBrandGoogle,
+  IconPassword,
+} from "@tabler/icons-react";
+import { IconAt } from "@tabler/icons-react";
+
+const useStyles = createStyles(() => ({
+  container: {
+    // padding: "50px",
+    paddingTop: "50px",
+
+    width: "442px",
+    height: "583px",
+    margin: "auto",
+  },
+  img: {
+    width: "329px",
+  },
+  form: {
+    padding: "50px",
+    border: "1px solid gray",
+    borderRadius: "7px",
+  },
+  heading: {
+    color: "#00A551",
+    fontFamily: "Roboto",
+    fontSize: "20px",
+    fontStyle: "normal",
+    fontWeight: "500",
+    lineHeight: "normal",
+    textAlign: "center",
+  },
+  sub_title: {
+    color: "#474749",
+    textAlign: "center",
+    fontFamily: "Roboto",
+    fontSize: "14px",
+    fontStyle: "normal",
+    fontWeight: "500",
+    lineHeight: "normal",
+    marginTop: "11px",
+  },
+  submit_button: {
+    backgroundColor: "#00A551 !important",
+    color: "#FFFFFF",
+    marginTop: "19px",
+  },
+}));
+
 const SignUP = () => {
+  const { classes } = useStyles();
   return (
     <div>
       <section>
-        <div className=" pt-28 pb-12 ">
-          <div className="flex justify-evenly align-center mt-10 mb-10 w-10/12 mx-auto">
-            <div className=" bg-info w-full ">
-              <h1 className="text-4xl text-primary font-semibold w-96 pt-20 pb-6 mx-auto">
-                You order and we deliver
-              </h1>
-
-              <img
-                src="https://i.ibb.co/qMDcmvY/signup.png"
-                alt=""
-                className="w-96 mx-auto  mt-5 mb-5"
-              />
-            </div>
-
-            <div className="input-form w-full bg-white ">
-              <form action="" className="sign-up-form w-8/12 mx-auto pt-20">
+        <div>
+          <div className={classes.container}>
+            <div className={classes.form}>
+              <form action="" className="">
                 <div>
-                  <h1 className="text-4xl text-primary font-semibold mb-5">
-                    Create Account
+                  <h1 className={classes.heading}>Create Account</h1>
+                </div>
+                <div>
+                  <h1 className={classes.sub_title}>
+                    SignUp With your account
                   </h1>
-                  <div>
-                    <button className="btn capitalize w-60 h-12 mr-5 text-primary font-semibold ">
-                      {" "}
-                      <FcGoogle className="w-5 h-5 me-2" /> Sign up with Google
-                    </button>
-                    <button className="btn capitalize w-60 h-12 text-primary font-semibold ">
-                      {" "}
-                      <FaFacebook className="w-5 h-5 me-2 text-primary" /> Sign
-                      up with Facebook
-                    </button>
-                  </div>
                 </div>
 
-                <div className=" input-field">
-                  <div className="mt-10 mb-10">
-                    <input
-                      type="text"
-                      placeholder="Full Name"
-                      className="input input-bordered input-md w-full max-w-xs focus:outline-0"
-                    />
-                  </div>
-                  <div className="mt-10 mb-10">
-                    <input
-                      type="email"
-                      placeholder="Email"
-                      className="input input-bordered input-md w-full max-w-xs focus:outline-0"
-                    />
-                  </div>
-                  <div className="mt-10 mb-10">
-                    <input
-                      type="password"
-                      placeholder="Password"
-                      className="input input-bordered input-md w-full max-w-xs focus:outline-0"
-                    />
-                  </div>
-                </div>
+                <Input.Wrapper mt={15} label="Your Name" className="">
+                  <Input
+                    type="text"
+                    icon={<IconAt />}
+                    variant="filled"
+                    placeholder="Your Name"
+                    radius="md"
+                  />
+                </Input.Wrapper>
+                <Input.Wrapper mt={15} label="Email" className="">
+                  <Input
+                    type="email"
+                    icon={<IconAt />}
+                    variant="filled"
+                    placeholder="Your email"
+                    radius="md"
+                  />
+                </Input.Wrapper>
 
-                <div>
-                  <button class="btn btn-wide ">Create Account</button>
-                </div>
-                <div className="flex justify-between align-center w-96 mt-10 mb-10 ">
-                  <p className="text-primary font-semibold">
-                    Already Have An Account?{" "}
-                  </p>
-                  <Link
-                    to="/logIn"
-                    className="text-error text-semibold border pe-4 ps-4 border-error rounded "
-                  >
-                    Login{" "}
+                <Input.Wrapper mt={15} label="Password" className="">
+                  <Input
+                    type="password"
+                    icon={<IconPassword />}
+                    variant="filled"
+                    placeholder="Your password"
+                    radius="md"
+                  />
+                </Input.Wrapper>
+
+                <Group position="center">
+                  <Button className={classes.submit_button}>Submit</Button>
+                </Group>
+                <Group
+                  position="center"
+                  className="flex items-center gap-2 mt-5"
+                >
+                  <p className={classes.sub_title}>Already Have An Account? </p>
+                  <Link color="red" to="/signUp" className={classes.sub_title}>
+                    Sign Up
                   </Link>
-                </div>
+                </Group>
+
+                <p className={classes.sub_title}>--or--</p>
+
+                <Group position="center" className="mt-10">
+                  <Button
+                    // component="a"
+                    // target="_blank"
+                    // rel="noopener noreferrer"
+                    // href="https://twitter.com/mantinedev"
+                    leftIcon={<IconBrandGoogle size={rem(18)} />}
+                    styles={(theme) => ({
+                      root: {
+                        backgroundColor: "#00acee !important",
+                        border: 0,
+                        height: rem(42),
+                        paddingLeft: rem(20),
+                        paddingRight: rem(20),
+                        "&:not([data-disabled])": theme.fn.hover({
+                          backgroundColor: theme.fn.darken("#00acee", 0.05),
+                        }),
+                      },
+
+                      leftIcon: {
+                        marginRight: theme.spacing.md,
+                      },
+                    })}
+                  >
+                    Log in with Google
+                  </Button>
+                  <Button
+                    // component="a"
+                    // target="_blank"
+                    // rel="noopener noreferrer"
+                    // href="https://twitter.com/mantinedev"
+                    leftIcon={<IconBrandFacebook size={rem(18)} />}
+                    styles={(theme) => ({
+                      root: {
+                        backgroundColor: "#00acee !important",
+                        border: 0,
+                        height: rem(42),
+                        paddingLeft: rem(20),
+                        paddingRight: rem(20),
+                        "&:not([data-disabled])": theme.fn.hover({
+                          backgroundColor: theme.fn.darken("#00acee", 0.05),
+                        }),
+                      },
+
+                      leftIcon: {
+                        marginRight: theme.spacing.md,
+                      },
+                    })}
+                  >
+                    Log in With Facebook
+                  </Button>
+                </Group>
               </form>
             </div>
           </div>

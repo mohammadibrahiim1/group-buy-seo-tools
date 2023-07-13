@@ -131,7 +131,7 @@ const Navbar = () => {
   return (
     <Header height={HEADER_HEIGHT} className={classes.root}>
       <section className={classes.header}>
-        <Link to="/">GBSTools</Link>
+        <Link to="/">GBSEOTools</Link>
         <Group spacing={5} className={classes.links}>
           {items}
         </Group>
