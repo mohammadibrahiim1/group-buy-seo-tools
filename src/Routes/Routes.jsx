@@ -24,16 +24,16 @@ export const router = createBrowserRouter([
         path: "/allTools",
         element: <AllTools />,
       },
+      // {
+      //   path: "/logIn",
+      //   element: <LogIn />,
+      // },
+      // {
+      //   path: "/signUp",
+      //   element: <SignUP />,
+      // },
       {
-        path: "/logIn",
-        element: <LogIn />,
-      },
-      {
-        path: "/signUp",
-        element: <SignUP />,
-      },
-      {
-        path: "/authForm",
+        path: "/authentication",
         element: <AuthenticationForm />,
       },
     ],

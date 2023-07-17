@@ -38,16 +38,21 @@ export const AuthenticationForm = () => {
 
   return (
     <div>
-      <Container size="25rem">
+      <Container size="25rem" mx="auto" mt={150}>
         <Paper radius="md" p="xl" withBorder>
           <Text size="lg" weight={500}>
-            Welcome to Mantine, {type} with
+            Welcome to GroupBuy Seo Tools <br />
+            {type} with
           </Text>
 
           <Group grow mb="md" mt="md">
-            {/* <FcGoogle /> */}
-            <FcGoogle radius="xl">Twitter</FcGoogle>
-            <FaFacebookF radius="xl">Twitter</FaFacebookF>
+            <Button fullWidth variant="outline">
+              <FcGoogle radius="xl" className="mr-2"></FcGoogle>Google
+            </Button>
+            <Button fullWidth variant="outline" c="blue">
+              <FaFacebookF radius="xl" className="mr-2"></FaFacebookF>Facebook
+            </Button>
+            {/* <FaFacebookF radius="xl">Twitter</FaFacebookF> */}
           </Group>
 
           <Divider

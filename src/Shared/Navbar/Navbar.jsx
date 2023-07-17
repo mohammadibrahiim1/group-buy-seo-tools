@@ -102,8 +102,7 @@ const links = [
   { link: "/", label: "Home" },
   { link: "/allTools", label: "Shop" },
   { link: "/contactUs", label: "Contact" },
-  { link: "/logIn", label: "Login" },
-  { link: "/signUp", label: "SignUp" },
+  { link: "/authentication", label: "Authentication" },
 ];
 
 const Navbar = () => {
