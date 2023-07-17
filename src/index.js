@@ -5,15 +5,18 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import DataContext from "./Context/DataContext";
 import { ThemeProvider } from "@material-tailwind/react";
+import UserContext from "./Context/UserContext";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <DataContext>
-      <ThemeProvider>
-        <App />
-      </ThemeProvider>
-    </DataContext>
+    <UserContext>
+      <DataContext>
+        <ThemeProvider>
+          <App />
+        </ThemeProvider>
+      </DataContext>
+    </UserContext>
   </React.StrictMode>
 );
 

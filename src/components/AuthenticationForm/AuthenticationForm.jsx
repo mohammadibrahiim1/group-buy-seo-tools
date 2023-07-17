@@ -16,8 +16,18 @@ import {
 // import { GoogleButton, TwitterButton } from "../SocialButtons/SocialButtons";
 import { FcGoogle } from "react-icons/fc";
 import { FaFacebookF } from "react-icons/fa";
+import { useContext } from "react";
+import { AuthContext } from "../../Context/UserContext";
+import { useState } from "react";
+import { toast } from "react-hot-toast";
+import { Navigate, useNavigate } from "react-router-dom";
 
 export const AuthenticationForm = () => {
+  const [error, setError] = useState("");
+  console.log(error);
+  const navigate = useNavigate();
+
+  const { createUser, signInWithGoogle } = useContext(AuthContext);
   const [type, toggle] = useToggle(["login", "register"]);
   const form = useForm({
     initialValues: {
@@ -36,6 +46,75 @@ export const AuthenticationForm = () => {
     },
   });
 
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    const form = event.target;
+    const name = form.name.value;
+
+    const email = form.email.value;
+    const password = form.password.value;
+
+    createUser(email, password)
+      .then((result) => {
+        const user = result.user;
+        console.log(user);
+      })
+      .catch((error) => {
+        setError(error.message);
+      });
+
+    const userInfo = {
+      name,
+      email,
+    };
+
+    fetch("http://localhost:5000/users", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(userInfo),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.acknowledged) {
+          toast.success("user created successfully ");
+        } else {
+          toast.error(data.message);
+        }
+      });
+  };
+
+  //   google sign in
+  const handleGoogleSignIn = () => {
+    signInWithGoogle().then((result) => {
+      const user = result.user;
+      if (user) {
+        fetch("http://localhost:5000/users", {
+          method: "post",
+          headers: {
+            "content-type": "application/json",
+          },
+          body: JSON.stringify({
+            name: user.displayName,
+            email: user.email,
+            image: user.photoURL,
+          }),
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            console.log(data);
+            if (data.acknowledged) {
+              toast.success(" successfully SignIn");
+              navigate("/allTools");
+            } else {
+              toast.error(data.message);
+            }
+          });
+      }
+    });
+  };
+
   return (
     <div>
       <Container size="25rem" mx="auto" mt={150}>
@@ -46,13 +125,12 @@ export const AuthenticationForm = () => {
           </Text>
 
           <Group grow mb="md" mt="md">
-            <Button fullWidth variant="outline">
+            <Button fullWidth variant="outline" onClick={handleGoogleSignIn}>
               <FcGoogle radius="xl" className="mr-2"></FcGoogle>Google
             </Button>
             <Button fullWidth variant="outline" c="blue">
               <FaFacebookF radius="xl" className="mr-2"></FaFacebookF>Facebook
             </Button>
-            {/* <FaFacebookF radius="xl">Twitter</FaFacebookF> */}
           </Group>
 
           <Divider
@@ -61,11 +139,13 @@ export const AuthenticationForm = () => {
             my="lg"
           />
 
-          <form onSubmit={form.onSubmit(() => {})}>
+          <form onSubmit={handleSubmit}>
             <Stack>
               {type === "register" && (
                 <TextInput
+                  type="text"
                   label="Name"
+                  id="name"
                   placeholder="Your name"
                   value={form.values.name}
                   onChange={(event) =>
@@ -76,8 +156,10 @@ export const AuthenticationForm = () => {
               )}
 
               <TextInput
+                type="email"
                 required
                 label="Email"
+                id="email"
                 placeholder="hello@mantine.dev"
                 value={form.values.email}
                 onChange={(event) =>
@@ -88,8 +170,10 @@ export const AuthenticationForm = () => {
               />
 
               <PasswordInput
+                type="password"
                 required
                 label="Password"
+                id="password"
                 placeholder="Your password"
                 value={form.values.password}
                 onChange={(event) =>

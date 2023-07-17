@@ -11,6 +11,10 @@ import {
 } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
 import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { AuthContext } from "../../Context/UserContext";
+import { toast } from "react-hot-toast";
+import { FaUserAlt } from "react-icons/fa";
 // import { MantineLogo } from "@mantine/ds";
 
 const HEADER_HEIGHT = rem(60);
@@ -98,14 +102,33 @@ const useStyles = createStyles((theme) => ({
   },
 }));
 
-const links = [
-  { link: "/", label: "Home" },
-  { link: "/allTools", label: "Shop" },
-  { link: "/contactUs", label: "Contact" },
-  { link: "/authentication", label: "Authentication" },
-];
-
 const Navbar = () => {
+  const { user, logOut } = useContext(AuthContext);
+  const handleLogOut = () => {
+    logOut()
+      .then(() => {})
+      .catch((error) => console.error(error));
+    toast.success(" logout successfully ");
+  };
+  const links = [
+    { link: "/", label: "Home" },
+    { link: "/allTools", label: "Shop" },
+    { link: "/contactUs", label: "Contact" },
+    {
+      link: "/authentication",
+      label: user?.email ? (
+        <div onClick={handleLogOut}>
+          <FaUserAlt className="h-6 w-6" />
+        </div>
+      ) : (
+        "Register "
+      ),
+      // <div onClick={handleGoogleSignIn}>
+      //   <FcGoogle className="h-6 w-6" />{" "}
+      // </div>
+    },
+    // { link: "/authentication", label: "Register" },
+  ];
   const [opened, { toggle, close }] = useDisclosure(false);
   const [active, setActive] = useState(links[0].link);
   const { classes, cx } = useStyles();
