@@ -119,20 +119,20 @@ const Tools = () => {
   return (
     <div>
       <section className={classes.root}>
-        <div className=" text-center">
+        <div className="text-center">
           <Title className={classes.heading}>
-            Our{" "}
             <Text
               component="span"
               inherit
               variant="gradient"
-              gradient={{ from: "teal", to: "lime" }}
+              gradient={{ from: "teal", to: "blue" }}
             >
-              seo
+              Our seo Tools
             </Text>{" "}
-            Tools
           </Title>
-          <p className={classes.title}>Always Know What You Are Pricing</p>
+          <Text mb={75} className={classes.title}>
+            Always Know What You Are Pricing
+          </Text>
         </div>
         <div className={classes.tool_container}>
           {tools &&

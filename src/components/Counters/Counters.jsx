@@ -87,10 +87,17 @@ export const Counters = () => {
     <div className={classes.wrapper}>
       <Grid gutter={80}>
         <Col span={12} md={5}>
-          <Title className={classes.title} order={2}>
+          <Title
+            component="span"
+            inherit
+            variant="gradient"
+            gradient={{ from: "teal", to: "blue" }}
+            className={classes.title}
+            order={2}
+          >
             A fully featured React components library for your next project
           </Title>
-          <Text c="dimmed">
+          <Text c="dimmed" mt={11}>
             Build fully functional accessible web applications faster than ever
             – Mantine includes more than 120 customizable components and hooks
             to cover you in any situation

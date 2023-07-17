@@ -196,12 +196,13 @@ import {
   createStyles,
   Text,
   SimpleGrid,
-  Container,
+  // Container,
   rem,
-  Image,
+  // Image,
   Title,
+  Container,
 } from "@mantine/core";
-import { IconTruck, IconCertificate, IconCoin } from "@tabler/icons-react";
+// import { IconTruck, IconCertificate, IconCoin } from "@tabler/icons-react";
 import { FaMoneyCheckAlt, FaPaypal, FaRocket } from "react-icons/fa";
 import { GiMoneyStack } from "react-icons/gi";
 
@@ -215,6 +216,7 @@ const useStyles = createStyles((theme) => ({
   container: {
     width: "70%",
     margin: "auto",
+    padding: `calc(${theme.spacing.xl} * 2) ${theme.spacing.xl}`,
   },
 
   overlay: {
@@ -264,12 +266,6 @@ const useStyles = createStyles((theme) => ({
   },
 }));
 
-// interface FeatureProps extends React.ComponentPropsWithoutRef<"div"> {
-//   icon: React.FC<any>;
-//   title: string;
-//   description: string;
-// }
-
 function Feature({
   icon: Icon,
   image,
@@ -281,7 +277,7 @@ function Feature({
   const { classes, cx } = useStyles();
 
   return (
-    <div className={cx(classes.feature, className)} {...others}>
+    <div className={cx(classes.feature)} {...others}>
       <div className={classes.overlay} />
 
       <div className={classes.content}>
@@ -337,18 +333,16 @@ const Payment = () => {
   const items = mockdata.map((item) => <Feature {...item} key={item.title} />);
 
   return (
-    <div className={classes.container} mt={30} mb={30} size="lg">
+    <Container className={classes.container} mt={70} size="xl">
       <Title className={classes.heading}>
-        Our{" "}
         <Text
           component="span"
           inherit
           variant="gradient"
-          gradient={{ from: "teal", to: "lime" }}
+          gradient={{ from: "teal", to: "blue" }}
         >
-          Payments
+          Our Payments Methods
         </Text>{" "}
-        Methods
       </Title>
 
       <SimpleGrid
@@ -358,7 +352,7 @@ const Payment = () => {
       >
         {items}
       </SimpleGrid>
-    </div>
+    </Container>
   );
 };
 

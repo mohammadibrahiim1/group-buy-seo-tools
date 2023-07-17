@@ -365,26 +365,20 @@ const ServiceCard = () => {
   ));
 
   return (
-    <div size={700} className={classes.wrapper}>
+    <Container mt={80} mb={80} size="xl" className={classes.wrapper}>
       {/* <Text className={classes.supTitle}>{supTitle}</Text> */}
       <Title className={classes.title}>
-        Our{" "}
         <Text
           component="span"
           inherit
           variant="gradient"
-          gradient={{ from: "teal", to: "lime" }}
+          gradient={{ from: "teal", to: "blue" }}
         >
-          SEO Tools Service
-        </Text>{" "}
-        Benefit
+          Our SEO Tools Service Benefit
+        </Text>
       </Title>
 
-      <Container size={660} p={0}>
-        {/* <Text color="dimmed" className={classes.description}>
-          {description}
-        </Text> */}
-      </Container>
+      <Container size={660} p={0}></Container>
 
       <SimpleGrid
         cols={2}
@@ -394,7 +388,7 @@ const ServiceCard = () => {
       >
         {items}
       </SimpleGrid>
-    </div>
+    </Container>
   );
 };
 
