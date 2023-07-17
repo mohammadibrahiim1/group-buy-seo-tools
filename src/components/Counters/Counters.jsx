@@ -1,115 +1,121 @@
 import {
   createStyles,
+  Title,
+  SimpleGrid,
   Text,
-  Card,
-  RingProgress,
-  Group,
+  Button,
+  ThemeIcon,
+  Grid,
+  Col,
   rem,
 } from "@mantine/core";
+import {
+  IconReceiptOff,
+  IconFlame,
+  IconCircleDotted,
+  IconFileCode,
+} from "@tabler/icons-react";
 
 const useStyles = createStyles((theme) => ({
-  card: {
-    backgroundColor:
-      theme.colorScheme === "dark" ? theme.colors.dark[7] : theme.white,
+  wrapper: {
+    padding: `calc(${theme.spacing.xl} * 2) ${theme.spacing.xl}`,
+    width: "70%",
+    margin: "auto",
+    paddingTop: "150px",
   },
 
-  label: {
+  title: {
     fontFamily: `Greycliff CF, ${theme.fontFamily}`,
-    fontWeight: 700,
-    lineHeight: 1,
-  },
-
-  lead: {
-    fontFamily: `Greycliff CF, ${theme.fontFamily}`,
-    fontWeight: 700,
-    fontSize: rem(22),
-    lineHeight: 1,
-  },
-
-  inner: {
-    display: "flex",
-
-    [theme.fn.smallerThan("xs")]: {
-      flexDirection: "column",
-    },
-  },
-
-  ring: {
-    flex: 1,
-    display: "flex",
-    justifyContent: "flex-end",
-
-    [theme.fn.smallerThan("xs")]: {
-      justifyContent: "center",
-      marginTop: theme.spacing.md,
-    },
+    fontSize: rem(36),
+    fontWeight: 900,
+    lineHeight: 1.1,
+    marginBottom: theme.spacing.md,
+    color: theme.colorScheme === "dark" ? theme.white : theme.black,
   },
 }));
 
-const stats = [
+const features = [
   {
-    title: "projects tasks",
-    completed: 1887,
-    total: 81,
-    stats: {
-      value: 71,
-      label: "string",
-    },
+    icon: IconReceiptOff,
+    title: "Total Users",
+    description:
+      "All packages are published under MIT license, you can use Mantine in any project",
+  },
+  {
+    icon: IconFileCode,
+    title: "Active Users",
+    description:
+      "Build type safe applications, all components and hooks export types",
+  },
+  {
+    icon: IconCircleDotted,
+    title: "Countries",
+    description:
+      "With new :focus-visible selector focus ring will appear only when user navigates with keyboard",
+  },
+  {
+    icon: IconFlame,
+    title: "Since",
+    description:
+      "Customize colors, spacing, shadows, fonts and many other settings with global theme object",
   },
 ];
 
-const Counter = ({ title, completed, total }) => {
-  const { classes, theme } = useStyles();
-  const items = stats.map((stat) => (
-    <div key={stat.label}>
-      <Text className={classes.label}>{stat.value}</Text>
-      <Text size="xs" color="dimmed">
-        {stat.label}
+export const Counters = () => {
+  const { classes } = useStyles();
+
+  const items = features.map((feature) => (
+    <div key={feature.title}>
+      <ThemeIcon
+        size={44}
+        radius="md"
+        variant="gradient"
+        gradient={{ deg: 133, from: "blue", to: "cyan" }}
+      >
+        <feature.icon size={rem(26)} stroke={1.5} />
+      </ThemeIcon>
+      <Text fz="lg" mt="sm" fw={500}>
+        {feature.title}
+      </Text>
+      <Text c="dimmed" fz="sm">
+        {feature.description}
       </Text>
     </div>
   ));
 
   return (
-    <Card withBorder p="xl" radius="md" className={classes.card}>
-      <div className={classes.inner}>
-        <div>
-          <Text fz="xl" className={classes.label}>
-            {title}
+    <div className={classes.wrapper}>
+      <Grid gutter={80}>
+        <Col span={12} md={5}>
+          <Title className={classes.title} order={2}>
+            A fully featured React components library for your next project
+          </Title>
+          <Text c="dimmed">
+            Build fully functional accessible web applications faster than ever
+            – Mantine includes more than 120 customizable components and hooks
+            to cover you in any situation
           </Text>
-          <div>
-            <Text className={classes.lead} mt={30}>
-              {completed}
-            </Text>
-            <Text fz="xs" color="dimmed">
-              Completed
-            </Text>
-          </div>
-          <Group mt="lg">{items}</Group>
-        </div>
 
-        <div className={classes.ring}>
-          <RingProgress
-            roundCaps
-            thickness={6}
-            size={150}
-            sections={[
-              { value: (completed / total) * 100, color: theme.primaryColor },
-            ]}
-            label={
-              <div>
-                <Text ta="center" fz="lg" className={classes.label}>
-                  {((completed / total) * 100).toFixed(0)}%
-                </Text>
-                <Text ta="center" fz="xs" c="dimmed">
-                  Completed
-                </Text>
-              </div>
-            }
-          />
-        </div>
-      </div>
-    </Card>
+          <Button
+            variant="gradient"
+            gradient={{ deg: 133, from: "blue", to: "cyan" }}
+            size="lg"
+            radius="md"
+            mt="xl"
+          >
+            Get started
+          </Button>
+        </Col>
+        <Col span={12} md={7}>
+          <SimpleGrid
+            cols={2}
+            spacing={30}
+            breakpoints={[{ maxWidth: "md", cols: 1 }]}
+          >
+            {items}
+          </SimpleGrid>
+        </Col>
+      </Grid>
+    </div>
   );
 };
-
-export default Counter;
