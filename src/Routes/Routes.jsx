@@ -5,6 +5,7 @@ import ContactUs from "../Pages/ContactUs/ContactUs";
 import AllTools from "../Pages/AllTools/AllTools";
 import SignUP from "../Pages/SignUP/SignUP";
 import LogIn from "../Pages/LogIn/LogIn";
+import { AuthenticationForm } from "../Components/AuthenticationForm/AuthenticationForm";
 
 export const router = createBrowserRouter([
   {
@@ -30,6 +31,10 @@ export const router = createBrowserRouter([
       {
         path: "/signUp",
         element: <SignUP />,
+      },
+      {
+        path: "/authForm",
+        element: <AuthenticationForm />,
       },
     ],
   },
