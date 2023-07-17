@@ -1,5 +1,3 @@
-
-
 import {
   createStyles,
   Container,
@@ -14,7 +12,7 @@ const useStyles = createStyles((theme) => ({
     backgroundColor: "#11284b",
     backgroundSize: "cover",
     backgroundPosition: "center",
-    height: "500px",
+    height: "700px",
     // backgroundImage:
     //   "linear-gradient(250deg, rgba(130, 201, 30, 0) 0%, #062343 70%), url(https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1080&q=80)",
     paddingTop: `calc(${theme.spacing.xl} * 3)`,
@@ -87,6 +85,13 @@ const useStyles = createStyles((theme) => ({
       width: "100%",
     },
   },
+
+  iframe: {
+    width: "700px",
+    height: "300px",
+    margin: "auto",
+    marginTop: "70px",
+  },
 }));
 
 const Header = () => {
@@ -114,6 +119,24 @@ const Header = () => {
               Mantine includes more than 100 customizable components and hooks
               to cover you in any situation
             </Text>
+
+            {/* <iframe
+              class=" 	aspect-ratio: 16 / 9"
+              src="https://www.youtube.com/..."
+            ></iframe> */}
+            <div>
+              <iframe
+                className={classes.iframe}
+                // width="780"
+                // height="221"
+                // margin=" 0 auto"
+                src="https://www.youtube.com/embed/TOfeDuAYUUI"
+                title="How to Use Group Buy SEO Tools | Best Group Buy SEO Tools Service 2020 | Digital Services BD"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen
+              ></iframe>
+            </div>
 
             {/* <Button className={classes.control} variant="filled" mt={25}>
               Get Started

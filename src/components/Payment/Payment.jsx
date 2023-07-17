@@ -334,7 +334,7 @@ const Payment = () => {
 
   return (
     <Container className={classes.container} mt={70} size="xl">
-      <Title className={classes.heading}>
+      <Title className={classes.heading} mb={75}>
         <Text
           component="span"
           inherit
