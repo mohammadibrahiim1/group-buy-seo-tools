@@ -8,7 +8,6 @@ const DataContext = ({ children }) => {
   const [tools, setTools] = useState([]);
   const [cart, setCart] = useState(cartFromLocalStorage);
 
-
   const addToCart = (tool) => {
     let newCart = [];
     const exists = cart.find((item) => item.id === tool.id);
@@ -33,21 +32,13 @@ const DataContext = ({ children }) => {
   };
 
   useEffect(() => {
-    fetch("tools.json")
+    fetch("http://localhost:5000/tools")
       .then((res) => res.json())
       .then((data) => {
-        // console.log(data);
         setTools(data);
       });
   }, []);
-  //   useEffect(() => {
-  //     fetch("tools.json")
-  //       .then((res) => res.json())
-  //       .then((data) => {
-  //         // console.log(data);
-  //         seeAllTools(data);
-  //       });
-  //   }, []);
+
   const data = {
     tools,
     addToCart,
