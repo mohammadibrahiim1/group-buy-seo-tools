@@ -208,6 +208,7 @@ import {
   SimpleGrid,
   createStyles,
   rem,
+  Group,
 } from "@mantine/core";
 import { isEmail } from "@mantine/form";
 // import IMAGES from "./images";
@@ -220,6 +221,7 @@ import {
 
 const useStyles = createStyles((theme) => ({
   wrapper: {
+    // border: "1px solid gray",
     padding: `calc(${theme.spacing.xl} * 2) ${theme.spacing.xl}`,
     // paddingTop: rem(80),
     // paddingBottom: rem(50),
@@ -262,6 +264,7 @@ const useStyles = createStyles((theme) => ({
     fontSize: rem(42),
     // textAlign: "center",
     marginTop: "25px",
+    marginBottom: "100px",
 
     [theme.fn.smallerThan("md")]: {
       maxWidth: "100%",
@@ -366,7 +369,6 @@ const ServiceCard = () => {
 
   return (
     <Container mt={80} mb={80} size="xl" className={classes.wrapper}>
-      {/* <Text className={classes.supTitle}>{supTitle}</Text> */}
       <Title className={classes.title}>
         <Text
           component="span"
@@ -378,9 +380,10 @@ const ServiceCard = () => {
         </Text>
       </Title>
 
-      <Container size={660} p={0}></Container>
+      {/* <Container size={660} p={0}></Container> */}
 
       <SimpleGrid
+        mt={11}
         cols={2}
         spacing={50}
         breakpoints={[{ maxWidth: 550, cols: 1, spacing: 40 }]}
