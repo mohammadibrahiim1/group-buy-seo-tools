@@ -15,6 +15,7 @@ import {
   IconCircleDotted,
   IconFileCode,
 } from "@tabler/icons-react";
+import { FaFlag, FaUserCheck, FaUsers, FaHands } from "react-icons/fa";
 
 const useStyles = createStyles((theme) => ({
   wrapper: {
@@ -36,28 +37,24 @@ const useStyles = createStyles((theme) => ({
 
 const features = [
   {
-    icon: IconReceiptOff,
+    icon: FaUsers,
     title: "Total Users",
-    description:
-      "All packages are published under MIT license, you can use Mantine in any project",
+    description: "5634",
   },
   {
-    icon: IconFileCode,
+    icon: FaUserCheck,
     title: "Active Users",
-    description:
-      "Build type safe applications, all components and hooks export types",
+    description: "193",
   },
   {
-    icon: IconCircleDotted,
+    icon: FaFlag,
     title: "Countries",
-    description:
-      "With new :focus-visible selector focus ring will appear only when user navigates with keyboard",
+    description: "105",
   },
   {
-    icon: IconFlame,
+    icon: FaHands,
     title: "Since",
-    description:
-      "Customize colors, spacing, shadows, fonts and many other settings with global theme object",
+    description: "2018",
   },
 ];
 
