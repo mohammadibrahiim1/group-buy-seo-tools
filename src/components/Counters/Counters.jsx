@@ -9,12 +9,14 @@ import {
   Col,
   rem,
 } from "@mantine/core";
-import {
-  IconReceiptOff,
-  IconFlame,
-  IconCircleDotted,
-  IconFileCode,
-} from "@tabler/icons-react";
+
+// import {
+//   IconReceiptOff,
+//   IconFlame,
+//   IconCircleDotted,
+//   IconFileCode,
+// } from "@tabler/icons-react";
+
 import { FaFlag, FaUserCheck, FaUsers, FaHands } from "react-icons/fa";
 
 const useStyles = createStyles((theme) => ({
@@ -99,22 +101,12 @@ export const Counters = () => {
             – Mantine includes more than 120 customizable components and hooks
             to cover you in any situation
           </Text>
-
-          <Button
-            variant="gradient"
-            gradient={{ deg: 133, from: "blue", to: "cyan" }}
-            size="lg"
-            radius="md"
-            mt="xl"
-          >
-            Get started
-          </Button>
         </Col>
         <Col span={12} md={7}>
           <SimpleGrid
             cols={2}
             spacing={30}
-            breakpoints={[{ maxWidth: "md", cols: 1 }]}
+            breakpoints={[{ maxWidth: "md", cols: 2 }]}
           >
             {items}
           </SimpleGrid>
