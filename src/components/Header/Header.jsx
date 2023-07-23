@@ -122,8 +122,9 @@ const Header = () => {
             </Title>
 
             <Text className={classes.description} mt={30}>
-              Build fully functional accessible web applications with ease – Mantine includes more than 100 customizable
-              components and hooks to cover you in any situation
+              As a SEO / Digital Marketer / Website owner, you know how important the SEO is. As a result, you're
+              looking for ways to improve your ranking on search engines so more users can find you on the World Wide
+              Web. 
             </Text>
 
             {/* <iframe

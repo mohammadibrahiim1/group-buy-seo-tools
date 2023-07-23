@@ -86,8 +86,9 @@ export const Counters = () => {
             A fully featured React components library for your next project
           </Title>
           <Text c="dimmed" mt={11}>
-            Build fully functional accessible web applications faster than ever – Mantine includes more than 120
-            customizable components and hooks to cover you in any situation
+            India, Bangladesh, Pakistan, Nepal, United States, Saudi Arabia, Malaysia, and many more countries peoples
+            also can purchase our service. Our maximum tools have simple access system (One click to access system) -
+            hope you'll like this system!
           </Text>
         </Col>
         <Col span={12} sm={6}>

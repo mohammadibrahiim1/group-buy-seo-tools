@@ -1,37 +1,3 @@
-.all-tools-header-section {
-  background-color: #f0f7f7;
-  background-image: linear-gradient(to bottom, rgba(71, 71, 71, 0.52), #f0f7f7),
-    url(https://i.ibb.co/f2mfBv0/gbtoolsheaderbanner.webp);
-  /* <a href="https://ibb.co/drnF1gK"><img src="https://i.ibb.co/f2mfBv0/gbtoolsheaderbanner.webp" alt="gbtoolsheaderbanner" border="0"></a> */
-  background-repeat: no-repeat;
-  background-position: center;
-  height: 600px;
-}
-
-.allTools-section {
-  width: 64%;
-  margin: 0 auto;
-}
-
-/* .drawer-button {
-  position: absolute;
-  top: 80px;
-  right: 100px;
-} */
-
-/* .drawer-side {
-  position: absolute;
-  top: 200px;
-  right: 0;
-  height: 100px;
-  border: 1px solid orangered;
-}  */
-
-/* .drawer-button {
-  position: fixed;
-  top: 50%;
-  right: 1.5%;
-} */
 .indicator {
   position: fixed;
   top: 50%;
@@ -57,17 +23,3 @@
 .cart-item-closed {
   right: -340px;
 }
-
-/* .nav-button {
-  z-index: 2;
-} */
-
-/* .indicator .btn {
-  font-size: 2.5rem;
-} */
-
-/* .cart-item {
-  display: block;
-  transition: all 0.3s linear;
-
-} */
