@@ -212,6 +212,10 @@ const useStyles = createStyles((theme) => ({
     // paddingBottom: rem(50),
     width: "70%",
     margin: "auto",
+    [theme.fn.smallerThan("md")]: {
+      width: "100%",
+      margin: "auto",
+    },
   },
 
   item: {
@@ -250,11 +254,11 @@ const useStyles = createStyles((theme) => ({
     marginTop: "25px",
     marginBottom: "100px",
 
-    [theme.fn.smallerThan("md")]: {
-      maxWidth: "100%",
-      fontSize: rem(34),
-      lineHeight: 1.15,
-    },
+    // [theme.fn.smallerThan("lg")]: {
+    //   maxWidth: "100%",
+    //   fontSize: rem(34),
+    //   lineHeight: 1.15,
+    // },
   },
 
   description: {
