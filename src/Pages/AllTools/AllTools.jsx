@@ -5,9 +5,10 @@ import ToolsModal from "../../Components/ToolsModal/ToolsModal";
 import { ApiContext } from "../../Context/DataContext";
 // import CartDrawer from "../../Components/CartDrawer/CartDrawer";
 // import Marquee from "react-fast-marquee";
-import Payment from "../../Components/Payment/Payment";
-import { Button, Text, Title, createStyles, rem } from "@mantine/core";
-import { FaShoppingCart } from "react-icons/fa";
+// import Payment from "../../Components/Payment/Payment";
+import { Badge, Button, Card, Group, Image, Text, Title, createStyles, rem } from "@mantine/core";
+// import { FaShoppingCart } from "react-icons/fa";
+
 // import NewDrawer from "../../Components/NewDrawer/NewDrawer";
 // import Drawer from "../../Components/Drawer/Drawer";
 // import NewDrawer from "../../Components/Drawer/Drawer";
@@ -50,34 +51,20 @@ const useStyles = createStyles((theme) => ({
   title: {
     lineHeight: 1,
     textAlign: "start",
-    // marginTop: theme.spacing.xl,
     color: theme.dark,
     fontFamily: `Greycliff CF, ${theme.fontFamily}`,
     fontWeight: 500,
-    // lineHeight: 1.05,
-
-    fontSize: rem(22),
-
+    fontSize: rem(16),
     marginTop: "90px",
-    // marginBottom: "100px",
-
-    // [theme.fn.smallerThan("lg")]: {
-    //   maxWidth: "100%",
-    //   fontSize: rem(34),
-    //   lineHeight: 1.15,
-    // },
   },
 
-  // allToolSection: {
-  //   width: "70%",
-  //   margin: "0 auto",
-  // },
   toolsContainer: {
     display: "grid",
     gridTemplateColumns: "repeat(4,1fr)",
     justifyContent: "space-between",
     alignItems: "center",
     gap: "12px",
+    marginTop: "5px",
   },
 
   description: {
@@ -127,33 +114,26 @@ const AllTools = () => {
         <div className={classes.toolsContainer}>
           {tools.slice(0, showMore).map((tool) => (
             <>
-              <div class="max-w-sm bg-white shadow-lg rounded-lg overflow-hidden my-4">
-                <img class="w-full h-56 p-2 rounded-md object-cover object-center" src={tool.image} alt="avatar" />
+              <Card shadow="sm" padding="lg" radius="md" withBorder>
+                <Card.Section>
+                  <Image src={tool.image} height={160} alt="Norway" />
+                </Card.Section>
 
-                <div class="py-4 px-6">
-                  <h1 class="text-xl font-semibold text-primary">{tool.name}</h1>
-                  <div className="flex justify-between">
-                    <p class="py-2 text-sm text-success font-semibold">{tool.status}</p>
-                    <p class="py-2 text-sm text-success font-semibold">{tool.price} BDT</p>
-                  </div>
-                  <div class="flex justify-between mt-4 text-gray-700">
-                    <button class="px-2 text-sm p-1 rounded-md btn-secondary" onClick={() => addToCart(tool)}>
-                      add to cart
-                    </button>
-                    <label
-                      onClick={() => setToolDetails(tool)}
-                      htmlFor="my-modal-3"
-                      className="px-2 text-sm p-1 rounded-md btn-info cursor-pointer"
-                    >
-                      details
-                    </label>
-                  </div>
+                <Group position="apart" mt="md" mb="xs">
+                  <Text weight={500}>{tool.name}</Text>
+                  <Badge color="pink" variant="light">
+                    {tool.status}
+                  </Badge>
+                </Group>
 
-                  <div class="flex items-center mt-4 text-gray-700">
-                    <h1 class="px-2 text-sm text-primary font-semibold">limits : {tool?.limit?.slice(0, 23)}...</h1>
-                  </div>
-                </div>
-              </div>
+                <Text size="sm" color="dimmed">
+                  {tool.text}
+                </Text>
+
+                <Button variant="light" color="teal" fullWidth mt="md" radius="md" onClick={() => addToCart(tool._id)}>
+                  add to cart
+                </Button>
+              </Card>
             </>
           ))}
         </div>

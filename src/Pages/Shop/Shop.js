@@ -6,7 +6,7 @@ import NewDrawer from "../../Components/NewDrawer/NewDrawer";
 // import { ContactUs } from "../ContactUs/ContactUs";
 // import ContactUs from "../ContactUs/ContactUs";
 import { FaqWithBg } from "../../Components/FAQ/FAQ";
-import { ContactIcons, ContactIconsList } from "../ContactUs/ContactUs";
+import {  ContactIconsList } from "../ContactUs/ContactUs";
 // import { ContactUs } from "../ContactUs/ContactUs";
 const useStyles = createStyles(() => ({
   container: {

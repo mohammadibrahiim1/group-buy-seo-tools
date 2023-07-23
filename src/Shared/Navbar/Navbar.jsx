@@ -6,7 +6,7 @@ import { useContext } from "react";
 import { AuthContext } from "../../Context/UserContext";
 import { toast } from "react-hot-toast";
 import { FaUserAlt } from "react-icons/fa";
-import BgColorToggler from "../../Components/BgColorToggler/BgColorToggler";
+// import BgColorToggler from "../../Components/BgColorToggler/BgColorToggler";
 // import { MantineLogo } from "@mantine/ds";
 
 const HEADER_HEIGHT = rem(60);
