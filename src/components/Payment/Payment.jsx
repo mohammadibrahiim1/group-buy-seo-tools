@@ -241,8 +241,7 @@ const useStyles = createStyles((theme) => ({
   },
 
   icon: {
-    color: theme.fn.variant({ variant: "light", color: theme.primaryColor })
-      .color,
+    color: theme.fn.variant({ variant: "light", color: theme.primaryColor }).color,
   },
 
   heading: {
@@ -256,12 +255,6 @@ const useStyles = createStyles((theme) => ({
     fontSize: rem(42),
 
     marginTop: "25px",
-
-    // [theme.fn.smallerThan("md")]: {
-    //   maxWidth: "100%",
-    //   fontSize: rem(34),
-    //   lineHeight: 1.15,
-    // },
   },
 
   title: {
@@ -269,14 +262,7 @@ const useStyles = createStyles((theme) => ({
   },
 }));
 
-function Feature({
-  icon: Icon,
-  image,
-  title,
-  description,
-  className,
-  ...others
-}) {
+function Feature({ icon: Icon, image, title, description, className, ...others }) {
   const { classes, cx } = useStyles();
 
   return (
@@ -290,7 +276,7 @@ function Feature({
           className={classes.icon}
           stroke={1.5}
         />
-        {/* <img src={image} alt="" srcset="" /> */}
+    
         <Text fw={700} fz="lg" mb="xs" mt={3} ml={37} className={classes.title}>
           {title}
         </Text>
@@ -305,8 +291,7 @@ function Feature({
 const mockdata = [
   {
     icon: FaMoneyCheckAlt,
-    image:
-      "https://i.ibb.co/QncQsz2/dutch-bangla-rocket-logo-B4-D1-CC458-D-seeklogo-com.png",
+    image: "https://i.ibb.co/QncQsz2/dutch-bangla-rocket-logo-B4-D1-CC458-D-seeklogo-com.png",
     title: "Bkash",
     description:
       "As electricity builds up inside its body, it becomes more aggressive. One theory is that the electricity.",
@@ -314,8 +299,7 @@ const mockdata = [
   {
     icon: GiMoneyStack,
     title: "Nagad",
-    description:
-      "Slakoth’s heart beats just once a minute. Whatever happens, it is content to loaf around motionless.",
+    description: "Slakoth’s heart beats just once a minute. Whatever happens, it is content to loaf around motionless.",
   },
   {
     icon: FaRocket,
@@ -338,12 +322,7 @@ const Payment = () => {
   return (
     <section className={classes.container} mt={70} size="xl">
       <Title className={classes.heading} mb={75}>
-        <Text
-          component="span"
-          inherit
-          variant="gradient"
-          gradient={{ from: "teal", to: "blue" }}
-        >
+        <Text component="span" inherit variant="gradient" gradient={{ from: "teal", to: "blue" }}>
           Our Payments Methods
         </Text>{" "}
       </Title>

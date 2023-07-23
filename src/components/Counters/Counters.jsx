@@ -1,14 +1,4 @@
-import {
-  createStyles,
-  Title,
-  SimpleGrid,
-  Text,
-  Button,
-  ThemeIcon,
-  Grid,
-  Col,
-  rem,
-} from "@mantine/core";
+import { createStyles, Title, SimpleGrid, Text, Button, ThemeIcon, Grid, Col, rem } from "@mantine/core";
 
 // import {
 //   IconReceiptOff,
@@ -25,6 +15,10 @@ const useStyles = createStyles((theme) => ({
     width: "70%",
     margin: "auto",
     paddingTop: "150px",
+    [theme.fn.smallerThan("md")]: {
+      width: "100%",
+      margin: "auto",
+    },
   },
 
   title: {
@@ -65,12 +59,7 @@ export const Counters = () => {
 
   const items = features.map((feature) => (
     <div key={feature.title}>
-      <ThemeIcon
-        size={44}
-        radius="md"
-        variant="gradient"
-        gradient={{ deg: 133, from: "blue", to: "cyan" }}
-      >
+      <ThemeIcon size={44} radius="md" variant="gradient" gradient={{ deg: 133, from: "blue", to: "cyan" }}>
         <feature.icon size={rem(26)} stroke={1.5} />
       </ThemeIcon>
       <Text fz="lg" mt="sm" fw={500}>
@@ -85,7 +74,7 @@ export const Counters = () => {
   return (
     <div className={classes.wrapper}>
       <Grid gutter={80}>
-        <Col span={12} md={5}>
+        <Col span={12} sm={6}>
           <Title
             component="span"
             inherit
@@ -97,17 +86,12 @@ export const Counters = () => {
             A fully featured React components library for your next project
           </Title>
           <Text c="dimmed" mt={11}>
-            Build fully functional accessible web applications faster than ever
-            – Mantine includes more than 120 customizable components and hooks
-            to cover you in any situation
+            Build fully functional accessible web applications faster than ever – Mantine includes more than 120
+            customizable components and hooks to cover you in any situation
           </Text>
         </Col>
-        <Col span={12} md={7}>
-          <SimpleGrid
-            cols={2}
-            spacing={30}
-            breakpoints={[{ maxWidth: "md", cols: 2 }]}
-          >
+        <Col span={12} sm={6}>
+          <SimpleGrid cols={2} spacing={30} breakpoints={[{ maxWidth: "md", cols: 2 }]}>
             {items}
           </SimpleGrid>
         </Col>
