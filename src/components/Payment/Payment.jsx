@@ -216,6 +216,10 @@ const useStyles = createStyles((theme) => ({
     width: "70%",
     margin: "auto",
     padding: `calc(${theme.spacing.xl} * 2) ${theme.spacing.xl}`,
+    [theme.fn.smallerThan("md")]: {
+      width: "100%",
+      margin: "auto",
+    },
   },
 
   overlay: {
@@ -253,11 +257,11 @@ const useStyles = createStyles((theme) => ({
 
     marginTop: "25px",
 
-    [theme.fn.smallerThan("md")]: {
-      maxWidth: "100%",
-      fontSize: rem(34),
-      lineHeight: 1.15,
-    },
+    // [theme.fn.smallerThan("md")]: {
+    //   maxWidth: "100%",
+    //   fontSize: rem(34),
+    //   lineHeight: 1.15,
+    // },
   },
 
   title: {
@@ -332,7 +336,7 @@ const Payment = () => {
   const items = mockdata.map((item) => <Feature {...item} key={item.title} />);
 
   return (
-    <Container className={classes.container} mt={70} size="xl">
+    <section className={classes.container} mt={70} size="xl">
       <Title className={classes.heading} mb={75}>
         <Text
           component="span"
@@ -355,7 +359,7 @@ const Payment = () => {
       >
         {items}
       </SimpleGrid>
-    </Container>
+    </section>
   );
 };
 
