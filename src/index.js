@@ -6,10 +6,13 @@ import reportWebVitals from "./reportWebVitals";
 import DataContext from "./Context/DataContext";
 import { ThemeProvider } from "@material-tailwind/react";
 import UserContext from "./Context/UserContext";
+// import { MantineProvider, ColorSchemeProvider, ColorScheme } from "@mantine/core";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
+    {/* <ColorSchemeProvider colorScheme={colorScheme} toggleColorScheme={toggleColorScheme}>
+      <MantineProvider theme={{ colorScheme }} withGlobalStyles withNormalizeCSS> */}
     <UserContext>
       <DataContext>
         <ThemeProvider>
@@ -17,6 +20,8 @@ root.render(
         </ThemeProvider>
       </DataContext>
     </UserContext>
+    {/* </MantineProvider>
+    </ColorSchemeProvider> */}
   </React.StrictMode>
 );
 

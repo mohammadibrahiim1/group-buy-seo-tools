@@ -6,6 +6,7 @@ import { useContext } from "react";
 import { AuthContext } from "../../Context/UserContext";
 import { toast } from "react-hot-toast";
 import { FaUserAlt } from "react-icons/fa";
+import BgColorToggler from "../../Components/BgColorToggler/BgColorToggler";
 // import { MantineLogo } from "@mantine/ds";
 
 const HEADER_HEIGHT = rem(60);
@@ -97,7 +98,7 @@ const Navbar = () => {
   const links = [
     { link: "/", label: "Home" },
     { link: "/shop", label: "Shop" },
-    { link: "/contactUs", label: "Contact" },
+    // { link: "/contactUs", label: "Contact" },
     {
       link: "/authentication",
       label: user?.email ? (
@@ -111,7 +112,7 @@ const Navbar = () => {
       //   <FcGoogle className="h-6 w-6" />{" "}
       // </div>
     },
-    // { link: "/authentication", label: "Register" },
+    // { label: <BgColorToggler /> },
   ];
   const [opened, { toggle, close }] = useDisclosure(false);
   const [active, setActive] = useState(links[0].link);

@@ -48,7 +48,7 @@ const useStyles = createStyles((theme) => ({
 
   title: {
     lineHeight: 1,
-    textAlign: "center",
+    textAlign: "start",
     // marginTop: theme.spacing.xl,
     color: theme.dark,
     fontFamily: `Greycliff CF, ${theme.fontFamily}`,
@@ -73,7 +73,7 @@ const useStyles = createStyles((theme) => ({
   // },
   toolsContainer: {
     display: "grid",
-    gridTemplateColumns: "repeat(3,1fr)",
+    gridTemplateColumns: "repeat(4,1fr)",
     justifyContent: "space-between",
     alignItems: "center",
     gap: "12px",
@@ -149,9 +149,9 @@ const AllTools = () => {
         <div>{toolDetails && <ToolsModal toolDetails={toolDetails} key={toolDetails.id}></ToolsModal>}</div>
       </div>
 
-      <div>
+      {/* <div>
         <Payment></Payment>
-      </div>
+      </div> */}
     </div>
   );
 };

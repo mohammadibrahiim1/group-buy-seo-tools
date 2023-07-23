@@ -3,10 +3,15 @@ import { Drawer, Button, Group, createStyles } from "@mantine/core";
 import CartTool from "../../Pages/Cart/CartTool";
 import { useContext } from "react";
 import { ApiContext } from "../../Context/DataContext";
+import { FaShoppingCart } from "react-icons/fa";
 const useStyles = createStyles(() => ({
   drawerButton: {
     position: "fixed",
-    right: "2%",
+    top: "70%",
+    left: "93%",
+    width: "115px",
+    backgroundColor: "orangered",
+    borderRadius: "5px",
   },
 }));
 
@@ -17,7 +22,7 @@ const NewDrawer = () => {
 
   return (
     <>
-      <Drawer opened={opened} onClose={close} position="right" title="Authentication">
+      <Drawer opened={opened} onClose={close} position="right" size={"sm"} title="Authentication">
         {/* Drawer content */}
         <p>cart</p>
 
@@ -29,7 +34,9 @@ const NewDrawer = () => {
       </Drawer>
 
       <Group className={classes.drawerButton}>
-        <Button onClick={open}>Open Drawer</Button>
+        <Button size="xs" variant="gradient" gradient={{ from: "orange", to: "red" }} onClick={open}>
+          <FaShoppingCart className=" h-5 w-5 mr-2" /> <span className="text-sm">See Cart</span>
+        </Button>
       </Group>
     </>
   );
