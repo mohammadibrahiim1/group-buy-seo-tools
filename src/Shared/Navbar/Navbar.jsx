@@ -15,6 +15,7 @@ const useStyles = createStyles((theme) => ({
   root: {
     position: "fixed",
     zIndex: 1,
+    backgroundColor: "#11284B",
     // width: "70%",
     // margin: "auto",
   },
@@ -98,7 +99,7 @@ const Navbar = () => {
   const links = [
     { link: "/", label: "Home" },
     { link: "/shop", label: "Shop" },
-    // { link: "/contactUs", label: "Contact" },
+    { link: "/dashboard", label: "Dashboard" },
     {
       link: "/authentication",
       label: user?.email ? (
@@ -108,11 +109,7 @@ const Navbar = () => {
       ) : (
         "Register "
       ),
-      // <div onClick={handleGoogleSignIn}>
-      //   <FcGoogle className="h-6 w-6" />{" "}
-      // </div>
     },
-    // { label: <BgColorToggler /> },
   ];
   const [opened, { toggle, close }] = useDisclosure(false);
   const [active, setActive] = useState(links[0].link);
