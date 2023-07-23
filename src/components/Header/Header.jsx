@@ -91,6 +91,18 @@ const useStyles = createStyles((theme) => ({
     height: "300px",
     margin: "auto",
     marginTop: "70px",
+    // [theme.fn.largerThan("sm")]: {
+    //   width: "750px",
+    //   height: "550px",
+    // },
+    [theme.fn.smallerThan("lg")]: {
+      width: "350px",
+      height: "190px",
+      [theme.fn.largerThan("sm")]: {
+        width: "680px",
+        height: "320px",
+      },
+    },
   },
 }));
 
@@ -103,21 +115,15 @@ const Header = () => {
           <div className={classes.content}>
             <Title className={classes.title}>
               Valuable{" "}
-              <Text
-                component="span"
-                inherit
-                variant="gradient"
-                gradient={{ from: "pink", to: "yellow" }}
-              >
+              <Text component="span" inherit variant="gradient" gradient={{ from: "pink", to: "yellow" }}>
                 Group Buy SEO Tools
               </Text>{" "}
               Service at Affordable Price
             </Title>
 
             <Text className={classes.description} mt={30}>
-              Build fully functional accessible web applications with ease –
-              Mantine includes more than 100 customizable components and hooks
-              to cover you in any situation
+              Build fully functional accessible web applications with ease – Mantine includes more than 100 customizable
+              components and hooks to cover you in any situation
             </Text>
 
             {/* <iframe

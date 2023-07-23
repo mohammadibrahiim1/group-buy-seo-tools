@@ -202,7 +202,6 @@ import {
   Title,
   Container,
 } from "@mantine/core";
-// import { IconTruck, IconCertificate, IconCoin } from "@tabler/icons-react";
 import { FaMoneyCheckAlt, FaPaypal, FaRocket } from "react-icons/fa";
 import { GiMoneyStack } from "react-icons/gi";
 
@@ -347,7 +346,11 @@ const Payment = () => {
 
       <SimpleGrid
         cols={4}
-        breakpoints={[{ maxWidth: "sm", cols: 1 }]}
+        breakpoints={[
+          { maxWidth: "sm", cols: 1 },
+          { maxWidth: "md", cols: 2 },
+          { maxWidth: "lg", cols: 3 },
+        ]}
         spacing={50}
       >
         {items}

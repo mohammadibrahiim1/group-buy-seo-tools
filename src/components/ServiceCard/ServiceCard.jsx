@@ -199,25 +199,10 @@
 
 // export default ServiceCard;
 
-import {
-  Image,
-  Text,
-  Container,
-  ThemeIcon,
-  Title,
-  SimpleGrid,
-  createStyles,
-  rem,
-  Group,
-} from "@mantine/core";
+import { Image, Text, Container, ThemeIcon, Title, SimpleGrid, createStyles, rem, Group } from "@mantine/core";
 import { isEmail } from "@mantine/form";
 // import IMAGES from "./images";
-import {
-  Icon24Hours,
-  IconAntennaBars5,
-  IconCheck,
-  IconCoin,
-} from "@tabler/icons-react";
+import { Icon24Hours, IconAntennaBars5, IconCheck, IconCoin } from "@tabler/icons-react";
 
 const useStyles = createStyles((theme) => ({
   wrapper: {
@@ -247,8 +232,7 @@ const useStyles = createStyles((theme) => ({
     textTransform: "uppercase",
     fontWeight: 800,
     fontSize: theme.fontSizes.sm,
-    color: theme.fn.variant({ variant: "light", color: theme.primaryColor })
-      .color,
+    color: theme.fn.variant({ variant: "light", color: theme.primaryColor }).color,
     letterSpacing: rem(0.5),
   },
 
@@ -295,8 +279,7 @@ const data = [
   {
     // title: "one",
     title: "Tools Uptime",
-    description:
-      "We take care about tools uptime. We always try our best to keep our tools active maximum time.",
+    description: "We take care about tools uptime. We always try our best to keep our tools active maximum time.",
     image: "https://i.ibb.co/8jxsY61/ahrefs-cloud.png",
     category: "string",
     icon: IconAntennaBars5,
@@ -320,8 +303,7 @@ const data = [
   {
     // title: "one",
     title: "Easy Payment Gateway",
-    description:
-      "We accept PayPal internationally and locally bKash, Rocket and Nagad.",
+    description: "We accept PayPal internationally and locally bKash, Rocket and Nagad.",
     image: "https://i.ibb.co/1TW87K0/canva.png",
     category: "string",
     icon: IconCoin,
@@ -349,12 +331,7 @@ const ServiceCard = () => {
 
   const items = data.map((item) => (
     <div className={classes.item} key={item.image}>
-      <ThemeIcon
-        variant="light"
-        className={classes.itemIcon}
-        size={60}
-        radius="md"
-      >
+      <ThemeIcon variant="light" className={classes.itemIcon} size={60} radius="md">
         <item.icon size={rem(50)} stroke={2} color={theme.fn.primaryColor()} />
       </ThemeIcon>
 
@@ -370,12 +347,7 @@ const ServiceCard = () => {
   return (
     <Container mt={80} mb={80} size="xl" className={classes.wrapper}>
       <Title className={classes.title}>
-        <Text
-          component="span"
-          inherit
-          variant="gradient"
-          gradient={{ from: "teal", to: "blue" }}
-        >
+        <Text component="span" inherit variant="gradient" gradient={{ from: "teal", to: "blue" }}>
           Our SEO Tools Service Benefit
         </Text>
       </Title>
@@ -386,7 +358,11 @@ const ServiceCard = () => {
         mt={11}
         cols={2}
         spacing={50}
-        breakpoints={[{ maxWidth: 550, cols: 1, spacing: 40 }]}
+        breakpoints={[
+          { maxWidth: "sm", cols: 1, spacing: 40 },
+          { maxWidth: "md", cols: 2, spacing: 40 },
+          { maxWidth: "lg", cols: 3, spacing: 40 },
+        ]}
         style={{ marginTop: 60 }}
       >
         {items}
