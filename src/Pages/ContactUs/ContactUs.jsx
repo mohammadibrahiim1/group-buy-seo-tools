@@ -34,8 +34,6 @@ const useStyles = createStyles((theme) => ({
   },
 }));
 
-
-
 function ContactIcon({ icon: Icon, title, description, variant = "gradient", className, ...others }) {
   const { classes, cx } = useStyles({ variant });
   return (
@@ -60,8 +58,6 @@ function ContactIcon({ icon: Icon, title, description, variant = "gradient", cla
   );
 }
 
-
-
 const MOCKDATA = [
   { title: "Email", description: "hello@mantine.dev", icon: IconAt },
   { title: "Phone", description: "+49 (800) 335 35 35", icon: IconPhone },
@@ -70,6 +66,13 @@ const MOCKDATA = [
 ];
 
 export const ContactIconsList = () => {
-  const items = MOCKDATA.map((item, index) => <ContactIcon key={index} {...item} />);
-  return <Stack>{items}</Stack>;
+  const items = MOCKDATA.map((item, index) => <ContactIcon className="mt-5" key={index} {...item} />);
+  return (
+    <Stack>
+      <div className="mt-24">
+        <Text className="mb-4">Contact Us</Text>
+        {items}
+      </div>
+    </Stack>
+  );
 };

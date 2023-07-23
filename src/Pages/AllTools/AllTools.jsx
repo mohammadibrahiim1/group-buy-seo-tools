@@ -6,7 +6,8 @@ import { ApiContext } from "../../Context/DataContext";
 // import CartDrawer from "../../Components/CartDrawer/CartDrawer";
 // import Marquee from "react-fast-marquee";
 import Payment from "../../Components/Payment/Payment";
-import { Text, Title, createStyles, rem } from "@mantine/core";
+import { Button, Text, Title, createStyles, rem } from "@mantine/core";
+import { FaShoppingCart } from "react-icons/fa";
 // import NewDrawer from "../../Components/NewDrawer/NewDrawer";
 // import Drawer from "../../Components/Drawer/Drawer";
 // import NewDrawer from "../../Components/Drawer/Drawer";
@@ -52,12 +53,12 @@ const useStyles = createStyles((theme) => ({
     // marginTop: theme.spacing.xl,
     color: theme.dark,
     fontFamily: `Greycliff CF, ${theme.fontFamily}`,
-    fontWeight: 900,
+    fontWeight: 500,
     // lineHeight: 1.05,
 
-    fontSize: rem(42),
+    fontSize: rem(22),
 
-    marginTop: "25px",
+    marginTop: "90px",
     // marginBottom: "100px",
 
     // [theme.fn.smallerThan("lg")]: {
@@ -95,25 +96,36 @@ const useStyles = createStyles((theme) => ({
     display: "inline-block",
     color: theme.colorScheme === "dark" ? theme.white : "inherit",
   },
+  showMoreButton: {
+    width: "115px",
+
+    backgroundColor: "orangered",
+    borderRadius: "5px",
+  },
 }));
 
 const AllTools = () => {
+  const [showMore, setShowMore] = useState(4);
   const { classes } = useStyles();
   const { tools, addToCart } = useContext(ApiContext);
   const [toolDetails, setToolDetails] = useState();
+
+  const handleShowMore = () => {
+    setShowMore((preValue) => preValue + 1);
+  };
 
   return (
     <div className="bg-base-100">
       <div>
         <Title className={classes.title}>
           <Text component="span" inherit variant="gradient" gradient={{ from: "teal", to: "blue" }}>
-            See Our SEO Tools
+            Showing {showMore} of {tools.length} Tools
           </Text>
         </Title>
       </div>
       <div className={classes.allToolSection}>
         <div className={classes.toolsContainer}>
-          {tools.slice(0, 6).map((tool) => (
+          {tools.slice(0, showMore).map((tool) => (
             <>
               <div class="max-w-sm bg-white shadow-lg rounded-lg overflow-hidden my-4">
                 <img class="w-full h-56 p-2 rounded-md object-cover object-center" src={tool.image} alt="avatar" />
@@ -148,10 +160,11 @@ const AllTools = () => {
 
         <div>{toolDetails && <ToolsModal toolDetails={toolDetails} key={toolDetails.id}></ToolsModal>}</div>
       </div>
-
-      {/* <div>
-        <Payment></Payment>
-      </div> */}
+      <div className="w-1/2 m-auto my-5">
+        <Button variant="outline" size="sm" onClick={handleShowMore}>
+          show more
+        </Button>
+      </div>
     </div>
   );
 };
