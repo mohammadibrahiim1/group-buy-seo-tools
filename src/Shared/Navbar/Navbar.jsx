@@ -63,12 +63,13 @@ const useStyles = createStyles((theme) => ({
     padding: `${rem(8)} ${rem(12)}`,
     borderRadius: theme.radius.sm,
     textDecoration: "none",
-    color: theme.colorScheme === "dark" ? theme.colors.dark[0] : theme.colors.gray[7],
+    color: "#FFF4E6",
     fontSize: theme.fontSizes.sm,
     fontWeight: 500,
 
     "&:hover": {
-      backgroundColor: theme.colorScheme === "dark" ? theme.colors.dark[6] : theme.colors.gray[0],
+      color: "#FFA94D",
+      transition: "0.3s",
     },
 
     [theme.fn.smallerThan("sm")]: {
@@ -76,14 +77,12 @@ const useStyles = createStyles((theme) => ({
       padding: theme.spacing.md,
     },
   },
-
-  linkActive: {
-    "&, &:hover": {
-      backgroundColor: theme.fn.variant({
-        variant: "light",
-        color: theme.primaryColor,
-      }).background,
-      color: theme.fn.variant({ variant: "light", color: theme.primaryColor }).color,
+  logo: {
+    color: "#FFF4E6",
+    fontWeight: "700",
+    "&:hover": {
+      color: "#FFA94D",
+      transition: "0.3s",
     },
   },
 }));
@@ -135,7 +134,9 @@ const Navbar = () => {
   return (
     <Header height={HEADER_HEIGHT} className={classes.root}>
       <section className={classes.header}>
-        <Link to="/">GBSEOTools</Link>
+        <Link to="/" className={classes.logo}>
+          GBSEOTools
+        </Link>
         <Group spacing={5} className={classes.links}>
           {items}
         </Group>
