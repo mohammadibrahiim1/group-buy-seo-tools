@@ -1,39 +1,25 @@
-import {
-  createStyles,
-  Text,
-  Container,
-  ActionIcon,
-  Group,
-  rem,
-} from "@mantine/core";
-import {
-  IconBrandTwitter,
-  IconBrandYoutube,
-  IconBrandInstagram,
-} from "@tabler/icons-react";
-// import { MantineLogo } from "@mantine/ds";
+import { createStyles, Text, ActionIcon, Group, rem } from "@mantine/core";
+import { IconBrandTwitter, IconBrandYoutube, IconBrandInstagram } from "@tabler/icons-react";
 
 const useStyles = createStyles((theme) => ({
   footer: {
     marginTop: rem(160),
     paddingTop: `calc(${theme.spacing.xl} * 2)`,
     paddingBottom: `calc(${theme.spacing.xl} * 2)`,
-    backgroundColor:
-      theme.colorScheme === "dark"
-        ? theme.colors.dark[6]
-        : theme.colors.gray[0],
-    borderTop: `${rem(1)} solid ${
-      theme.colorScheme === "dark" ? theme.colors.dark[5] : theme.colors.gray[2]
-    }`,
+    backgroundColor: theme.colorScheme === "dark" ? theme.colors.dark[6] : theme.colors.gray[0],
+    borderTop: `${rem(1)} solid ${theme.colorScheme === "dark" ? theme.colors.dark[5] : theme.colors.gray[2]}`,
   },
 
   logo: {
-    maxWidth: rem(200),
+    maxWidth: rem(400),
 
     [theme.fn.smallerThan("sm")]: {
       display: "flex",
       flexDirection: "column",
       alignItems: "center",
+    },
+    [theme.fn.smallerThan("lg")]: {
+      maxWidth: rem(300),
     },
   },
 
@@ -47,6 +33,8 @@ const useStyles = createStyles((theme) => ({
   },
 
   inner: {
+    width: "70%",
+    margin: "auto",
     display: "flex",
     justifyContent: "space-between",
 
@@ -54,11 +42,20 @@ const useStyles = createStyles((theme) => ({
       flexDirection: "column",
       alignItems: "center",
     },
+    [theme.fn.smallerThan("lg")]: {
+      width: "90%",
+      margin: "auto",
+
+      // flexDirection: "column",
+      // alignItems: "center",
+    },
   },
 
   groups: {
     display: "flex",
-    flexWrap: "wrap",
+    justifyContent: "space-between",
+    alignItems: "center",
+    // flexWrap: "wrap",
 
     [theme.fn.smallerThan("sm")]: {
       display: "none",
@@ -71,10 +68,7 @@ const useStyles = createStyles((theme) => ({
 
   link: {
     display: "block",
-    color:
-      theme.colorScheme === "dark"
-        ? theme.colors.dark[1]
-        : theme.colors.gray[6],
+    color: theme.colorScheme === "dark" ? theme.colors.dark[1] : theme.colors.gray[6],
     fontSize: theme.fontSizes.sm,
     paddingTop: rem(3),
     paddingBottom: rem(3),
@@ -93,15 +87,15 @@ const useStyles = createStyles((theme) => ({
   },
 
   afterFooter: {
-    display: "flex",
-    justifyContent: "space-between",
-    alignItems: "center",
+    // width: "50%",
+    // margin: "auto",
+    // display: "flex",
+    // justifyContent: "space-between",
+    // alignItems: "center",
     marginTop: theme.spacing.xl,
     paddingTop: theme.spacing.xl,
     paddingBottom: theme.spacing.xl,
-    borderTop: `${rem(1)} solid ${
-      theme.colorScheme === "dark" ? theme.colors.dark[4] : theme.colors.gray[2]
-    }`,
+    borderTop: `${rem(1)} solid ${theme.colorScheme === "dark" ? theme.colors.dark[4] : theme.colors.gray[2]}`,
 
     [theme.fn.smallerThan("sm")]: {
       flexDirection: "column",
@@ -130,13 +124,7 @@ const Footer = () => {
 
   const groups = data.map((group) => {
     const links = group.links.map((link, index) => (
-      <Text
-        key={index}
-        className={classes.link}
-        component="a"
-        href={link.link}
-        onClick={(event) => event.preventDefault()}
-      >
+      <Text key={index} className={classes.link} component="a" href={link.link} onClick={() => link.link}>
         {link.label}
       </Text>
     ));
@@ -151,20 +139,18 @@ const Footer = () => {
 
   return (
     <footer className={classes.footer}>
-      <Container className={classes.inner}>
+      <section className={classes.inner}>
         <div className={classes.logo}>
-          {/* <MantineLogo size={30} /> */} GBSBTools
+          <Text fz={18} fw={600} c={"#FF922B"}>
+            {" "}
+            GBSBTools
+          </Text>
+
           <Text size="xs" color="dimmed" className={classes.description}>
-            Build fully functional accessible web applications faster than ever
+            GroupBuySEO offers affordable SEO tools for collective purchases, enabling access to premium resources at a
+            fraction of the cost.
           </Text>
         </div>
-        <div className={classes.groups}>{groups}</div>
-      </Container>
-      <Container className={classes.afterFooter}>
-        <Text color="dimmed" size="sm">
-          © 2023 Author Safiul Alom. All rights reserved.
-        </Text>
-
         <Group spacing={0} className={classes.social} position="right" noWrap>
           <ActionIcon size="lg">
             <IconBrandTwitter size="1.5rem" stroke={1.5} />
@@ -176,7 +162,13 @@ const Footer = () => {
             <IconBrandInstagram size="1.5rem" stroke={1.5} />
           </ActionIcon>
         </Group>
-      </Container>
+        <div className={classes.groups}>{groups}</div>
+      </section>
+      <section className={classes.afterFooter}>
+        <Text color="dimmed" size="sm" align="center">
+          © 2023 Author Safiul Alom. All rights reserved.
+        </Text>
+      </section>
     </footer>
   );
 };

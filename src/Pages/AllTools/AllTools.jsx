@@ -60,7 +60,7 @@ const useStyles = createStyles((theme) => ({
 
   toolsContainer: {
     display: "grid",
-    gridTemplateColumns: "repeat(4,1fr)",
+    gridTemplateColumns: "repeat(3,1fr)",
     justifyContent: "space-between",
     alignItems: "center",
     gap: "12px",
@@ -92,7 +92,7 @@ const useStyles = createStyles((theme) => ({
 }));
 
 const AllTools = () => {
-  const [showMore, setShowMore] = useState(4);
+  const [showMore, setShowMore] = useState(3);
   const { classes } = useStyles();
   const { tools, addToCart } = useContext(ApiContext);
   const [toolDetails, setToolDetails] = useState();
@@ -140,7 +140,7 @@ const AllTools = () => {
 
         <div>{toolDetails && <ToolsModal toolDetails={toolDetails} key={toolDetails.id}></ToolsModal>}</div>
       </div>
-      <div className="w-1/2 m-auto my-5">
+      <div>
         <Button variant="outline" size="sm" onClick={handleShowMore}>
           show more
         </Button>

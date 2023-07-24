@@ -6,7 +6,8 @@ import NewDrawer from "../../Components/NewDrawer/NewDrawer";
 // import { ContactUs } from "../ContactUs/ContactUs";
 // import ContactUs from "../ContactUs/ContactUs";
 import { FaqWithBg } from "../../Components/FAQ/FAQ";
-import {  ContactIconsList } from "../ContactUs/ContactUs";
+import { ContactIconsList } from "../ContactUs/ContactUs";
+import Pricing from "../../Components/Pricing/Pricing";
 // import { ContactUs } from "../ContactUs/ContactUs";
 const useStyles = createStyles(() => ({
   container: {
@@ -31,8 +32,11 @@ const Shop = () => {
               <ContactIconsList></ContactIconsList>
             </Text>
           </Grid.Col>
-          <Grid.Col span={10}>
+          <Grid.Col span={8}>
             <AllTools></AllTools>
+          </Grid.Col>
+          <Grid.Col span={2}>
+            <Text className="mt-24" >Blog</Text>
           </Grid.Col>
         </Grid>
       </section>
@@ -40,6 +44,9 @@ const Shop = () => {
         <div>
           <NewDrawer></NewDrawer>
         </div>
+      </section>
+      <section>
+        <Pricing></Pricing>
       </section>
       <section>
         <FaqWithBg></FaqWithBg>
