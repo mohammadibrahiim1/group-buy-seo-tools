@@ -27,17 +27,17 @@ const Shop = () => {
       <Header></Header>
       <section className={classes.container}>
         <Grid>
+          <Grid.Col span={10}>
+            <AllTools></AllTools>
+          </Grid.Col>
           <Grid.Col span={2}>
             <Text>
               <ContactIconsList></ContactIconsList>
             </Text>
           </Grid.Col>
-          <Grid.Col span={8}>
-            <AllTools></AllTools>
-          </Grid.Col>
-          <Grid.Col span={2}>
+          {/* <Grid.Col span={2}>
             <Text className="mt-24" >Blog</Text>
-          </Grid.Col>
+          </Grid.Col> */}
         </Grid>
       </section>
       <section>

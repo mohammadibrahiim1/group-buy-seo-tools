@@ -7,24 +7,60 @@ import { ApiContext } from "../../Context/DataContext";
 // import Marquee from "react-fast-marquee";
 // import Payment from "../../Components/Payment/Payment";
 import { Badge, Button, Card, Group, Image, Text, Title, createStyles, rem } from "@mantine/core";
-// import { FaShoppingCart } from "react-icons/fa";
+import { IconShoppingBag } from "@tabler/icons-react";
+import { MdInfo } from "react-icons/md";
+import Modal from "../../Components/Modal/Modal";
 
 // import NewDrawer from "../../Components/NewDrawer/NewDrawer";
 // import Drawer from "../../Components/Drawer/Drawer";
 // import NewDrawer from "../../Components/Drawer/Drawer";
 const useStyles = createStyles((theme) => ({
-  // wrapper: {
-  //   // border: "1px solid gray",
-  //   padding: `calc(${theme.spacing.xl} * 2) ${theme.spacing.xl}`,
-  //   // paddingTop: rem(80),
-  //   // paddingBottom: rem(50),
-  //   width: "70%",
-  //   margin: "auto",
-  //   [theme.fn.smallerThan("md")]: {
-  //     width: "100%",
-  //     margin: "auto",
-  //   },
-  // },
+  card_container: {
+    display: "grid",
+    gridTemplateColumns: "repeat(4,1fr)",
+    justifyContent: "space-between",
+    alignItems: "center",
+    gap: "14px",
+  },
+
+  card: {
+    width: "262px",
+    height: "299px",
+    border: "1px solid #f8f8f8",
+    "&:hover": {
+      boxShadow: "0 8px 16px 0 rgba(0,0,0,0.1), 0 5px 20px 0 rgba(0,0,0,0.1) ",
+      transition: "0.3s",
+    },
+  },
+
+  card_footer_container: {
+    display: "flex",
+    justifyContent: "space-between",
+    alignItems: "center",
+    gap: "12px",
+    marginTop: "10px",
+  },
+
+  btn: {
+    display: "flex",
+    justifyContent: "space-between",
+    alignItems: "center",
+    paddingRight: "9px",
+    paddingLeft: "7px",
+    borderRadius: "11px",
+    cursor: "pointer",
+    color: "#FF7F7F",
+    backgroundColor: "#FFF !important",
+    border: "1px solid #FFF",
+    boxShadow: "0 8px 16px 0 rgba(0,0,0,0.1), 0 5px 20px 0 rgba(0,0,0,0.1) ",
+
+    "&:hover": {
+      backgroundColor: "#FF7F7F !important",
+      border: "1px solid #FF7F7F",
+      color: "#FFFFFF",
+      transition: ".5s",
+    },
+  },
 
   item: {
     display: "flex",
@@ -60,7 +96,7 @@ const useStyles = createStyles((theme) => ({
 
   toolsContainer: {
     display: "grid",
-    gridTemplateColumns: "repeat(3,1fr)",
+    gridTemplateColumns: "repeat(4,1fr)",
     justifyContent: "space-between",
     alignItems: "center",
     gap: "12px",
@@ -92,13 +128,18 @@ const useStyles = createStyles((theme) => ({
 }));
 
 const AllTools = () => {
-  const [showMore, setShowMore] = useState(3);
+  const [showMore, setShowMore] = useState(8);
   const { classes } = useStyles();
   const { tools, addToCart } = useContext(ApiContext);
+  console.log(tools);
   const [toolDetails, setToolDetails] = useState();
-
+  console.log(toolDetails);
   const handleShowMore = () => {
     setShowMore((preValue) => preValue + 1);
+  };
+
+  const addToolInfo = (selectItem) => {
+    setToolDetails(selectItem);
   };
 
   return (
@@ -112,9 +153,51 @@ const AllTools = () => {
       </div>
       <div className={classes.allToolSection}>
         <div className={classes.toolsContainer}>
-          {tools.slice(0, showMore).map((tool) => (
+          {tools?.slice(0, showMore)?.map((tool) => (
             <>
-              <Card shadow="sm" padding="lg" radius="md" withBorder>
+              <Card className={classes.card} padding="lg" radius="md" shadow="sm">
+                <Card.Section>
+                  <Image src={tool.image} height={160} alt={tool.name} />
+                  <div className="p-3">
+                    <div className="flex justify-between items-center ">
+                      <Text fz="sm" weight={700}>
+                        {tool.name}
+                      </Text>
+                      <Badge color="pink" variant="light">
+                        {tool.status}
+                      </Badge>
+                    </div>
+
+                    <div className="flex justify-between items-center pt-2 ">
+                      <Text size="xs" color="dimmed">
+                        Limit: {tool.limit?.slice(0, 30)}...
+                      </Text>
+                      <label htmlFor="my_modal_6" onClick={() => addToolInfo(tool)}>
+                        <MdInfo className="cursor-pointer hover:text-[#FF7F7F]" />
+                      </label>
+                    </div>
+
+                    <div className={classes.card_footer_container}>
+                      <Text size="lg" color="dark" weight={700}>
+                        ${tool.price}
+                      </Text>
+                      <label onClick={() => addToCart(tool._id)} className={classes.btn}>
+                        <IconShoppingBag height={16} />
+                        <Text weight={700} size={"sm"}>
+                          add
+                        </Text>
+                      </label>
+                    </div>
+                  </div>
+                </Card.Section>
+                <Modal toolDetails={toolDetails}></Modal>
+              </Card>
+
+              {/* The button to open modal */}
+
+              {/* Put this part before </body> tag */}
+
+              {/* <Card shadow="sm" padding="lg" radius="md" withBorder>
                 <Card.Section>
                   <Image src={tool.image} height={160} alt="Norway" />
                 </Card.Section>
@@ -133,12 +216,12 @@ const AllTools = () => {
                 <Button variant="light" color="teal" fullWidth mt="md" radius="md" onClick={() => addToCart(tool._id)}>
                   add to cart
                 </Button>
-              </Card>
+              </Card> */}
             </>
           ))}
         </div>
 
-        <div>{toolDetails && <ToolsModal toolDetails={toolDetails} key={toolDetails.id}></ToolsModal>}</div>
+        {/* <div>{toolDetails && <ToolsModal toolDetails={toolDetails} key={toolDetails.id}></ToolsModal>}</div> */}
       </div>
       <div>
         <Button variant="outline" size="sm" onClick={handleShowMore}>
