@@ -199,19 +199,7 @@
 
 // export default ServiceCard;
 
-import {
-  Image,
-  Text,
-  Container,
-  ThemeIcon,
-  Title,
-  SimpleGrid,
-  createStyles,
-  rem,
-  Group,
-  Grid,
-  Col,
-} from "@mantine/core";
+import { Text, Container, ThemeIcon, Title, SimpleGrid, createStyles, rem, Grid, Col } from "@mantine/core";
 import { isEmail } from "@mantine/form";
 // import IMAGES from "./images";
 import { Icon24Hours, IconAntennaBars5, IconCheck, IconCoin } from "@tabler/icons-react";
@@ -219,9 +207,10 @@ import { Icon24Hours, IconAntennaBars5, IconCheck, IconCoin } from "@tabler/icon
 const useStyles = createStyles((theme) => ({
   wrapper: {
     // border: "1px solid gray",
-    padding: `calc(${theme.spacing.xl} * 2) ${theme.spacing.xl}`,
+    // padding: `calc(${theme.spacing.xl} * 2) ${theme.spacing.xl}`,
     // paddingTop: rem(80),
     // paddingBottom: rem(50),
+    paddingTop: "150px",
     width: "70%",
     margin: "auto",
     [theme.fn.smallerThan("md")]: {
@@ -361,8 +350,8 @@ const ServiceCard = () => {
   ));
 
   return (
-    <Container mt={80} mb={80} size="xl" className={classes.wrapper}>
-      <Grid gutter={80}>
+    <Container size="xl" className={classes.wrapper}>
+      <Grid>
         <Col span={12} sm={6}>
           <SimpleGrid
             mt={11}

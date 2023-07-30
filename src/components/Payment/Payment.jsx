@@ -200,7 +200,6 @@ import {
   rem,
   // Image,
   Title,
-  Container,
   Col,
   Grid,
 } from "@mantine/core";
@@ -217,7 +216,8 @@ const useStyles = createStyles((theme) => ({
   container: {
     width: "70%",
     margin: "auto",
-    padding: `calc(${theme.spacing.xl} * 2) ${theme.spacing.xl}`,
+    // padding: `calc(${theme.spacing.xl} * 1) ${theme.spacing.xl}`,
+    paddingTop: "150px",
     [theme.fn.smallerThan("md")]: {
       width: "100%",
       margin: "auto",
@@ -322,8 +322,8 @@ const Payment = () => {
   const items = mockdata.map((item) => <Feature {...item} key={item.title} />);
 
   return (
-    <section className={classes.container} mt={70} size="xl">
-      <Grid gutter={80}>
+    <section className={classes.container} size="xl">
+      <Grid>
         <Col span={12} sm={6}>
           <Title className={classes.heading} mb={30}>
             <Text component="span" inherit variant="gradient" gradient={{ from: "teal", to: "blue" }}>

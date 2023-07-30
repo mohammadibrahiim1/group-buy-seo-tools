@@ -21,6 +21,8 @@ const useStyles = createStyles((theme) => ({
   },
 
   dropdown: {
+    backgroundColor: "#11284B",
+    color: "#FFF4E6",
     position: "absolute",
     top: HEADER_HEIGHT,
     left: 0,
@@ -52,6 +54,7 @@ const useStyles = createStyles((theme) => ({
   },
 
   burger: {
+    // color: "#FFF4E6 !important",
     [theme.fn.largerThan("sm")]: {
       display: "none",
     },
@@ -121,7 +124,7 @@ const Navbar = () => {
       className={cx(classes.link, {
         [classes.linkActive]: active === link.link,
       })}
-      onClick={(event) => {
+      onClick={() => {
         // event.preventDefault();
         setActive(link.link);
         close();
@@ -137,13 +140,11 @@ const Navbar = () => {
         <Link to="/" className={classes.logo}>
           GBSEOTools
         </Link>
-        <Group spacing={5} className={classes.links}>
-          {items}
-        </Group>
-        <Burger opened={opened} onClick={toggle} className={classes.burger} size="sm" />
+        <Group className={classes.links}>{items}</Group>
+        <Burger opened={opened} onClick={toggle} className={classes.burger} size="sm" color="#FFF4E6" />
         <Transition transition="pop-top-right" duration={200} mounted={opened}>
           {(styles) => (
-            <Paper className={classes.dropdown} withBorder style={styles}>
+            <Paper className={classes.dropdown} style={styles}>
               {items}
             </Paper>
           )}
