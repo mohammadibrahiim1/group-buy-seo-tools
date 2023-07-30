@@ -20,7 +20,7 @@ import { useContext } from "react";
 import { AuthContext } from "../../Context/UserContext";
 import { useState } from "react";
 import { toast } from "react-hot-toast";
-import { Navigate, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 export const AuthenticationForm = () => {
   const [error, setError] = useState("");
@@ -39,10 +39,7 @@ export const AuthenticationForm = () => {
 
     validate: {
       email: (val) => (/^\S+@\S+$/.test(val) ? null : "Invalid email"),
-      password: (val) =>
-        val.length <= 6
-          ? "Password should include at least 6 characters"
-          : null,
+      password: (val) => (val.length <= 6 ? "Password should include at least 6 characters" : null),
     },
   });
 
@@ -50,7 +47,6 @@ export const AuthenticationForm = () => {
     event.preventDefault();
     const form = event.target;
     const name = form.name.value;
-
     const email = form.email.value;
     const password = form.password.value;
 
@@ -106,7 +102,7 @@ export const AuthenticationForm = () => {
             console.log(data);
             if (data.acknowledged) {
               toast.success(" successfully SignIn");
-              navigate("/allTools");
+              navigate("/shop");
             } else {
               toast.error(data.message);
             }
@@ -117,7 +113,7 @@ export const AuthenticationForm = () => {
 
   return (
     <div>
-      <Container size="25rem" mx="auto" mt={150}>
+      <Container size="40rem" mx="auto" pt={150}>
         <Paper radius="md" p="xl" withBorder>
           <Text size="lg" weight={500}>
             Welcome to GroupBuy Seo Tools <br />
@@ -133,11 +129,7 @@ export const AuthenticationForm = () => {
             </Button>
           </Group>
 
-          <Divider
-            label="Or continue with email"
-            labelPosition="center"
-            my="lg"
-          />
+          <Divider label="Or continue with email" labelPosition="center" my="lg" />
 
           <form onSubmit={handleSubmit}>
             <Stack>
@@ -148,9 +140,7 @@ export const AuthenticationForm = () => {
                   id="name"
                   placeholder="Your name"
                   value={form.values.name}
-                  onChange={(event) =>
-                    form.setFieldValue("name", event.currentTarget.value)
-                  }
+                  onChange={(event) => form.setFieldValue("name", event.currentTarget.value)}
                   radius="md"
                 />
               )}
@@ -162,12 +152,23 @@ export const AuthenticationForm = () => {
                 id="email"
                 placeholder="hello@mantine.dev"
                 value={form.values.email}
-                onChange={(event) =>
-                  form.setFieldValue("email", event.currentTarget.value)
-                }
+                onChange={(event) => form.setFieldValue("email", event.currentTarget.value)}
                 error={form.errors.email && "Invalid email"}
                 radius="md"
               />
+              {type === "register" && (
+                <TextInput
+                  type="photoURL"
+                  required
+                  label="PhotoURL"
+                  id="photoURL"
+                  placeholder="Photo url"
+                  value={form.values.photoURL}
+                  onChange={(event) => form.setFieldValue("photoURL", event.currentTarget.value)}
+                  error={form.errors.photoURL && "Invalid url"}
+                  radius="md"
+                />
+              )}
 
               <PasswordInput
                 type="password"
@@ -176,13 +177,8 @@ export const AuthenticationForm = () => {
                 id="password"
                 placeholder="Your password"
                 value={form.values.password}
-                onChange={(event) =>
-                  form.setFieldValue("password", event.currentTarget.value)
-                }
-                error={
-                  form.errors.password &&
-                  "Password should include at least 6 characters"
-                }
+                onChange={(event) => form.setFieldValue("password", event.currentTarget.value)}
+                error={form.errors.password && "Password should include at least 6 characters"}
                 radius="md"
               />
 
@@ -190,9 +186,7 @@ export const AuthenticationForm = () => {
                 <Checkbox
                   label="I accept terms and conditions"
                   checked={form.values.terms}
-                  onChange={(event) =>
-                    form.setFieldValue("terms", event.currentTarget.checked)
-                  }
+                  onChange={(event) => form.setFieldValue("terms", event.currentTarget.checked)}
                 />
               )}
             </Stack>
@@ -201,15 +195,13 @@ export const AuthenticationForm = () => {
               <Anchor
                 component="button"
                 type="button"
-                color="dimmed"
+                // color="dimmed"
                 onClick={() => toggle()}
                 size="xs"
               >
-                {type === "register"
-                  ? "Already have an account? Login"
-                  : "Don't have an account? Register"}
+                {type === "register" ? "Already have an account? Login" : "Don't have an account? Register"}
               </Anchor>
-              <Button type="submit" radius="xl">
+              <Button variant="outline" type="submit" radius="xl">
                 {upperFirst(type)}
               </Button>
             </Group>

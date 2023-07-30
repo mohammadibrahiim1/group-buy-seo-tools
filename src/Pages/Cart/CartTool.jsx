@@ -9,10 +9,12 @@ const CartTool = ({ tool, handleRemoveProduct }) => {
     setProductQuantity(productQuantity + 1);
   };
   const decreaseQuantity = () => {
-    setProductQuantity(productQuantity - 1);
+    if (productQuantity > 1) {
+      setProductQuantity(productQuantity - 1);
+    }
   };
 
-  const { image, name, price, id } = tool;
+  const { image, name, price, _id } = tool;
   const newPrice = price * productQuantity;
   localStorage.setItem("Price", newPrice);
 
@@ -59,7 +61,7 @@ const CartTool = ({ tool, handleRemoveProduct }) => {
                 +{" "}
               </span>
               {/* </div> */}
-              <span onClick={() => handleRemoveProduct(id)}>
+              <span onClick={() => handleRemoveProduct(_id)}>
                 <FaTrash className="text-error cursor-pointer" />
               </span>
             </div>

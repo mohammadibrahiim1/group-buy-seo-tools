@@ -199,7 +199,19 @@
 
 // export default ServiceCard;
 
-import { Image, Text, Container, ThemeIcon, Title, SimpleGrid, createStyles, rem, Group } from "@mantine/core";
+import {
+  Image,
+  Text,
+  Container,
+  ThemeIcon,
+  Title,
+  SimpleGrid,
+  createStyles,
+  rem,
+  Group,
+  Grid,
+  Col,
+} from "@mantine/core";
 import { isEmail } from "@mantine/form";
 // import IMAGES from "./images";
 import { Icon24Hours, IconAntennaBars5, IconCheck, IconCoin } from "@tabler/icons-react";
@@ -242,7 +254,7 @@ const useStyles = createStyles((theme) => ({
 
   title: {
     lineHeight: 1,
-    textAlign: "center",
+    textAlign: "left",
     // marginTop: theme.spacing.xl,
     color: theme.dark,
     fontFamily: `Greycliff CF, ${theme.fontFamily}`,
@@ -252,7 +264,7 @@ const useStyles = createStyles((theme) => ({
     fontSize: rem(42),
     // textAlign: "center",
     marginTop: "25px",
-    marginBottom: "100px",
+    marginBottom: "30px",
 
     // [theme.fn.smallerThan("lg")]: {
     //   maxWidth: "100%",
@@ -350,27 +362,38 @@ const ServiceCard = () => {
 
   return (
     <Container mt={80} mb={80} size="xl" className={classes.wrapper}>
-      <Title className={classes.title}>
-        <Text component="span" inherit variant="gradient" gradient={{ from: "teal", to: "blue" }}>
-          Our SEO Tools Service Benefit
-        </Text>
-      </Title>
+      <Grid gutter={80}>
+        <Col span={12} sm={6}>
+          <SimpleGrid
+            mt={11}
+            cols={2}
+            spacing={50}
+            breakpoints={[
+              { maxWidth: "sm", cols: 1, spacing: 40 },
+              { maxWidth: "md", cols: 2, spacing: 40 },
+              { maxWidth: "lg", cols: 3, spacing: 40 },
+            ]}
+            style={{ marginTop: 60 }}
+          >
+            {items}
+          </SimpleGrid>
+        </Col>
 
-      {/* <Container size={660} p={0}></Container> */}
+        <Col span={12} sm={6}>
+          <Title className={classes.title}>
+            <Text component="span" inherit variant="gradient" gradient={{ from: "teal", to: "blue" }}>
+              Our SEO Tools Service Benefit
+            </Text>
+          </Title>
+          <Text c="dimmed">
+            India, Bangladesh, Pakistan, Nepal, United States, Saudi Arabia, Malaysia, and many more countries peoples
+            also can purchase our service. Our maximum tools have simple access system (One click to access system) -
+            hope you'll like this system!
+          </Text>
+        </Col>
 
-      <SimpleGrid
-        mt={11}
-        cols={2}
-        spacing={50}
-        breakpoints={[
-          { maxWidth: "sm", cols: 1, spacing: 40 },
-          { maxWidth: "md", cols: 2, spacing: 40 },
-          { maxWidth: "lg", cols: 3, spacing: 40 },
-        ]}
-        style={{ marginTop: 60 }}
-      >
-        {items}
-      </SimpleGrid>
+        {/* <Container size={660} p={0}></Container> */}
+      </Grid>
     </Container>
   );
 };

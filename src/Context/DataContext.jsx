@@ -1,26 +1,25 @@
 import React, { createContext, useEffect, useState } from "react";
+import { toast } from "react-hot-toast";
 
 export const ApiContext = createContext();
-const cartFromLocalStorage = JSON.parse(
-  localStorage.getItem("newCart") || "[]"
-);
+const cartFromLocalStorage = JSON.parse(localStorage.getItem("newCart") || "[]" || "[]");
 const DataContext = ({ children }) => {
   const [tools, setTools] = useState([]);
   const [cart, setCart] = useState(cartFromLocalStorage);
 
-  const addToCart = (tool) => {
+  const addToCart = (selectItem) => {
     let newCart = [];
-    const exists = cart.find((item) => item.id === tool.id);
+    const exists = cart.find((item) => item._id === selectItem._id);
     if (!exists) {
-      tool.quantity = 1;
-      newCart = [...cart, tool];
+      selectItem.quantity = 1;
+      newCart = [...cart, selectItem];
     } else {
-      const rest = cart.filter((item) => item.id !== tool.id);
-      exists.quantity = exists.quantity + 1;
+      const rest = cart.filter((item) => item._id !== selectItem._id);
+      // exists.quantity = exists.quantity + 1;
       newCart = [...rest, exists];
     }
+    toast.success(`${selectItem.name} added successfully`);
     setCart(newCart);
-    console.log(newCart);
     localStorage.setItem("newCart", JSON.stringify(newCart));
   };
 
@@ -28,7 +27,9 @@ const DataContext = ({ children }) => {
     const updatedItems = [...cart];
     updatedItems.splice(id, 1);
     localStorage.setItem("newCart", JSON.stringify(updatedItems));
+    toast.error(` item delete successfully`);
     setCart(updatedItems);
+    console.log(updatedItems);
   };
 
   useEffect(() => {

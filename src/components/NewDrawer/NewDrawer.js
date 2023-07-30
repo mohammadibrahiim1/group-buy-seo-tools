@@ -1,5 +1,5 @@
 import { useDisclosure } from "@mantine/hooks";
-import { Drawer, Button, Group, createStyles } from "@mantine/core";
+import { Drawer, Button, Group, createStyles, Indicator } from "@mantine/core";
 import CartTool from "../../Pages/Cart/CartTool";
 import { useContext } from "react";
 import { ApiContext } from "../../Context/DataContext";
@@ -33,10 +33,12 @@ const NewDrawer = () => {
         </div>
       </Drawer>
 
-      <Group className={classes.drawerButton}>
-        <Button size="xs" variant="gradient" gradient={{ from: "orange", to: "red" }} onClick={open}>
-          <FaShoppingCart className=" h-5 w-5 mr-2" /> <span className="text-sm">See Cart</span>
-        </Button>
+      <Group position="center" className={classes.drawerButton}>
+        <Indicator size={16} label={cart.length}>
+          <Button size="xs" variant="gradient" gradient={{ from: "orange", to: "red" }} onClick={open}>
+            <FaShoppingCart className=" h-5 w-5 mr-2" /> <span className="text-sm">See Cart</span>
+          </Button>
+        </Indicator>
       </Group>
     </>
   );

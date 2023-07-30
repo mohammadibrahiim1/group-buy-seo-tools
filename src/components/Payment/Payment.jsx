@@ -201,6 +201,8 @@ import {
   // Image,
   Title,
   Container,
+  Col,
+  Grid,
 } from "@mantine/core";
 import { FaMoneyCheckAlt, FaPaypal, FaRocket } from "react-icons/fa";
 import { GiMoneyStack } from "react-icons/gi";
@@ -232,7 +234,7 @@ const useStyles = createStyles((theme) => ({
       variant: "light",
       color: theme.primaryColor,
     }).background,
-    zIndex: 1,
+    // zIndex: 1,
   },
 
   content: {
@@ -246,7 +248,7 @@ const useStyles = createStyles((theme) => ({
 
   heading: {
     lineHeight: 1,
-    textAlign: "center",
+    textAlign: "left",
     marginBottom: "35px",
     color: theme.dark,
     fontFamily: `Greycliff CF, ${theme.fontFamily}`,
@@ -276,7 +278,7 @@ function Feature({ icon: Icon, image, title, description, className, ...others }
           className={classes.icon}
           stroke={1.5}
         />
-    
+
         <Text fw={700} fz="lg" mb="xs" mt={3} ml={37} className={classes.title}>
           {title}
         </Text>
@@ -321,24 +323,64 @@ const Payment = () => {
 
   return (
     <section className={classes.container} mt={70} size="xl">
-      <Title className={classes.heading} mb={75}>
-        <Text component="span" inherit variant="gradient" gradient={{ from: "teal", to: "blue" }}>
-          Our Payments Methods
-        </Text>{" "}
-      </Title>
+      <Grid gutter={80}>
+        <Col span={12} sm={6}>
+          <Title className={classes.heading} mb={30}>
+            <Text component="span" inherit variant="gradient" gradient={{ from: "teal", to: "blue" }}>
+              Our Payments Methods
+            </Text>{" "}
+          </Title>
+          <Text c="dimmed">
+            India, Bangladesh, Pakistan, Nepal, United States, Saudi Arabia, Malaysia, and many more countries peoples
+            also can purchase our service. Our maximum tools have simple access system (One click to access system) -
+            hope you'll like this system!
+          </Text>
+        </Col>
 
-      <SimpleGrid
-        cols={4}
-        breakpoints={[
-          { maxWidth: "sm", cols: 1 },
-          { maxWidth: "md", cols: 2 },
-          { maxWidth: "lg", cols: 3 },
-        ]}
-        spacing={50}
-      >
-        {items}
-      </SimpleGrid>
+        <Col span={12} sm={6}>
+          <SimpleGrid
+            // cols={2}
+            // spacing={30}
+            // breakpoints={[{ maxWidth: "md", cols: 2 }]}
+            cols={2}
+            breakpoints={[
+              { maxWidth: "sm", cols: 1 },
+              { maxWidth: "md", cols: 2 },
+              { maxWidth: "lg", cols: 3 },
+            ]}
+            spacing={50}
+          >
+            {items}
+          </SimpleGrid>
+        </Col>
+      </Grid>
     </section>
+    //    <div className={classes.wrapper}>
+    //    <Grid gutter={80}>
+    //      <Col span={12} sm={6}>
+    //        <Title
+    //          component="span"
+    //          inherit
+    //          variant="gradient"
+    //          gradient={{ from: "teal", to: "blue" }}
+    //          className={classes.title}
+    //          order={2}
+    //        >
+    //          A fully featured React components library for your next project
+    //        </Title>
+    //        <Text c="dimmed" mt={11}>
+    //          India, Bangladesh, Pakistan, Nepal, United States, Saudi Arabia, Malaysia, and many more countries peoples
+    //          also can purchase our service. Our maximum tools have simple access system (One click to access system) -
+    //          hope you'll like this system!
+    //        </Text>
+    //      </Col>
+    //      <Col span={12} sm={6}>
+    //        <SimpleGrid cols={2} spacing={30} breakpoints={[{ maxWidth: "md", cols: 2 }]}>
+    //          {items}
+    //        </SimpleGrid>
+    //      </Col>
+    //    </Grid>
+    //  </div>
   );
 };
 

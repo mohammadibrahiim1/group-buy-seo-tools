@@ -11,7 +11,6 @@ const Home = () => {
   return (
     <div>
       <Header />
-
       <Counters></Counters>
       <PopularTools></PopularTools>
       {/* <Tools></Tools> */}

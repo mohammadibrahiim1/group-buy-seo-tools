@@ -121,7 +121,6 @@ const useStyles = createStyles((theme) => ({
   },
   showMoreButton: {
     width: "115px",
-
     backgroundColor: "orangered",
     borderRadius: "5px",
   },
@@ -132,10 +131,10 @@ const AllTools = () => {
   const { classes } = useStyles();
   const { tools, addToCart } = useContext(ApiContext);
   console.log(tools);
-  const [toolDetails, setToolDetails] = useState();
+  const [toolDetails, setToolDetails] = useState({});
   console.log(toolDetails);
   const handleShowMore = () => {
-    setShowMore((preValue) => preValue + 1);
+    setShowMore((preValue) => preValue + 4);
   };
 
   const addToolInfo = (selectItem) => {
@@ -143,7 +142,7 @@ const AllTools = () => {
   };
 
   return (
-    <div className="bg-base-100">
+    <div>
       <div>
         <Title className={classes.title}>
           <Text component="span" inherit variant="gradient" gradient={{ from: "teal", to: "blue" }}>
@@ -151,7 +150,7 @@ const AllTools = () => {
           </Text>
         </Title>
       </div>
-      <div className={classes.allToolSection}>
+      <div>
         <div className={classes.toolsContainer}>
           {tools?.slice(0, showMore)?.map((tool) => (
             <>
@@ -173,7 +172,7 @@ const AllTools = () => {
                         Limit: {tool.limit?.slice(0, 30)}...
                       </Text>
                       <label htmlFor="my_modal_6" onClick={() => addToolInfo(tool)}>
-                        <MdInfo className="cursor-pointer hover:text-[#FF7F7F]" />
+                        <MdInfo className="cursor-pointer hover:text-[#FF7F7F] duration-700" />
                       </label>
                     </div>
 
@@ -181,7 +180,7 @@ const AllTools = () => {
                       <Text size="lg" color="dark" weight={700}>
                         ${tool.price}
                       </Text>
-                      <label onClick={() => addToCart(tool._id)} className={classes.btn}>
+                      <label onClick={() => addToCart(tool)} className={classes.btn}>
                         <IconShoppingBag height={16} />
                         <Text weight={700} size={"sm"}>
                           add
@@ -192,38 +191,11 @@ const AllTools = () => {
                 </Card.Section>
                 <Modal toolDetails={toolDetails}></Modal>
               </Card>
-
-              {/* The button to open modal */}
-
-              {/* Put this part before </body> tag */}
-
-              {/* <Card shadow="sm" padding="lg" radius="md" withBorder>
-                <Card.Section>
-                  <Image src={tool.image} height={160} alt="Norway" />
-                </Card.Section>
-
-                <Group position="apart" mt="md" mb="xs">
-                  <Text weight={500}>{tool.name}</Text>
-                  <Badge color="pink" variant="light">
-                    {tool.status}
-                  </Badge>
-                </Group>
-
-                <Text size="sm" color="dimmed">
-                  {tool.text}
-                </Text>
-
-                <Button variant="light" color="teal" fullWidth mt="md" radius="md" onClick={() => addToCart(tool._id)}>
-                  add to cart
-                </Button>
-              </Card> */}
             </>
           ))}
         </div>
-
-        {/* <div>{toolDetails && <ToolsModal toolDetails={toolDetails} key={toolDetails.id}></ToolsModal>}</div> */}
       </div>
-      <div>
+      <div className="text-center mt-5">
         <Button variant="outline" size="sm" onClick={handleShowMore}>
           show more
         </Button>
