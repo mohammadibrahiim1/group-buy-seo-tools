@@ -29,24 +29,19 @@ const Shop = () => {
         <Grid>
           <Grid.Col span={10}>
             <AllTools></AllTools>
+            <Pricing></Pricing>
           </Grid.Col>
           <Grid.Col span={2}>
             <Text>
               <ContactIconsList></ContactIconsList>
             </Text>
           </Grid.Col>
-          {/* <Grid.Col span={2}>
-            <Text className="mt-24" >Blog</Text>
-          </Grid.Col> */}
         </Grid>
       </section>
       <section>
         <div>
           <NewDrawer></NewDrawer>
         </div>
-      </section>
-      <section>
-        <Pricing></Pricing>
       </section>
       <section>
         <FaqWithBg></FaqWithBg>

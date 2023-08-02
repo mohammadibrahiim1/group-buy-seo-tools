@@ -1,38 +1,20 @@
 import React, { useContext, useState } from "react";
 // import DisplayTools from "../../Components/DisplayTools/DisplayTools";
 import "./AllTools.css";
-import ToolsModal from "../../Components/ToolsModal/ToolsModal";
+// import ToolsModal from "../../Components/ToolsModal/ToolsModal";
 import { ApiContext } from "../../Context/DataContext";
 // import CartDrawer from "../../Components/CartDrawer/CartDrawer";
 // import Marquee from "react-fast-marquee";
 // import Payment from "../../Components/Payment/Payment";
-import { Badge, Button, Card, Group, Image, Text, Title, createStyles, rem } from "@mantine/core";
-import { IconShoppingBag } from "@tabler/icons-react";
-import { MdInfo } from "react-icons/md";
+import { Button, Text, Title, createStyles, getStylesRef, rem } from "@mantine/core";
+// import { IconShoppingBag } from "@tabler/icons-react";
+import { FaInfoCircle, FaShoppingCart } from "react-icons/fa";
 import Modal from "../../Components/Modal/Modal";
 
 // import NewDrawer from "../../Components/NewDrawer/NewDrawer";
 // import Drawer from "../../Components/Drawer/Drawer";
 // import NewDrawer from "../../Components/Drawer/Drawer";
 const useStyles = createStyles((theme) => ({
-  card_container: {
-    display: "grid",
-    gridTemplateColumns: "repeat(4,1fr)",
-    justifyContent: "space-between",
-    alignItems: "center",
-    gap: "14px",
-  },
-
-  card: {
-    width: "262px",
-    height: "299px",
-    border: "1px solid #f8f8f8",
-    "&:hover": {
-      boxShadow: "0 8px 16px 0 rgba(0,0,0,0.1), 0 5px 20px 0 rgba(0,0,0,0.1) ",
-      transition: "0.3s",
-    },
-  },
-
   card_footer_container: {
     display: "flex",
     justifyContent: "space-between",
@@ -124,17 +106,127 @@ const useStyles = createStyles((theme) => ({
     backgroundColor: "orangered",
     borderRadius: "5px",
   },
+
+  card: {
+    backgroundColor: theme.colorScheme === "dark" ? theme.colors.dark[7] : theme.white,
+    borderTop: "1px solid #F1F3F5",
+    borderLeft: "1px solid #F1F3F5",
+    height: "237px",
+    overflow: "hidden",
+
+    [`&:hover .${getStylesRef("product_img")}`]: {
+      transform: "scale(1.08)",
+    },
+
+    "&:hover": {
+      boxShadow: "0  5px 6px 0 #DCDCDF",
+      transition: " 0.5s",
+      transform: "scale(1.01)",
+    },
+
+    [`&:hover .${getStylesRef("hover_text")}`]: {
+      position: "relative",
+      bottom: "30px",
+      transition: "0.5s",
+    },
+    // [`&:hover .${getStylesRef("label")}`]: {
+    //   position: "absolute",
+    //   top: "30px",
+    //   transition: "0.5s",
+    // },
+  },
+
+  imageSection: {
+    padding: theme.spacing.md,
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    borderBottom: `${rem(1)} solid ${theme.colorScheme === "dark" ? theme.colors.dark[4] : theme.colors.gray[3]}`,
+  },
+
+  // label: {
+  //   marginBottom: theme.spacing.xs,
+  //   lineHeight: 1,
+  //   fontWeight: 700,
+  //   fontSize: theme.fontSizes.xs,
+  //   letterSpacing: rem(-0.25),
+  //   textTransform: "uppercase",
+  // },
+
+  section: {
+    padding: theme.spacing.md,
+    borderTop: `${rem(1)} solid ${theme.colorScheme === "dark" ? theme.colors.dark[4] : theme.colors.gray[3]}`,
+  },
+
+  icon: {
+    marginRight: rem(5),
+    color: theme.colorScheme === "dark" ? theme.colors.dark[2] : theme.colors.gray[5],
+  },
+
+  container: {
+    maxWidth: "1400px",
+    margin: "auto",
+  },
+  card_container: {
+    display: "grid",
+    gridTemplateColumns: "repeat(5,1fr)",
+    justifyContent: "space-between",
+    alignItems: "center",
+    borderBottom: "1px solid #F1F3F5",
+    borderRight: "1px solid #F1F3F5",
+    position: "relative",
+    marginTop: "6px",
+    // zIndex: 1,
+  },
+  product_img: {
+    width: "140px",
+    height: "140px",
+    margin: "auto",
+    padding: "30px",
+    marginTop: "15px",
+    ref: getStylesRef("product_img"),
+    backgroundSize: "cover",
+    transition: "transform 500ms ease",
+  },
+
+  hover_text: {
+    ref: getStylesRef("hover_text"),
+    transition: "0.5s",
+  },
+
+  label: {
+    position: "absolute",
+    zIndex: -1,
+    top: 10,
+    right: 10,
+    transition: "0.5s",
+    "&:hover": {
+      color: "orangered",
+      cursor: "pointer",
+    },
+  },
+  cart_button: {
+    position: "absolute",
+    zIndex: -1,
+    top: 40,
+    right: 10,
+    transition: "0.5s",
+    "&:hover": {
+      color: "orangered",
+      cursor: "pointer",
+    },
+  },
 }));
 
 const AllTools = () => {
-  const [showMore, setShowMore] = useState(8);
+  const [showMore, setShowMore] = useState(10);
   const { classes } = useStyles();
   const { tools, addToCart } = useContext(ApiContext);
   console.log(tools);
   const [toolDetails, setToolDetails] = useState({});
   console.log(toolDetails);
   const handleShowMore = () => {
-    setShowMore((preValue) => preValue + 4);
+    setShowMore((preValue) => preValue + 5);
   };
 
   const addToolInfo = (selectItem) => {
@@ -145,55 +237,40 @@ const AllTools = () => {
     <div>
       <div>
         <Title className={classes.title}>
-          <Text component="span" inherit variant="gradient" gradient={{ from: "teal", to: "blue" }}>
+          <Text component="span" inherit>
             Showing {showMore} of {tools.length} Tools
           </Text>
         </Title>
       </div>
       <div>
-        <div className={classes.toolsContainer}>
-          {tools?.slice(0, showMore)?.map((tool) => (
+        <div className={classes.card_container}>
+          {tools.slice(0, showMore).map((tool) => (
             <>
-              <Card className={classes.card} padding="lg" radius="md" shadow="sm">
-                <Card.Section>
-                  <Image src={tool.image} height={160} alt={tool.name} />
-                  <div className="p-3">
-                    <div className="flex justify-between items-center ">
-                      <Text fz="sm" weight={700}>
-                        {tool.name}
-                      </Text>
-                      <Badge color="pink" variant="light">
-                        {tool.status}
-                      </Badge>
-                    </div>
+              <div className={classes.card}>
+                <img className={classes.product_img} src={tool.image} alt={tool.name} />
 
-                    <div className="flex justify-between items-center pt-2 ">
-                      <Text size="xs" color="dimmed">
-                        Limit: {tool.limit?.slice(0, 30)}...
-                      </Text>
-                      <label htmlFor="my_modal_6" onClick={() => addToolInfo(tool)}>
-                        <MdInfo className="cursor-pointer hover:text-[#FF7F7F] duration-700" />
-                      </label>
-                    </div>
+                <div className={classes.hover_text}>
+                  <Text fz="md" c={"#D00906"} fw={700} align="center" pt={50} px={10}>
+                    {tool.name}
+                  </Text>
 
-                    <div className={classes.card_footer_container}>
-                      <Text size="lg" color="dark" weight={700}>
-                        ${tool.price}
-                      </Text>
-                      <label onClick={() => addToCart(tool)} className={classes.btn}>
-                        <IconShoppingBag height={16} />
-                        <Text weight={700} size={"sm"}>
-                          add
-                        </Text>
-                      </label>
-                    </div>
-                  </div>
-                </Card.Section>
-                <Modal toolDetails={toolDetails}></Modal>
-              </Card>
+                  <Text fz="md" c={"#C1C2C5"} fw={700} align="center">
+                    ${tool.price}
+                  </Text>
+                </div>
+
+                <label className={classes.label} htmlFor="my_modal_6" onClick={() => addToolInfo(tool)}>
+                  <FaInfoCircle className="w-5 h-5" />
+                </label>
+
+                <div className={classes.cart_button} onClick={() => addToCart(tool)} size="xs" variant="subtle">
+                  <FaShoppingCart className="w-5 h-5" />
+                </div>
+              </div>
             </>
           ))}
         </div>
+        <Modal toolDetails={toolDetails}></Modal>
       </div>
       <div className="text-center mt-5">
         <Button variant="outline" size="sm" onClick={handleShowMore}>

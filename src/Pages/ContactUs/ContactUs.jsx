@@ -66,11 +66,13 @@ const MOCKDATA = [
 ];
 
 export const ContactIconsList = () => {
-  const items = MOCKDATA.map((item, index) => <ContactIcon className="mt-5" key={index} {...item} />);
+  const items = MOCKDATA.map((item, index) => <ContactIcon className="mt-5 ps-2" key={index} {...item} />);
   return (
     <Stack>
-      <div className="mt-24">
-        <Text className="mb-4">Contact Us</Text>
+      <div className="mt-28 border pb-3 ">
+        <Text className="mb-3 text-center" fw={"bold"}>
+          Contact Us
+        </Text>
         {items}
       </div>
     </Stack>

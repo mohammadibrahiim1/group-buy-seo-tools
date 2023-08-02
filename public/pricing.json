@@ -7,7 +7,7 @@
       "monthly": 29,
       "annually": "29 * 12 - 199"
     },
-    "features": "['One project', 'Your dashboard']"
+    "features": ["One project", "Your dashboard", "+50 Components", "Chat support"]
   },
   {
     "id": 2,
@@ -17,7 +17,7 @@
       "monthly": 59,
       "annually": "59 * 12 - 100"
     },
-    "features": "['Two projects', 'Your dashboard', 'Components included', 'Advanced charts']"
+    "features": ["Two projects", "Your dashboard", "Components included", "Advanced charts"]
   },
   {
     "id": 3,
@@ -27,6 +27,6 @@
       "monthly": 139,
       "annually": "139 * 12 - 100"
     },
-    "features": "['Unlimited projects', 'Your dashboard', '+300 Components', 'Chat support']"
+    "features": ["Unlimited projects", "Your dashboard", "+300 Components", "Chat support"]
   }
 ]
