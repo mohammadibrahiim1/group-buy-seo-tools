@@ -30,6 +30,7 @@ const Shop = () => {
           <Grid.Col span={10}>
             <AllTools></AllTools>
             <Pricing></Pricing>
+            <FaqWithBg></FaqWithBg>
           </Grid.Col>
           <Grid.Col span={2}>
             <Text>
@@ -43,9 +44,7 @@ const Shop = () => {
           <NewDrawer></NewDrawer>
         </div>
       </section>
-      <section>
-        <FaqWithBg></FaqWithBg>
-      </section>
+      <section></section>
     </div>
   );
 };

@@ -7,6 +7,7 @@ import {
   MantineProvider,
   getStylesRef,
   rem,
+  Text,
 } from "@mantine/core";
 import { IconPlus } from "@tabler/icons-react";
 
@@ -14,21 +15,20 @@ const useStyles = createStyles((theme) => ({
   wrapper: {
     paddingTop: `calc(${theme.spacing.xl} * 2)`,
     minHeight: rem(820),
-    backgroundImage: `radial-gradient(${theme.colors[theme.primaryColor][6]} 0%, ${
-      theme.colors[theme.primaryColor][4]
-    } 100%)`,
-    backgroundRepeat: "no-repeat",
-    backgroundPosition: "top left",
+    // backgroundImage: `radial-gradient(${theme.colors[theme.primaryColor][6]} 0%, ${
+    //   theme.colors[theme.primaryColor][4]
+    // } 100%)`,
+    // backgroundRepeat: "no-repeat",
+    // backgroundPosition: "top left",
     position: "relative",
     color: theme.black,
-    
   },
 
   title: {
-    color: theme.white,
-    fontSize: 52,
+    // color: theme.orange,
+    fontSize: 42,
     fontFamily: `Greycliff CF, ${theme.fontFamily}`,
-    marginBottom: `calc(${theme.spacing.xl} * 1.5)`,
+    marginTop: `calc(${theme.spacing.xl} * 1.5)`,
   },
 
   item: {
@@ -60,11 +60,11 @@ const useStyles = createStyles((theme) => ({
     marginLeft: theme.spacing.md,
   },
 
-  gradient: {
-    backgroundImage: `radial-gradient(${theme.colors[theme.primaryColor][6]} 0%, ${
-      theme.colors[theme.primaryColor][5]
-    } 100%)`,
-  },
+  // gradient: {
+  //   backgroundImage: `radial-gradient(${theme.colors[theme.primaryColor][6]} 0%, ${
+  //     theme.colors[theme.primaryColor][0]
+  //   } 100%)`,
+  // },
 
   itemOpened: {
     [`& .${getStylesRef("icon")}`]: {
@@ -89,12 +89,20 @@ const placeholder =
 export const FaqWithBg = () => {
   const { classes } = useStyles();
   return (
-    <MantineProvider inherit theme={{ colorScheme: "light" }}>
+    <MantineProvider inherit theme={{}}>
       <div className={classes.wrapper}>
-        <Container size="sm">
-          <Title align="center" className={classes.title}>
+        <Container size="lg">
+          <Title
+            variant="gradient"
+            gradient={{ from: "orange", to: "red", deg: 105 }}
+            align="center"
+            className={classes.title}
+          >
             Frequently Asked Questions
           </Title>
+          <Text mb={15} mt={5} variant="gradient" align="center" gradient={{ from: "teal", to: "lime", deg: 105 }}>
+            Ask, what you want to know?
+          </Text>
 
           <Accordion
             chevronPosition="right"
@@ -103,7 +111,13 @@ export const FaqWithBg = () => {
             variant="separated"
             disableChevronRotation
             chevron={
-              <ThemeIcon radius="xl" className={classes.gradient} size={32}>
+              <ThemeIcon
+                radius="xl"
+                variant="gradient"
+                gradient={{ from: "orange", to: "red", deg: 105 }}
+                // className={classes.gradient}
+                size={32}
+              >
                 <IconPlus size="1.05rem" stroke={1.5} />
               </ThemeIcon>
             }
